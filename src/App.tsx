@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Container } from './modules';
 
-function App() {
+
+
+interface Transaction_model {
+  id: string;
+  date: string;
+  amount: number;
+  description: string;
+  category: string;
+}
+
+interface MainContextType { 
+  mainData: Transaction_model[];
+  setMainData: React.Dispatch<React.SetStateAction<Transaction_model[]>>;
+}
+
+//! Definuj kontext pre hlavný kontext
+const mainContext = React.createContext<MainContextType>({
+  mainData: [],
+  setMainData: () => [],
+});
+
+
+function App(): React.JSX.Element {
+  const [mainData, setMainData] = React.useState<Transaction_model[]>([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <mainContext.Provider value={{ mainData, setMainData }}>
+        <Container/>
+      </mainContext.Provider>
     </div>
   );
 }
 
-export default App;
+const Content_app = {
+  App,
+  mainContext,
+}
+
+export default Content_app;
