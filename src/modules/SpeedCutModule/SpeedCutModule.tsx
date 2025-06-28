@@ -17,10 +17,11 @@ function SpeedCutModule(): React.JSX.Element {
     }
   }
 
-
   return (
     <div className="speed-cut-module">
+      <div>
       <h1>Welcome to the Main Module</h1>
+      </div>
       <div className="form-container">
         <form
           action="#"
@@ -30,7 +31,6 @@ function SpeedCutModule(): React.JSX.Element {
             Vonkajší priemer BK:
           </label>
           <input
-            type="number"
             id="diametro"
             name="diametro" />
           <label
@@ -38,13 +38,12 @@ function SpeedCutModule(): React.JSX.Element {
             Rezná rýchlosť:
           </label>
           <input
-            type="number"
             id="cutspeed"
             name="cutspeed"
             defaultValue={52} />
           <button
             type="submit">
-            Submit
+            Prepočet
           </button>
         </form>
       </div>

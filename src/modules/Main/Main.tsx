@@ -1,5 +1,6 @@
 import React from "react";
 import { SpeedCutModule } from "../SpeedCutModule";
+import "./style/main_style.css";
 
 function Main(): React.JSX.Element {
 
