@@ -19,8 +19,8 @@ function SpeedCutModule(): React.JSX.Element {
 
   return (
     <div className="speed-cut-module">
-      <div>
-      <h1>Welcome to the Main Module</h1>
+      <div className="cut-speed-header">
+        <h1>Welcome to the Main Module</h1>
       </div>
       <div className="form-container">
         <form
@@ -47,20 +47,23 @@ function SpeedCutModule(): React.JSX.Element {
           </button>
         </form>
       </div>
+      {/* výsledok ......................................*/}
       <div className="result">
-        <div>
+        <div className="result-text">
           <span>
             Výsledné otačky:
           </span>
         </div>
-        <div>
+        <div className="result-speed">
           {returnedSpeed}
           <span>
             m/min
           </span>
         </div>
       </div>
-      <p>This is the main content area.</p>
+      <div className="cut-speed-footer">
+        <p>This is the main content area.</p>
+      </div>
     </div>
   );
 }
