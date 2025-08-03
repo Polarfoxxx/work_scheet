@@ -7,6 +7,13 @@ function Main(): React.JSX.Element {
 
   return (
     <div className="main">
+      <div>
+        <nav>
+          <NavLink to="/whell-live" className="nav-link">Whell Live</NavLink>
+          <NavLink to="/speedCut" className="nav-link">Speed Cut</NavLink>
+          {/* Add more navigation links as needed */}
+        </nav>
+      </div>
         <Routes>
           <Route path="/" element={<WhellLiveModule />} />
           <Route path="/whell-live" element={<WhellLiveModule />} />
