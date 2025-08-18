@@ -1,4 +1,4 @@
-const cutSpeed = require("./calculateFiles/CutSpeed_calculate");
+const cutSpeed = require("./calculateFiles/cutSpeed_calculate");
 
 const express = require("express");
 require('dotenv').config();
@@ -9,7 +9,6 @@ const localhost = process.env.REACT_APP_LOCALHOST;
 const publicSite = process.env.REACT_APP_PUPLIC;
 
 app.use(express.json());
-app.use(cookieParser());
 
 app.use(cors({
     origin: [localhost, publicSite],
