@@ -7,3 +7,21 @@
     justify-content: start;
     background-color: #f0f0f0;
 }
+
+.main .header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #282c34;
+    color: white;
+}
+
+.main .navigationBar {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #61dafb;
+}
