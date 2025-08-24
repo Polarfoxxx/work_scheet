@@ -7,7 +7,7 @@ interface type {
     password: string;
 }
 
-async function servicesLogin(params: type): Promise<any> {
+async function servicesLogin_Api(params: type): Promise<any> {
 
 
     try {
@@ -23,4 +23,4 @@ async function servicesLogin(params: type): Promise<any> {
     }
 }
 
-export default servicesLogin;
+export default servicesLogin_Api;

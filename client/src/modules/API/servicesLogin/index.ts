@@ -1,1 +1,1 @@
-export { default as servicesLogin } from "./servicesLogin";
+export { default as servicesLogin_API } from "./servicesLogin_API";

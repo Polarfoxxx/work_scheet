@@ -1,0 +1,1 @@
+export { default as SpeedOfRotationComponent } from "./SpeedOfRotationComponent"
