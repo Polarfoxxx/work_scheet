@@ -1,0 +1,50 @@
+.speed-of-rotation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.speed-of-rotation header h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.speed-of-rotation main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.speed-of-rotation main .form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.speed-of-rotation main .form-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.speed-of-rotation article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+    width: 100%;
+}

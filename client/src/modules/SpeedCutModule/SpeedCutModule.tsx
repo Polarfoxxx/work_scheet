@@ -11,7 +11,7 @@ function SpeedCutModule(): React.JSX.Element {
   return (
     <div className="speed-cut-module">
       <header>
-        <h1>Welcome to the Main Module</h1>
+        <h1>Výpočet renzej rýchlosti alebo otáčok</h1>
       </header>
       <main>
         <div className="introComponent">

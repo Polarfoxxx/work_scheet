@@ -1,5 +1,7 @@
 import React from "react";
 import { cutSpeed_API } from "../../../API";
+import "./style/speedOfRotationComponent_style.css"
+
 
 function SpeedOfRotationComponent() {
   const [returnedSpeed, setreturnedSpeed] = React.useState<number>(0);
@@ -24,49 +26,57 @@ function SpeedOfRotationComponent() {
     }
   }
 
-    
   return (
-    <div className="speed-cut-module">
-            <div className="form-container">
-            <form
-              action="#"
-              onSubmit={e => handleSubmit(e)}>
-              <label
-                htmlFor="diametro">
-                Vonkajší priemer BK:
-              </label>
-              <input
-                id="diametro"
-                name="diametro" />
-              <label
-                htmlFor="cutspeed">
-                Rezná rýchlosť:
-              </label>
-              <input
-                id="cutspeed"
-                name="cutspeed"
-                defaultValue={52} />
-              <button
-                type="submit">
-                Prepočet
-              </button>
-            </form>
+    <div className="speed-of-rotation">
+      <header>
+        <h1>
+          Výpočet otáčok na základe rezej rýchlosti a vonkajšieho priemeru BK
+        </h1>
+      </header>
+      <main>
+        <div className="form-container">
+          <form
+            action="#"
+            onSubmit={e => handleSubmit(e)}>
+            <label
+              htmlFor="diametro">
+              Vonkajší priemer BK:
+            </label>
+            <input
+              id="diametro"
+              name="diametro" />
+            <label
+              htmlFor="cutspeed">
+              Rezná rýchlosť:
+            </label>
+            <input
+              id="cutspeed"
+              name="cutspeed"
+              defaultValue={52} />
+            <button
+              type="submit">
+              Prepočet
+            </button>
+          </form>
+        </div>
+      </main>
+      {/* výsledok ......................................*/}
+      <article>
+        <div className="result">
+          <div className="result-text">
+            <span>
+              Výsledné otačky:
+            </span>
           </div>
-          {/* výsledok ......................................*/}
-          <div className="result">
-            <div className="result-text">
-              <span>
-                Výsledné otačky:
-              </span>
-            </div>
-            <div className="result-speed">
-              {returnedSpeed}
-              <span>
-                m/min
-              </span>
-            </div>
+          <div className="result-speed">
+            {returnedSpeed}
+            <span>
+              m/min
+            </span>
           </div>
-      </div>
+        </div>
+      </article>
+    </div>
   )
 }
 
