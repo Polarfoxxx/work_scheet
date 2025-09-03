@@ -26,7 +26,7 @@
     height: 40px;
     display: flex;
     justify-content: center;
-    background-color: #61dafb;
+    background-color: #282c34;
 }
 
 .main>nav .navigationBar {
@@ -39,11 +39,18 @@
 }
 
 .main>nav .navigationBar .nav-link {
+    padding: 3px 18px;
+    background-color: rgb(160, 160, 160);
+    border-radius: 5px;
     color: #000000;
     text-decoration: none;
     font-weight: bold;
 }
-
+.main>nav .navigationBar .nav-link:hover {
+    background-color: #07a749;
+    color: white;
+    transition: 0.3s;
+}
 /*! --------------------------------------- */
 /*! --------------------------------------- */
 /*! --------------------------------------- */

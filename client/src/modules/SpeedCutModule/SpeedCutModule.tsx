@@ -17,11 +17,13 @@ function SpeedCutModule(): React.JSX.Element {
         <div className="introComponent">
           <IntroComponent />
         </div>
-        <div className="speedOfRotationComponent">
-          <SpeedOfRotationComponent />
-        </div>
-        <div className="cutSpeedComponent">
-          <CutSpeedComponent />
+        <div className="calculationComponents">
+          <div className="speedOfRotationComponent">
+            <SpeedOfRotationComponent />
+          </div>
+          <div className="cutSpeedComponent">
+            <CutSpeedComponent />
+          </div>
         </div>
       </main >
       <footer>
