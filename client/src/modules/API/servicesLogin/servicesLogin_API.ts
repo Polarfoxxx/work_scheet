@@ -3,7 +3,7 @@ const apiUrl = process.env.CURRENT_API_URL;
 
 
 interface type {
-    username: string;
+    userName: string;
     password: string;
 }
 
@@ -11,9 +11,9 @@ async function servicesLogin_Api(params: type): Promise<any> {
 
 
     try {
-        const response = await axios.get(`${apiUrl}/user?ID=12345`, {
+        const response = await axios.get(`${apiUrl}/login/user`, {
             params: {
-                username: params.username,
+                username: params.userName,
                 password: params.password
             }
         });

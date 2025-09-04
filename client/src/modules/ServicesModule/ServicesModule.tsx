@@ -1,7 +1,27 @@
 import React from "react";
 import "./style/servicesModule_style.css";
+import servicesLogin_Api from "../API/servicesLogin/servicesLogin_API";
 
 function ServicesModule(): React.JSX.Element {
+
+  const loginUser = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const userName = formData.get("username");
+    const password = formData.get("password");
+
+    if (userName && password) {
+      servicesLogin_Api({ userName: userName.toString(), password: password.toString()})
+        .then(res => {
+          console.log(res);
+        }).catch(err => {
+          console.error(err);
+        })
+      e.currentTarget.reset(); // Reset form after submission
+    }
+  }
+
+
   return (
     <div className="services-module">
       <header>
@@ -9,12 +29,12 @@ function ServicesModule(): React.JSX.Element {
       </header>
       <main>
         <div>
-          <form className="login-form">
+          <form className="login-form" onSubmit={e => loginUser(e)}>
             <label htmlFor="username">Username:</label>
             <input type="text" id="username" name="username" required />
             <label htmlFor="password">Password:</label>
             <input type="password" id="password" name="password" required />
-            <button type="submit">Log In</button>
+            <button type="submit" >Log In</button>
           </form>
         </div>
         <p>This is the Services module. Here you can log in to access exclusive features and services.</p>

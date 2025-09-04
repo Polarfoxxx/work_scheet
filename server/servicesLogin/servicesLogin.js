@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-router.post("/cutSpeed", async (req, res) => {
-    const { username, password } = req.body;
+router.get("/user", async (req, res) => {
+    const { userName, password } = req.body;
+    console.log("Received login request:", { userName, password });
     try {
 
 

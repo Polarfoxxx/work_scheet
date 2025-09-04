@@ -1,4 +1,5 @@
 const cutSpeed = require("./calculateFiles/cutSpeed_calculate");
+const userLogIn = require("./servicesLogin/servicesLogin");
 
 require('dotenv').config();
 const express = require("express");
@@ -24,7 +25,8 @@ app.use((req, res, next) => {
 });
 
 //! CRUD Endpoints
-app.use('/calculate', cutSpeed); 
+app.use("/calculate", cutSpeed); 
+app.use("/login", userLogIn)
 
 //! run server
 app.listen(Port, () => console.log(`connect to port ${Port}`));
