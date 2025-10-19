@@ -1,50 +1,114 @@
-.speed-of-rotation{
+.speed-cut-component {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    background-color: #7268ce;
+    padding: 5px;
+    background-color: #39d86e;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    max-height: 300px;
+    width: 80%;
+    min-width: 600px;
 }
 
-.speed-of-rotation header h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+.speed-cut-component header {
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
 }
 
-.speed-of-rotation main {
+.speed-cut-component header h1 {
+    font-size: 18px;
+    color: #000000;
+}
+
+.speed-cut-component main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     width: 100%;
-    max-width: 400px;
+    height: 100%;
 }
 
-.speed-of-rotation main .form-container {
+.speed-cut-component main .form-container {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.speed-of-rotation main .form-container form{
+.speed-cut-component main .form-container form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
 }
 
-.speed-of-rotation article {
+.speed-cut-component main .form-container form label {
+    font-size: 12px;
+    position: relative;
+    top: 8px;
+}
+
+.speed-cut-component main .form-container form input {
+    width: 30%;
+    height: 25px;
+    padding: 5px 3px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.speed-cut-component main .form-container form button {
+    width: 200px;
+    padding: 8px 12px;
+    background-color: #5130b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+.speed-cut-component article {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #e0f7fa;
+    padding: 5px;
     border-radius: 8px;
     width: 100%;
+    height: 100%;
+}
+
+.speed-cut-component article .result {
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    color: #333;
+    gap: 15px;
+}
+
+.speed-cut-component article .result .result-text {
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+}
+
+.speed-cut-component article .result .result-speed {
+    font-size: 28px;
+    color: #000;
+}
+.speed-cut-component article .result .result-speed span {   
+    font-weight: bold;
+    color: #2e2e2f;
+    margin-left: 8px;
 }

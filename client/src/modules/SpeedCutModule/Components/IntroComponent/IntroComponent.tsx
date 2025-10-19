@@ -1,5 +1,9 @@
+import "./style/introComponent_style.css";
 
-function IntroComponent() {
+function IntroComponent(): React.JSX.Element {
+
+
+
   return (
     <div className="intro">
       <h2>Vplyv reznej rýchlosti na obrobok</h2>

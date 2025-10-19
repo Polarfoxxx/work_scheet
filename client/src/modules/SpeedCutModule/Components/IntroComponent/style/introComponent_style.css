@@ -1,0 +1,16 @@
+.intro{
+    background-color: aqua;
+    width: 90%;
+    height: 100%;
+}
+.intro h2{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.intro p{
+    font-size: 13px;
+    color: #555;
+}
