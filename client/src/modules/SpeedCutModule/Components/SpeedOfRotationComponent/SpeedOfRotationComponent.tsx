@@ -65,7 +65,7 @@ function SpeedOfRotationComponent() {
         <div className="result">
           <div className="result-text">
             <span>
-              Výsledné otačky:
+              Výsledné otáčky:
             </span>
           </div>
           <div className="result-speed">
