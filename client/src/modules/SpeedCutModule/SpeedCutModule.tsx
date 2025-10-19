@@ -7,7 +7,7 @@ import {
 } from "./Components";
 
 function SpeedCutModule(): React.JSX.Element {
-
+  
   return (
     <div className="speed-cut-module">
       <header>
@@ -26,11 +26,6 @@ function SpeedCutModule(): React.JSX.Element {
           </div>
         </div>
       </main >
-      <footer>
-        <div className="cut-speed-footer">
-          <p>This is the main content area.</p>
-        </div>
-      </footer>
     </div >
   );
 }

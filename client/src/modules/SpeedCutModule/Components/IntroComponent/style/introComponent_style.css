@@ -1,5 +1,5 @@
 .intro{
-    background-color: aqua;
+    background-color: transparent;
     width: 90%;
     height: 100%;
 }
@@ -13,4 +13,11 @@
 .intro p{
     font-size: 13px;
     color: #555;
+}
+
+.intro ul li{
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #e41010;
+    list-style-type: none;
 }
