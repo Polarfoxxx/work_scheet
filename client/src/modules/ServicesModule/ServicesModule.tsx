@@ -13,9 +13,7 @@ function ServicesModule(): React.JSX.Element {
     if (userName && password) {
       servicesLogin_Api({ userName: userName.toString(), password: password.toString()})
         .then(res => {
-          console.log(res);
         }).catch(err => {
-          console.error(err);
         })
       e.currentTarget.reset(); // Reset form after submission
     }

@@ -1,5 +1,5 @@
 import axios from "axios";
-const apiUrl = process.env.CURRENT_API_URL;
+const apiUrl = process.env.REACT_APP_CURRENT_API_URL;
 
 
 interface type {
@@ -7,20 +7,21 @@ interface type {
     password: string;
 }
 
-async function servicesLogin_Api(params: type): Promise<any> {
-
-
+async function servicesLogin_Api(params: { userName: string; password: string }): Promise<any> {
     try {
-        const response = await axios.get(`${apiUrl}/login/user`, {
-            params: {
+        const response = await axios.post(`${apiUrl}/login/user`,
+            {
                 username: params.userName,
-                password: params.password
-            }
-        });
+                password: params.password,
+            },
+            { withCredentials: true }
+        );
         console.log(response.data);
+        
     } catch (error) {
-        console.error(error);
+        throw error;
     }
 }
+
 
 export default servicesLogin_Api;
