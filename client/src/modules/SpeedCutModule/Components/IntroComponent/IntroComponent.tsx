@@ -29,7 +29,6 @@ function IntroComponent(): React.JSX.Element {
             čo vedie k zhoršeniu presnosti a k tvorbe povrchových trhlín.
           </p>
         </li>
-        <br />
         <li>
           <h3>Vplyv na tepelný stav obrobku</h3>
           <p>
@@ -39,7 +38,6 @@ function IntroComponent(): React.JSX.Element {
             Preto je často potrebné chladiace médium, ktoré odvádza teplo a stabilizuje proces.
           </p>
         </li>
-        <br />
         <li>
           <h3>Vplyv na presnosť obrábania</h3>
           <p>
@@ -48,7 +46,6 @@ function IntroComponent(): React.JSX.Element {
             avšak rastie riziko vibrácií a nepravidelného rezu.
           </p>
         </li>
-        <br />
         <li>
           <h3>Vplyv na mechanické vlastnosti povrchovej vrstvy</h3>
           <p>
