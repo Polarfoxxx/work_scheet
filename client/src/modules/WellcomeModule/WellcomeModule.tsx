@@ -1,5 +1,6 @@
 import React from "react";
 import "./style/wellcomeModule_style.css";
+import "./style/welcomeModule_style_mediaScreen.css";
 
 function WellcomeModule(): React.JSX.Element {
   return (

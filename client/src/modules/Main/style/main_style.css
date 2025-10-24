@@ -13,10 +13,33 @@
     height: 60px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     background-color: #282c34;
     color: white;
+    gap: 15px;
+    padding-left: 150px;
 }
+
+.main>header>h1 {
+    width: auto;
+    height: 40px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    color: rgb(14, 215, 14);
+
+}
+
+.main>header>p {
+    width: auto;
+    height: 40px;
+    display: flex;
+    align-items: end;
+    background-color: #282c34;
+    color: rgb(255, 255, 255);
+    padding-bottom: 5px;
+}
+
 
 /*! --------------------------------------- */
 /*! --------------------------------------- */
@@ -46,11 +69,13 @@
     text-decoration: none;
     font-weight: bold;
 }
+
 .main>nav .navigationBar .nav-link:hover {
     background-color: #07a749;
     color: white;
     transition: 0.3s;
 }
+
 /*! --------------------------------------- */
 /*! --------------------------------------- */
 /*! --------------------------------------- */

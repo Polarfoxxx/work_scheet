@@ -1,0 +1,1 @@
+export { default as GrindingSchemaModule } from './GrindingSchemaModule';

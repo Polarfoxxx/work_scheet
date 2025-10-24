@@ -1,20 +1,26 @@
 import React from "react";
+import "./style/main_style.css";
+import "./style/main_style_mediaScreen.css"
 import {
   SpeedCutModule,
-  WhellLiveModule,
+  GrindingSchemaModule,
   WellcomeModule,
   ServicesModule
 } from "../";
-import "./style/main_style.css";
-import { Router, Route, Routes, NavLink } from "react-router-dom";
+import {
+  Router,
+  Route,
+  Routes,
+  NavLink
+} from "react-router-dom";
 
 function Main(): React.JSX.Element {
 
   return (
     <div className="main">
       <header>
-        <h1>Main Module</h1>
-        <p>This is the main module of the application, serving as a container for other modules.</p>
+        <h1>Grinding application</h1>
+        <p>This is the application for help and calculate value</p>
       </header>
       <nav>
         <div className="navigationBar">
@@ -22,17 +28,14 @@ function Main(): React.JSX.Element {
           <NavLink to="/whell-live" className="nav-link">Whell Live</NavLink>
           <NavLink to="/speedCut" className="nav-link">Speed Cut</NavLink>
           <NavLink to="/services" className="nav-link">Services</NavLink>
-          {/* Add more navigation links as needed */}
         </div>
       </nav>
       <main>
         <Routes>
           <Route path="/" element={<WellcomeModule />} />
-          <Route path="/whell-live" element={<WhellLiveModule />} />
-          <Route path="/speedCut" element={<SpeedCutModule />} />
+          <Route path="/whell-live" element={<GrindingSchemaModule />} />
           <Route path="/speedCut" element={<SpeedCutModule />} />
           <Route path="/services" element={<ServicesModule />} />
-          {/* Add more routes as needed */}
         </Routes>
       </main>
       <footer>

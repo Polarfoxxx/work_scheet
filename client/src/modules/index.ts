@@ -1,5 +1,5 @@
 export * from "./Container";
-export * from "./WhellLiveModule";
+export * from "./GrindingSchemaModule";
 export * from "./SpeedCutModule";
 export * from "./services"
 export * from "./WellcomeModule";

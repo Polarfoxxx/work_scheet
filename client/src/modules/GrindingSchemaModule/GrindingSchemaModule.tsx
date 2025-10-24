@@ -1,8 +1,9 @@
 import React from 'react';
 import { Stage, Layer, Line, Text } from "react-konva";
+import './style/grindingSchema_style.css';
 
-function WhellLiveModule(): React.JSX.Element {
-const [positions, setPositions] = React.useState(200);
+function GrindingSchemaModule(): React.JSX.Element {
+  const [positions, setPositions] = React.useState(200);
 
   const diel = [
     { x: 100, y: 100 },
@@ -23,22 +24,18 @@ const [positions, setPositions] = React.useState(200);
 
 
   return (
-    <div>
-      <div>
-      </div>
-      <div>
-        <button onClick={handleClick}>
-          click me
-        </button>
-      </div>
-      <div>
-        <div>
+    <div className='grindingSchema'>
+      <header className='grindingSchema_header'>
+        Schema
+      </header>
+      <article className='grindingSchema_article'>
+        <div className='grindingSchema_article_leftSide'>
           <Stage width={800} height={600} style={{ border: '1px solid grey' }}>
             <Layer>
               <Line points={diel.flatMap(p => [p.x, p.y])} stroke="black" strokeWidth={2} />
               <Line points={[100, positions, 360, 200]} stroke="red" strokeWidth={1} />
-              <Text x={180} y={225} text={`${sirka} mm`} fontSize={14} fill="red" />
-              <Line points={[100, 100, 360, 100]} stroke="red" strokeWidth={10} draggable 
+              <Text x={180} y={225} text={`155 mm`} fontSize={14} fill="red" />
+              <Line points={[100, 100, 360, 100]} stroke="red" strokeWidth={10} draggable
                 onDragEnd={e => {
                   console.log('Nová pozícia:', e.target.x(), e.target.y());
                 }} />
@@ -46,10 +43,15 @@ const [positions, setPositions] = React.useState(200);
             </Layer>
           </Stage>
         </div>
-      </div>
+        <div className='grindingSchema_article_rightSide'>
+          <p>
+            rigt side
+          </p>
+        </div>
+      </article>
     </div>
 
   );
 }
 
-export default WhellLiveModule;
+export default GrindingSchemaModule;
