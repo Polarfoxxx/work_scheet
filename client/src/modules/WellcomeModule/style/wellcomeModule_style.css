@@ -31,15 +31,39 @@
     justify-content: center;
 }
 
+    .wellcome-mod .right-section > h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: rgb(0, 0, 0);
+        padding: 0px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .wellcome-mod .right-section > p {
+        font-size: 24px;
+        margin-bottom: 30px;
+        color: white;
+        padding: 0px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+    }
 
 
+/* !------------------------------------ */
+/* !------------------------------------ */
+/* !------------------------------------ */
 @media (max-width: 950px) {
 
     .wellcome-mod {
         flex-direction: column;
         height: 100%;
         width: 100%;
-        background-color: lightpink;
+        background-color: rgb(34, 158, 100);
     }
 
     .wellcome-mod .left-section {
