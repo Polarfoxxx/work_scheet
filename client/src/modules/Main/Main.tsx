@@ -1,6 +1,6 @@
 import React from "react";
 import "./style/main_style.css";
-import "./style/main_style_mediaScreen.css"
+
 import {
   SpeedCutModule,
   GrindingSchemaModule,
@@ -17,7 +17,7 @@ import {
 function Main(): React.JSX.Element {
 
   return (
-    <div className="main">
+    <div className="main_container">
       <header>
         <h1>Grinding application</h1>
         <p>This is the application for help and calculate value</p>
