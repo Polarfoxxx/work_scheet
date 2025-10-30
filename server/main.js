@@ -1,14 +1,14 @@
 const cutSpeed = require("./calculateFiles/cutSpeed_calculate");
+const whellRot = require("./calculateFiles/whellRot_calculate");
 const userLogIn = require("./servicesLogin/servicesLogin");
-require('dotenv').config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const Port = 5000;
 const WEB_SIDE = process.env.CURRENT_SIDE;
+require('dotenv').config();
 
 app.use(express.json());
-
 app.use(cors({
     origin: [WEB_SIDE],
     credentials: true
@@ -24,7 +24,8 @@ app.use((req, res, next) => {
 });
 
 //! CRUD Endpoints
-app.use("/calculate", cutSpeed); 
+app.use("/calculateCutSpeed", cutSpeed); 
+app.use("/calculateWhellrot", whellRot); 
 app.use("/login", userLogIn)
 
 //! run server

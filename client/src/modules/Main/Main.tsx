@@ -25,7 +25,7 @@ function Main(): React.JSX.Element {
       <nav>
         <div className="navigationBar">
           <NavLink to="/" className="nav-link">Home</NavLink>
-          <NavLink to="/whell-live" className="nav-link">Whell Live</NavLink>
+          <NavLink to="/grindingSchemaModule" className="nav-link">Schema</NavLink>
           <NavLink to="/speedCut" className="nav-link">Speed Cut</NavLink>
           <NavLink to="/services" className="nav-link">Services</NavLink>
         </div>
@@ -33,7 +33,7 @@ function Main(): React.JSX.Element {
       <main>
         <Routes>
           <Route path="/" element={<WellcomeModule />} />
-          <Route path="/whell-live" element={<GrindingSchemaModule />} />
+          <Route path="/grindingSchemaModule" element={<GrindingSchemaModule />} />
           <Route path="/speedCut" element={<SpeedCutModule />} />
           <Route path="/services" element={<ServicesModule />} />
         </Routes>
