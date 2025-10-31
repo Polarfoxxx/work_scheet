@@ -18,7 +18,7 @@ const WEB_SIDE = process.env.CURRENT_SIDE || "http://localhost:3000";
 //! --- Middleware ---
 app.use(express.json());
 app.use(cors({
-  origin: [WEB_SIDE],
+  origin: true,
   credentials: true,
 }));
 
