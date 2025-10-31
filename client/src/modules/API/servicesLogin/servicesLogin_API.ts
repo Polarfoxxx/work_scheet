@@ -9,7 +9,7 @@ interface type {
 
 async function servicesLogin_Api(params: { userName: string; password: string }): Promise<any> {
     try {
-        const response = await axios.post(`${apiUrl}/login/user`,
+        const response = await axios.post(`/login/user`,
             {
                 username: params.userName,
                 password: params.password,

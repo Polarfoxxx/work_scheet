@@ -10,7 +10,7 @@ interface type_for_cutSpeed_params {
 async function cutSpeed_API(cutSpeed_params: type_for_cutSpeed_params): Promise<{message: number} | undefined> {
     
     try {
-      const response = await axios.get(`${API_URL}/calculateCutSpeed/cutSpeed?speed=${cutSpeed_params.cutSpeed}&dia=${cutSpeed_params.diametro}`, {
+      const response = await axios.get(`/calculateCutSpeed/cutSpeed?speed=${cutSpeed_params.cutSpeed}&dia=${cutSpeed_params.diametro}`, {
             withCredentials: true});
         return response.data;
     } catch (error) {
