@@ -16,7 +16,12 @@ const PORT = process.env.PORT || 5000;
 
 //! --- Middleware ---
 app.use(express.json());
-app.use(cors({ origin: true, credentials: true }));
+app.use(
+  cors({
+    origin: true, // povolí požiadavky z rovnakého pôvodu (frontend aj backend spolu)
+    credentials: true,
+  })
+);
 
 //! --- API routes ---
 app.use("/calculateCutSpeed", cutSpeed);
@@ -25,12 +30,15 @@ app.use("/login", userLogIn);
 
 //! --- Serve React frontend ---
 const clientPath = path.join(__dirname, "../client/build");
+
 app.use(express.static(clientPath));
 
-//! --- Catch-all for React Router ---
-app.get("/*/", (req, res) => {
-  res.sendFile(path.join(clientPath, "index.html"));
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.resolve(clientPath, "index.html"));
 });
 
 //! --- Run server ---
-app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+app.listen(process.env.PORT || 5000, () =>
+  console.log(`✅ Server running on port ${process.env.PORT || 5000}`)
+);
+
