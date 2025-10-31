@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(
   cors({
-    origin: true, // povolí požiadavky z rovnakého pôvodu (frontend aj backend spolu)
+    origin: true, //! povolí požiadavky z rovnakého pôvodu (frontend aj backend spolu)
     credentials: true,
   })
 );
@@ -28,11 +28,11 @@ app.use("/calculateCutSpeed", cutSpeed);
 app.use("/calculateWhellrot", whellRot);
 app.use("/login", userLogIn);
 
-//! --- Serve React frontend ---
+//! --- Pripojenie statickeho suboru v tomto pripade buildu ---
 const clientPath = path.join(__dirname, "../client/build");
-
 app.use(express.static(clientPath));
 
+//! --- Serve React frontend ---
 app.get(/.*/, (req, res) => {
   res.sendFile(path.resolve(clientPath, "index.html"));
 });
