@@ -13,22 +13,10 @@ const userLogIn = require("./servicesLogin/servicesLogin");
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
-const WEB_SIDE = process.env.CURRENT_SIDE || "http://localhost:3000";
 
 //! --- Middleware ---
 app.use(express.json());
-app.use(cors({
-  origin: true,
-  credentials: true,
-}));
-
-//! optional manual headers (môžeš vynechať, keď používaš cors())
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", WEB_SIDE);
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
+app.use(cors({ origin: true, credentials: true }));
 
 //! --- API routes ---
 app.use("/calculateCutSpeed", cutSpeed);
@@ -39,8 +27,8 @@ app.use("/login", userLogIn);
 const clientPath = path.join(__dirname, "../client/build");
 app.use(express.static(clientPath));
 
-//! ak požiadavka nepasuje na žiadne API, pošli React index.html
-app.get("*", (req, res) => {
+//! --- Catch-all for React Router ---
+app.get("/*/", (req, res) => {
   res.sendFile(path.join(clientPath, "index.html"));
 });
 
