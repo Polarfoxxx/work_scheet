@@ -2,7 +2,7 @@ import React from "react";
 import { createContext, Dispatch, SetStateAction } from "react";
 
 type Type_for_provideDATA = {
-    appColorTheme: string;
+    appColorTheme: "light" | "dark";
 };
 
 type Type_for_DATA_context = {
@@ -10,7 +10,7 @@ type Type_for_DATA_context = {
     setProvideDATA: Dispatch<SetStateAction<Type_for_provideDATA>>;
 };
 
-const defaultProvideDATA = {
+const defaultProvideDATA: Type_for_provideDATA = {
     appColorTheme: "light"
 };
 

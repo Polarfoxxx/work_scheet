@@ -1,16 +1,21 @@
 import React from "react";
 import "./style/servicesModule_style.css";
+import { useContext } from "react";
+import { ContainerProvider } from "../Container";
 import servicesLogin_Api from "../API/servicesLogin/servicesLogin_API";
 
 function ServicesModule(): React.JSX.Element {
+  const { provideDATA, setProvideDATA } = useContext(ContainerProvider.Context);
 
   const handleChangeColor = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
-    if (currentTheme === "dark")
+    if (currentTheme === "dark") {
       document.documentElement.setAttribute("data-theme", "light");
-    else
+      setProvideDATA({ ...provideDATA, appColorTheme: "light" });
+    } else {
       document.documentElement.setAttribute("data-theme", "dark");
-  };
+    setProvideDATA({ ...provideDATA, appColorTheme : "dark" });
+  }};
 
 
   const loginUser = (e: React.FormEvent<HTMLFormElement>) => {
@@ -27,7 +32,7 @@ function ServicesModule(): React.JSX.Element {
 
       e.currentTarget.reset(); // Reset form after submission
     }
-  }
+  };
 
 
   return (
@@ -37,7 +42,7 @@ function ServicesModule(): React.JSX.Element {
       </header>
       <main>
         <div>
-          <button onClick={handleChangeColor}>change color</button>
+          <button onClick={handleChangeColor}>change color {provideDATA.appColorTheme === "dark" ? "light" : "dark"}</button>
         </div>
         <div>
           <form className="login-form" onSubmit={e => loginUser(e)}>
