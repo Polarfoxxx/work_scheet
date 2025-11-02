@@ -16,6 +16,10 @@ import {
 
 function Main(): React.JSX.Element {
 
+
+
+
+
   return (
     <div className="main_container">
       <header>

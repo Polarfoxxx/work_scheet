@@ -1,5 +1,4 @@
 import axios from "axios";
-const API_URL = process.env.REACT_APP_CURRENT_API_URL;
 
 
 interface type_for_cutSpeed_params {

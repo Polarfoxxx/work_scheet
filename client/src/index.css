@@ -1,7 +1,24 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+
+[data-theme="dark"] {
+  --primary-color: #282c34;
+  --secondary-color: #818cab;
+  --font-color: #e1e1ff;
+  --bg-color: #161625;
+  --heading-color: #818cab;
+}
+
+[data-theme="light"] {
+  --primary-color: #e1e0f4;
+  --secondary-color: #818cab;
+  --font-color: #e1e1ff;
+  --bg-color: #161625;
+  --heading-color: #818cab;
 }
 
 body {

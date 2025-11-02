@@ -1,6 +1,4 @@
 import axios from "axios";
-const apiUrl = process.env.REACT_APP_CURRENT_API_URL;
-
 
 interface type {
     userName: string;

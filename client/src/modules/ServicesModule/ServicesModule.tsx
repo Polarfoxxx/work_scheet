@@ -4,6 +4,15 @@ import servicesLogin_Api from "../API/servicesLogin/servicesLogin_API";
 
 function ServicesModule(): React.JSX.Element {
 
+  const handleChangeColor = () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    if (currentTheme === "dark")
+      document.documentElement.setAttribute("data-theme", "light");
+    else
+      document.documentElement.setAttribute("data-theme", "dark");
+  };
+
+
   const loginUser = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -11,10 +20,11 @@ function ServicesModule(): React.JSX.Element {
     const password = formData.get("password");
 
     if (userName && password) {
-      servicesLogin_Api({ userName: userName.toString(), password: password.toString()})
+      servicesLogin_Api({ userName: userName.toString(), password: password.toString() })
         .then(res => {
         }).catch(err => {
         })
+
       e.currentTarget.reset(); // Reset form after submission
     }
   }
@@ -26,6 +36,9 @@ function ServicesModule(): React.JSX.Element {
         <h2>Log In</h2>
       </header>
       <main>
+        <div>
+          <button onClick={handleChangeColor}>change color</button>
+        </div>
         <div>
           <form className="login-form" onSubmit={e => loginUser(e)}>
             <label htmlFor="username">Username:</label>
