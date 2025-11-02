@@ -1,14 +1,42 @@
 import React from "react";
-import { Main } from "../Main";
+import { createContext, Dispatch, SetStateAction } from "react";
+
+type Type_for_provideDATA = {
+    appColorTheme: string;
+};
+
+type Type_for_DATA_context = {
+    provideDATA: Type_for_provideDATA;
+    setProvideDATA: Dispatch<SetStateAction<Type_for_provideDATA>>;
+};
+
+const defaultProvideDATA = {
+    appColorTheme: "light"
+};
+
+const Context = createContext<Type_for_DATA_context>({
+    provideDATA: defaultProvideDATA,
+    setProvideDATA: () => { }
+})
 
 
-function Container(): React.JSX.Element {
+
+const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const [provideDATA, setProvideDATA] = React.useState<Type_for_provideDATA>(defaultProvideDATA);
+
+
     return (
         <div className="container">
-            <Main />
+            <Context.Provider value={{ provideDATA, setProvideDATA }}>
+                {children}
+            </Context.Provider>
         </div>
     );
 }
 
+const ContainerProvider = {
+    Context,
+    Container
+}
 
-export default Container;
+export default ContainerProvider;

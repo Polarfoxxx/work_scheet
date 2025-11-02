@@ -182,10 +182,10 @@
         width: 100%;
         height: 100%;
         display: flex;
-        align-items: center;
+        align-items: start;
         justify-content: center;
-        border: 2px solid black;
-
+        background-color: #07a749;
+        position: relative;
     }
 
 

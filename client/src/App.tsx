@@ -1,43 +1,21 @@
 import React from 'react';
 import './App.css';
-import { Container } from './modules';
+import ContainerProvider from './modules/Container/Container';
+import Main from './modules/Main/Main';
 
 
-interface Transaction_model {
-  id: string;
-  date: string;
-  amount: number;
-  description: string;
-  category: string;
-}
-
-interface MainContextType { 
-  mainData: Transaction_model[];
-  setMainData: React.Dispatch<React.SetStateAction<Transaction_model[]>>;
-}
-
-//! Definuj kontext pre hlavný kontext
-const mainContext = React.createContext<MainContextType>({
-  mainData: [],
-  setMainData: () => [],
-});
 
 
 function App(): React.JSX.Element {
-  const [mainData, setMainData] = React.useState<Transaction_model[]>([]);
 
   return (
-    <div className="app">
-      <mainContext.Provider value={{ mainData, setMainData }}>
-        <Container/>
-      </mainContext.Provider>
-    </div>
+    <ContainerProvider.Container>
+      <div className="app">
+        <Main />
+      </div>
+    </ContainerProvider.Container>
   );
 }
 
-const Content_app = {
-  App,
-  mainContext,
-}
 
-export default Content_app;
+export default App;
