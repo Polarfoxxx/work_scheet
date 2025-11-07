@@ -3,9 +3,12 @@ import "./style/servicesModule_style.css";
 import { useContext } from "react";
 import { ContainerProvider } from "../Container";
 import servicesLogin_Api from "../API/servicesLogin/servicesLogin_API";
+import { useNavigate } from "react-router-dom";
 
 function ServicesModule(): React.JSX.Element {
   const { provideDATA, setProvideDATA } = useContext(ContainerProvider.Context);
+  const navigate = useNavigate();
+
 
   const handleChangeColor = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
@@ -14,8 +17,9 @@ function ServicesModule(): React.JSX.Element {
       setProvideDATA({ ...provideDATA, appColorTheme: "light" });
     } else {
       document.documentElement.setAttribute("data-theme", "dark");
-    setProvideDATA({ ...provideDATA, appColorTheme : "dark" });
-  }};
+      setProvideDATA({ ...provideDATA, appColorTheme: "dark" });
+    }
+  };
 
 
   const loginUser = (e: React.FormEvent<HTMLFormElement>) => {
@@ -25,10 +29,12 @@ function ServicesModule(): React.JSX.Element {
     const password = formData.get("password");
 
     if (userName && password) {
-      servicesLogin_Api({ userName: userName.toString(), password: password.toString() })
-        .then(res => {
-        }).catch(err => {
-        })
+      const response_userLog = servicesLogin_Api({ userName: userName.toString(), password: password.toString() })
+      try {
+        console.log(response_userLog);
+        navigate('/dashboard');
+      } catch {
+      }
 
       e.currentTarget.reset(); // Reset form after submission
     }

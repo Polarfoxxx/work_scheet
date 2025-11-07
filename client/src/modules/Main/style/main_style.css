@@ -80,7 +80,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #07a749;
+    background-color: var(--bg-color-secondary);
 }
 
 
