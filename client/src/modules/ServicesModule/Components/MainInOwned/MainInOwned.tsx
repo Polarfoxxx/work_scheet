@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/mainOnOwned_style.css";
-import { NavLink } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
+
 
 function MainInOwned(): React.JSX.Element {
 
@@ -9,13 +9,11 @@ function MainInOwned(): React.JSX.Element {
   return (
     <div className="services-container">
       <nav className="navigationBar">
-        <NavLink to="/services/MainInOwned" className="nav-link">Main</NavLink>
-        <NavLink to="/services/ExcelFirst" className="nav-link">Excel</NavLink>
+        <NavLink to="excelFirst" className="nav-link">Excel one</NavLink>
+        <NavLink to="excelSecond" className="nav-link">Excel second</NavLink>
       </nav>
-      <div>
-        <Outlet />
-      </div>
-      <div className="excelIframe">
+      <div className="outlet-container">
+      <Outlet />
       </div>
     </div>
   );

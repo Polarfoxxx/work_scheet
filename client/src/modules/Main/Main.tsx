@@ -1,16 +1,15 @@
 import React from "react";
 import "./style/main_style.css";
-
 import {
   SpeedCutModule,
   GrindingSchemaModule,
   WellcomeModule,
   ServicesModule,
   MainInOwned,
-  ExcelFirstModule
+  ExcelFirstModule,
+  ExcelSecondModule
 } from "../";
 import {
-  Router,
   Route,
   Routes,
   NavLink
@@ -39,9 +38,10 @@ function Main(): React.JSX.Element {
           <Route path="/grindingSchemaModule" element={<GrindingSchemaModule />} />
           <Route path="/speedCut" element={<SpeedCutModule />} />
           <Route path="/services" element={<ServicesModule />}>
-            <Route index element={<MainInOwned />} /> {/* default */}
-            <Route path="MainInOwned" element={<MainInOwned />} />
-            <Route path="ExcelFirst" element={<ExcelFirstModule />} />
+            <Route path="mainInOwned" element={<MainInOwned />}> {/* <-- layout s navigáciou */}
+              <Route path="excelSecond" element={<ExcelSecondModule />} />
+              <Route path="excelFirst" element={<ExcelFirstModule />} />
+            </Route>
           </Route>
         </Routes>
       </main>

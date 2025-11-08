@@ -13,7 +13,7 @@ function ServicesModule(): React.JSX.Element {
 
   React.useEffect(() => {
     provideDATA.isLogged ? navigate('MainInOwned') : navigate('');
-   /*  return () => { setProvideDATA({ ...provideDATA, isLogged: false }) }; */  //! pri odchode nastane odhlásenie 
+    return () => { setProvideDATA({ ...provideDATA, isLogged: false }) };   //! pri odchode nastane odhlásenie 
   }, []);
 
 
@@ -41,7 +41,7 @@ function ServicesModule(): React.JSX.Element {
         console.log(response_userLog);
         if (response_userLog.status === 200) {
           setProvideDATA({ ...provideDATA, isLogged: true });
-          navigate('MainInOwned');
+          navigate('mainInOwned');
         }
       } catch {
         console.error("Login failed");
