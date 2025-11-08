@@ -6,7 +6,8 @@ import {
   GrindingSchemaModule,
   WellcomeModule,
   ServicesModule,
-  MainInOwned
+  MainInOwned,
+  ExcelFirstModule
 } from "../";
 import {
   Router,
@@ -37,8 +38,10 @@ function Main(): React.JSX.Element {
           <Route path="/" element={<WellcomeModule />} />
           <Route path="/grindingSchemaModule" element={<GrindingSchemaModule />} />
           <Route path="/speedCut" element={<SpeedCutModule />} />
-          <Route path="/services" element={<ServicesModule />} >
-            <Route path="/" element={<MainInOwned />} />
+          <Route path="/services" element={<ServicesModule />}>
+            <Route index element={<MainInOwned />} /> {/* default */}
+            <Route path="MainInOwned" element={<MainInOwned />} />
+            <Route path="ExcelFirst" element={<ExcelFirstModule />} />
           </Route>
         </Routes>
       </main>
