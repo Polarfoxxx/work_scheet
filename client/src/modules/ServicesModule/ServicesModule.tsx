@@ -22,17 +22,19 @@ function ServicesModule(): React.JSX.Element {
   };
 
 
-  const loginUser = (e: React.FormEvent<HTMLFormElement>) => {
+  const loginUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const userName = formData.get("username");
     const password = formData.get("password");
 
     if (userName && password) {
-      const response_userLog = servicesLogin_Api({ userName: userName.toString(), password: password.toString() })
+      const response_userLog = await servicesLogin_Api({ userName: userName.toString(), password: password.toString() })
       try {
         console.log(response_userLog);
-        navigate('/dashboard');
+        if (response_userLog.status === 200) {
+          navigate('/dashboard');
+        }
       } catch {
       }
 

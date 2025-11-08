@@ -3,12 +3,10 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const dotenv = require("dotenv");
-
 //! --- Local imports ---
 const cutSpeed = require("./calculateFiles/cutSpeed_calculate");
 const whellRot = require("./calculateFiles/whellRot_calculate");
 const userLogIn = require("./servicesLogin/servicesLogin");
-
 //! --- Config ---
 dotenv.config();
 const app = express();

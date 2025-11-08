@@ -5,7 +5,8 @@ import {
   SpeedCutModule,
   GrindingSchemaModule,
   WellcomeModule,
-  ServicesModule
+  ServicesModule,
+  MainInOwned
 } from "../";
 import {
   Router,
@@ -18,31 +19,33 @@ function Main(): React.JSX.Element {
 
 
   return (
-      <div className="main_container">
-        <header>
-          <h1>Grinding application</h1>
-          <p>This is the application for help and calculate value</p>
-        </header>
-        <nav>
-          <div className="navigationBar">
-            <NavLink to="/" className="nav-link">Home</NavLink>
-            <NavLink to="/grindingSchemaModule" className="nav-link">Schema</NavLink>
-            <NavLink to="/speedCut" className="nav-link">Speed Cut</NavLink>
-            <NavLink to="/services" className="nav-link">Services</NavLink>
-          </div>
-        </nav>
-        <main>
-          <Routes>
-            <Route path="/" element={<WellcomeModule />} />
-            <Route path="/grindingSchemaModule" element={<GrindingSchemaModule />} />
-            <Route path="/speedCut" element={<SpeedCutModule />} />
-            <Route path="/services" element={<ServicesModule />} />
-          </Routes>
-        </main>
-        <footer>
-          <p> Michal Suchovský. All rights reserved &copy; 2025.</p>
-        </footer>
-      </div>
+    <div className="main_container">
+      <header>
+        <h1>Grinding application</h1>
+        <p>This is the application for help and calculate value</p>
+      </header>
+      <nav>
+        <div className="navigationBar">
+          <NavLink to="/" className="nav-link">Home</NavLink>
+          <NavLink to="/grindingSchemaModule" className="nav-link">Schema</NavLink>
+          <NavLink to="/speedCut" className="nav-link">Speed Cut</NavLink>
+          <NavLink to="/services" className="nav-link">Services</NavLink>
+        </div>
+      </nav>
+      <main>
+        <Routes>
+          <Route path="/" element={<WellcomeModule />} />
+          <Route path="/grindingSchemaModule" element={<GrindingSchemaModule />} />
+          <Route path="/speedCut" element={<SpeedCutModule />} />
+          <Route path="/services" element={<ServicesModule />} >
+            <Route path="/" element={<MainInOwned />} />
+          </Route>
+        </Routes>
+      </main>
+      <footer>
+        <p> Michal Suchovský. All rights reserved &copy; 2025.</p>
+      </footer>
+    </div>
   );
 }
 
