@@ -4,3 +4,4 @@ export * from "./SpeedCutModule";
 export * from "./WellcomeModule";
 export * from "./ServicesModule";
 export * from "./API";
+export * from "./CykleTimeModule"

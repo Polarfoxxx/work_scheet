@@ -7,7 +7,8 @@ import {
   ServicesModule,
   MainInOwned,
   ExcelFirstModule,
-  ExcelSecondModule
+  ExcelSecondModule,
+  CykleTimeModule
 } from "../";
 import {
   Route,
@@ -29,6 +30,7 @@ function Main(): React.JSX.Element {
           <NavLink to="/" className="nav-link">Home</NavLink>
           <NavLink to="/grindingSchemaModule" className="nav-link">Schema</NavLink>
           <NavLink to="/speedCut" className="nav-link">Speed Cut</NavLink>
+          <NavLink to="/cykleTime" className="nav-link">Cykle time</NavLink>
           <NavLink to="/services" className="nav-link">Services</NavLink>
         </div>
       </nav>
@@ -37,6 +39,7 @@ function Main(): React.JSX.Element {
           <Route path="/" element={<WellcomeModule />} />
           <Route path="/grindingSchemaModule" element={<GrindingSchemaModule />} />
           <Route path="/speedCut" element={<SpeedCutModule />} />
+          <Route path="/cykleTime" element={<CykleTimeModule />} />
           <Route path="/services" element={<ServicesModule />}>
             <Route path="mainInOwned" element={<MainInOwned />}> {/* <-- layout s navigáciou */}
               <Route path="excelSecond" element={<ExcelSecondModule />} />
