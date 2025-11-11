@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 //! --- Local imports ---
 const cutSpeed = require("./calculateFiles/cutSpeed_calculate");
 const whellRot = require("./calculateFiles/whellRot_calculate");
+const cykleTime = require("./calculateFiles/cykleTime_calculate");
 const userLogIn = require("./servicesLogin/servicesLogin");
 //! --- Config ---
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(
 //! --- API routes ---
 app.use("/calculateCutSpeed", cutSpeed);
 app.use("/calculateWhellrot", whellRot);
+app.use("/cykleTime", cykleTime);
 app.use("/login", userLogIn);
 
 //! --- Pripojenie statickeho suboru v tomto pripade buildu ---

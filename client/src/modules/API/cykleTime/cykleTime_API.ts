@@ -1,15 +1,15 @@
 import axios from "axios";
 
 
-interface type_for_cutSpeed_params {
-    cutSpeed: string;
-    diametro: string;
+interface type_for_cykleTime_params {
+    calTime: string;
+    couPiec: string;
 }
 
-async function cykleTime_API(cutSpeed_params: type_for_cutSpeed_params): Promise<{message: number} | undefined> {
+async function cykleTime_API(cykleData: type_for_cykleTime_params): Promise<{message: number} | undefined> {
     
     try {
-      const response = await axios.get(`/calculateCutSpeed/cutSpeed?speed=${cutSpeed_params.cutSpeed}&dia=${cutSpeed_params.diametro}`, {
+      const response = await axios.get(`/cykleTime/cykleCalk?calTime=${cykleData.calTime}&couPiec=${cykleData.couPiec}`, {
             withCredentials: true});
         return response.data;
     } catch (error) {
