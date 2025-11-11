@@ -11,7 +11,18 @@ router.get("/cykleCalk", async (req, res) => {
         const calculateOne = calTime / couPiec;
         const calculateTwo = calculateOne / 60;
         const roundedReturn = Math.round(calculateTwo * 1000) / 1000;
-        return res.status(200).json({ message: roundedReturn });
+
+        const roundedReturn_halfHour = (Math.round(calculateTwo * 1000) / 1000) / 2;
+        return res.status(200).json({
+            message: {
+                fullCykle: roundedReturn,
+                halfHourCykle: roundedReturn_halfHour
+            }
+        });
+
+
+
+
 
     } catch (error) {
         console.error(error);

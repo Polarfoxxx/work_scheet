@@ -6,12 +6,14 @@ interface type_for_cykleTime_params {
     couPiec: string;
 }
 
-async function cykleTime_API(cykleData: type_for_cykleTime_params): Promise<{message: number} | undefined> {
+async function cykleTime_API(cykleData: type_for_cykleTime_params): Promise<any | undefined> {
     
     try {
       const response = await axios.get(`/cykleTime/cykleCalk?calTime=${cykleData.calTime}&couPiec=${cykleData.couPiec}`, {
             withCredentials: true});
-        return response.data;
+        console.log(response);
+        return 5
+        ;
     } catch (error) {
         console.error(error);
     }
