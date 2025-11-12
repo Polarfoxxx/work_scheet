@@ -8,21 +8,25 @@ router.get("/cykleCalk", async (req, res) => {
         if (calTime <= 0 || couPiec <= 0) {
             return res.status(500).json({ message: "zero value" });
         };
-        const calculateOne = calTime / couPiec;
-        const calculateTwo = calculateOne / 60;
-        const roundedReturn = Math.round(calculateTwo * 1000) / 1000;
+        const calculateFirstTime = calTime / couPiec;
+        const calculateOnePiece = 1 / calculateFirstTime;  //! diel za sekundu
+        const roundedReturnOnePiece = Math.round(calculateOnePiece * 100) / 100; 
+        const pieceForMminute = roundedReturnOnePiece * 60; //! dielov za minutu
 
-        const roundedReturn_halfHour = (Math.round(calculateTwo * 1000) / 1000) / 2;
         return res.status(200).json({
             message: {
-                fullCykle: roundedReturn,
-                halfHourCykle: roundedReturn_halfHour
+                thisCykle:  calculateFirstTime / 60,
+                halfHourCykle: pieceForMminute * 30,
+                onehourCykle: pieceForMminute * 60,
+                twoohourCykle: pieceForMminute * 120,
+                threehourCykle: pieceForMminute * 180,
+                fourhourCykle: pieceForMminute * 240,
+                fivehourCykle: pieceForMminute * 300,
+                sixHourCykle: pieceForMminute * 360,
+                sevenHourCykle: pieceForMminute * 420,
+                eightHourCykle: pieceForMminute * 480,
             }
         });
-
-
-
-
 
     } catch (error) {
         console.error(error);
