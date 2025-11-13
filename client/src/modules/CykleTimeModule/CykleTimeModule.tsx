@@ -1,8 +1,21 @@
 import React from 'react';
 import { cykleTime_API } from '../API';
+import { type_for_cykleTime_response } from '../API/cykleTime/cykleTime_API';
 
 function CykleTimeModule(): React.JSX.Element {
-    const [result, setResult] = React.useState<number | null>(null);    
+    const [result, setResult] = React.useState<type_for_cykleTime_response | undefined>({
+            thisCykle: 0,
+            halfHourCykle: 0,
+            onehourCykle: 0,
+            twoohourCykle: 0,
+            threehourCykle: 0,
+            fourhourCykle: 0,
+            fivehourCykle: 0,
+            sixHourCykle: 0,
+            sevenHourCykle: 0,
+            eightHourCykle: 0,
+    }
+    );    
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -18,7 +31,7 @@ function CykleTimeModule(): React.JSX.Element {
             cykleTime_API(formData)
                 .then(res => {
                     console.log(res);
-                    setResult(res ? res.message : null);
+                    setResult(res ? res : undefined);
                 }).catch(err => {
                     console.error(err);
                 })
@@ -63,7 +76,20 @@ function CykleTimeModule(): React.JSX.Element {
                         </button>
                     </form>
                     <div>
-                        <p>Výsledok: {result !== null ? result : "čaká na výpočet"}</p>
+                        {result && (
+                            <div className="resultContainer">
+                                <p>Cyklov za 1 minútu: {result.thisCykle}</p>   
+                                <p>Cyklov za 30 minút: {result.halfHourCykle}</p>
+                                <p>Cyklov za 1 hodinu: {result.onehourCykle}</p>
+                                <p>Cyklov za 2 hodiny: {result.twoohourCykle}</p>
+                                <p>Cyklov za 3 hodiny: {result.threehourCykle}</p>
+                                <p>Cyklov za 4 hodiny: {result.fourhourCykle}</p>
+                                <p>Cyklov za 5 hodín: {result.fivehourCykle}</p>
+                                <p>Cyklov za 6 hodín: {result.sixHourCykle}</p>
+                                <p>Cyklov za 7 hodín: {result.sevenHourCykle}</p>
+                                <p>Cyklov za 8 hodín: {result.eightHourCykle}</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </main>
