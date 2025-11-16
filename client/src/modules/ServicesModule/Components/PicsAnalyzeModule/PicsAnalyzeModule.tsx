@@ -18,8 +18,9 @@ function PicsAnalyzeModule() {
 
         const formData = new FormData();
         formData.append("image", file);
+        const analyzePics = formData
 
-        const returnedData = PicsAnalyze_API(formData)
+        const returnedData = PicsAnalyze_API(analyzePics)
         console.log(returnedData);
     };
 

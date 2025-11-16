@@ -1,13 +1,15 @@
+import axios from "axios";
 
+async function PicsAnalyze_API(analyzePics: any): Promise<any> {
 
-async function PicsAnalyze_API(formData: FormData): Promise<any> {
-
-  const res = await fetch("http://localhost:5000/upload", {
+  const response = await axios("/picsAnalyze/analyze", {
             method: "POST",
-            body: formData,
+            params: analyzePics,
         });
 
-        const data = await res.json();
+        const data = response.data;
+        console.log(data);
+        
 
 }
 
