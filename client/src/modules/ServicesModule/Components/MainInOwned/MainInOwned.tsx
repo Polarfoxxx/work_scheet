@@ -11,6 +11,7 @@ function MainInOwned(): React.JSX.Element {
       <nav className="navigationBar">
         <NavLink to="excelFirst" className="nav-link">Excel one</NavLink>
         <NavLink to="excelSecond" className="nav-link">Excel second</NavLink>
+        <NavLink to="picsAnalyze" className="nav-link">Picture analýze</NavLink>
       </nav>
       <div className="outlet-container">
       <Outlet />

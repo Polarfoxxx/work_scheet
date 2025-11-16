@@ -8,6 +8,7 @@ const cutSpeed = require("./calculateFiles/cutSpeed_calculate");
 const whellRot = require("./calculateFiles/whellRot_calculate");
 const cykleTime = require("./calculateFiles/cykleTime_calculate");
 const userLogIn = require("./servicesLogin/servicesLogin");
+const picsAnalyze = require("./calculateFiles/picsAnaliýze");
 //! --- Config ---
 dotenv.config();
 const app = express();
@@ -26,6 +27,7 @@ app.use(
 app.use("/calculateCutSpeed", cutSpeed);
 app.use("/calculateWhellrot", whellRot);
 app.use("/cykleTime", cykleTime);
+app.use("/picsAnalyze", picsAnalyze);
 app.use("/login", userLogIn);
 
 //! --- Pripojenie statickeho suboru v tomto pripade buildu ---

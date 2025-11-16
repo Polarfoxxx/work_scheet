@@ -8,7 +8,8 @@ import {
   MainInOwned,
   ExcelFirstModule,
   ExcelSecondModule,
-  CykleTimeModule
+  CykleTimeModule,
+  PicsAnalyzeModule
 } from "../";
 import {
   Route,
@@ -44,6 +45,7 @@ function Main(): React.JSX.Element {
             <Route path="mainInOwned" element={<MainInOwned />}> {/* <-- layout s navigáciou */}
               <Route path="excelSecond" element={<ExcelSecondModule />} />
               <Route path="excelFirst" element={<ExcelFirstModule />} />
+              <Route path="picsAnalyze" element={<PicsAnalyzeModule />} />
             </Route>
           </Route>
         </Routes>
