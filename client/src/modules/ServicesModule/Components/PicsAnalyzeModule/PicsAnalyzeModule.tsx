@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PicsAnalyze_API } from "../../../API";
+import { picsAnalyze_API } from "../../../API";
 
 function PicsAnalyzeModule() {
     const [preview, setPreview] = useState<string | null>(null);
@@ -17,10 +17,9 @@ function PicsAnalyzeModule() {
         if (!file) return;
 
         const formData = new FormData();
-        formData.append("image", file);
-        const analyzePics = formData
+        formData.append("file", file);
 
-        const returnedData = PicsAnalyze_API(analyzePics)
+        const returnedData = picsAnalyze_API(formData)
         console.log(returnedData);
     };
 

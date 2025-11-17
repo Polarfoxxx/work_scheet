@@ -1,1 +1,1 @@
-export { default as PicsAnalyze_API } from "./picsAnalize_API";
+export { default as picsAnalyze_API } from "./picsAnalize_API";

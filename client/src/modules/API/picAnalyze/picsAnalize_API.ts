@@ -1,16 +1,16 @@
 import axios from "axios";
 
-async function PicsAnalyze_API(analyzePics: any): Promise<any> {
+async function picsAnalyze_API(formData: any): Promise<any> {
 
-  const response = await axios("/picsAnalyze/analyze", {
-            method: "POST",
-            params: analyzePics,
-        });
+   const response = await axios.post("/picsAnalyze/analyze", formData, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }
+    });
 
-        const data = response.data;
-        console.log(data);
-        
+    console.log(response);
+
 
 }
 
-export default PicsAnalyze_API;
+export default picsAnalyze_API;
