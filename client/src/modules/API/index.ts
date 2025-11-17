@@ -2,4 +2,4 @@ export * from "./servicesLogin";
 export * from "./cutSpeed";
 export * from "./cykleTime";
 export * from "./picAnalyze";
-export * from "./GrindWhellLife";
+export * from "./grindWhellLife";

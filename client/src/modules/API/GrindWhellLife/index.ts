@@ -1,1 +1,1 @@
-export { default as grindWhellLife_API } from "./GrindWhellLifeModule_API";
+export { default as grindWhellLife_API } from "./grindWhellLife_API";
