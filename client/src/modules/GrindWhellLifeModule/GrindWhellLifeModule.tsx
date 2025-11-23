@@ -2,10 +2,11 @@ import React from "react"
 import { grindWhellLife_API } from "../API"
 
 function GrindWhellLifeModule(): React.JSX.Element {
-
+const [whellLife, setWhellLife] = React.useState<any>(null);  
+const [onhecked, setOnhecked] = React.useState<boolean>(false);  
 
     const fetchWhellLife = async (e: React.FormEvent<HTMLFormElement>) => {
-
+e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const maxWhell = Number(formData.get("maxWhell"));
         const minWhell = Number(formData.get("minWhell"));
@@ -16,7 +17,12 @@ function GrindWhellLifeModule(): React.JSX.Element {
             const returneddata = await grindWhellLife_API({ maxWhell, minWhell, n_sharpening, v_sharpening });
             console.log(returneddata);
         }
-    }
+    };
+
+const handleChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOnhecked(e.target.checked);
+    console.log(e.target.checked);
+}
 
     return (
         <div>
@@ -31,8 +37,8 @@ function GrindWhellLifeModule(): React.JSX.Element {
                             <input id="maxWhell" name="maxWhell" type="number" />
                         </div>
                         <div>
-                            <label htmlFor="mixWhell">mixWhell</label>
-                            <input id="mixWhell" name="mixWhell" type="number" />
+                            <label htmlFor="minWhell">mixWhell</label>
+                            <input id="minWhell" name="minWhell" type="number" />
                         </div>
                         <div>
                             <label htmlFor="n_sharpening">n_sharpening</label>
@@ -40,7 +46,11 @@ function GrindWhellLifeModule(): React.JSX.Element {
                         </div>
                         <div>
                             <label htmlFor="v_sharpening">v_sharpening</label>
-                            <input id="v_sharpening" name="v_sharpening" type="number" />
+                            <input id="v_sharpening" name="v_sharpening" type="number" step={0.001} />
+                        </div>
+                        <div>
+                            <label htmlFor="someCheckbox">2 kus</label>
+                            <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked}/>
                         </div>
                         <button type="submit">Get grind whell life</button>
                     </form>

@@ -21,7 +21,8 @@
   --font-color-primary: #e1e1ff;        /* title */
   --font-color-secondary: #000000;      /* p */
   --bg-color-primary: #ffffff;
-  --bg-color-secondary: #07a749;
+  --bg-color-secondary: rgb(1, 107, 97);
+  --bg-color-third: rgb(112, 178, 178);
   --heading-color: #818cab;
 }
 

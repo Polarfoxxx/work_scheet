@@ -12,9 +12,8 @@ interface GrindWhellLifeParams {
 async function grindWhellLife_API({ maxWhell, minWhell, n_sharpening, v_sharpening }: GrindWhellLifeParams): Promise<any> {
     
 
-const response = await axios.get(`/grindWhellLife/whellLife&maxWhell=${maxWhell}&minWhell=${minWhell}&n_sharpening=${n_sharpening}&v_sharpening=${v_sharpening}`);
+const response = await axios.get(`/grindWhellLife/whellLife?maxWhell=${maxWhell}&minWhell=${minWhell}&n_sharpening=${n_sharpening}&v_sharpening=${v_sharpening}`);
     console.log(response);
-    return response.data;
     
 };
 

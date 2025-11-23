@@ -36,7 +36,7 @@ app.use("/login", userLogIn);
 const clientPath = path.join(__dirname, "../client/build");
 app.use(express.static(clientPath));
 
-//! --- Serve React frontend ---
+//! --- Serve React frontend --- 
 app.get(/.*/, (req, res) => {
   res.sendFile(path.resolve(clientPath, "index.html"));
 });

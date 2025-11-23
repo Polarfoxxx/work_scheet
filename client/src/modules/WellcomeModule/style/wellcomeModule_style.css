@@ -26,14 +26,22 @@
 
 .wellcome-mod .right-section {
     display: flex;
+    width: 100%;
+    height: 100%;
     flex-direction: column;
     background-color: var(--primary-color);
     justify-content: start;
 }
 
+.wellcome-mod .right-section>div {
+    width: 100%;
+    border: 1px solid var(--secondary-color);
+}
+
 .wellcome-mod .right-section .right_tittle {
-    margin-top: 100px;
-    margin-bottom: 50px;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 300px;
 }
 
 .wellcome-mod .right-section .right_tittle>h1 {
@@ -47,19 +55,50 @@
     position: relative;
 }
 
+.wellcome-mod .right-section .right_content {
+    width: 100%;
+    height: 400px;
+background-color: var(--bg-color-third);
+
+}
+
 .wellcome-mod .right-section .right_content>p {
     width: 100%;
     height: 150px;
     font-size: 24px;
     margin-bottom: 30px;
-    color: var(--font-color-secondary);
     padding: 0px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: var(--bg-color-secondary);
+}
 
+.wellcome-mod .right-section .right_list {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: var(--font-color-secondary);
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.wellcome-mod .right-section .right_list .list_tittle {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.wellcome-mod .right-section .right_list .list_content {
+    margin-bottom: 20px;
+}
+
+.wellcome-mod .right-section .right_list .list_content>li {
+    margin: 5px 0px;
+    text-align: left;
 }
 
 
