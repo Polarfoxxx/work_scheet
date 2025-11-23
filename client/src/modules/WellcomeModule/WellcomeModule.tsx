@@ -6,7 +6,9 @@ function WellcomeModule(): React.JSX.Element {
   return (
     <div className="wellcome-mod">
       <div className="left-section">
+        <div className="left_content">
         <img src="/img/logo.png" alt="" />
+        </div>
       </div>
       <div className="right-section">
         <div className="right_tittle">
