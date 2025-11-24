@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 5px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 0px 15px 5px rgba(0, 0, 0, 0.1);
     background-color: var(--bg-color-secondary);
 }
 .wellcome-mod .left-section .left_content>img {
@@ -39,6 +39,7 @@
     height: 100%;
     flex-direction: column;
     justify-content: start;
+    padding: 0px 10px 0px 0px;
 }
 
 .wellcome-mod .right-section>div {
@@ -47,7 +48,7 @@
 
 .wellcome-mod .right-section .right_tittle {
     background-color: var(--bg-color-secondary);
-    box-shadow: 10px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 8px 2px 5px 3px rgba(0, 0, 0, 0.1);
     width: 100%;
     height: 100px;
 }
@@ -66,6 +67,7 @@
 .wellcome-mod .right-section .right_content {
     width: 100%;
     height: 100px;
+    padding: 0px 10px;
 }
 
 .wellcome-mod .right-section .right_content>p {
