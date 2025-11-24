@@ -127,12 +127,16 @@
 @media (max-width: 950px) {
 
     .wellcome-mod {
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         position: absolute;
         inset: 0;
         align-items: center;
         background-color: var(--bg-color);
+        justify-content: start;
+        overflow-y: auto;
     }
 
     .wellcome-mod .left-section {
@@ -153,7 +157,7 @@
     }
 
     .wellcome-mod .left-section .left_content>img {
-        width: 50%;
+        width: 80%;
         height: auto;
     }
 
