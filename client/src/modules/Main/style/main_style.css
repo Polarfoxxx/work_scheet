@@ -54,8 +54,8 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 20px;
-    padding-left: 55px;
+    gap: 10px;
+    padding: 0px 10px;
 }
 
 .main_container>nav .navigationBar .nav-link {
@@ -191,6 +191,7 @@
         justify-content: center;
         background-color: #07a749;
         position: relative;
+        padding: 0;
     }
 
 
