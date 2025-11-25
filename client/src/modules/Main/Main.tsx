@@ -21,6 +21,11 @@ import {
 function Main(): React.JSX.Element {
 
 
+const handleDropdownMenu = (): void => {
+    const navBar = document.querySelector(".navigationBar") as HTMLElement;
+    navBar.classList.toggle("active");
+  }
+
   return (
     <div className="main_container">
       <header>
@@ -28,6 +33,9 @@ function Main(): React.JSX.Element {
         <p>This is the application for help and calculate value</p>
       </header>
       <nav>
+        <div className="dropdown_button">
+          <button onClick={handleDropdownMenu}>click</button>
+        </div>
         <div className="navigationBar">
           <NavLink to="/" className="nav-link">Home</NavLink>
           <NavLink to="/grindingSchemaModule" className="nav-link">Schema</NavLink>

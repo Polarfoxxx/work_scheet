@@ -47,6 +47,12 @@
     background-color: var(--bg-color-primary);
     border-radius: 10px;
 }
+.main_container>nav .dropdown_button {
+    width: auto;
+    height: 100%;
+    display: none;
+    padding: 0px 10px;
+}   
 
 .main_container>nav .navigationBar {
     width: 100%;
@@ -159,11 +165,17 @@
         border-radius: 0px;
         background-color: rgb(155, 172, 172);
         position: relative;
+        z-index: 10;
+    }
+    .main_container>nav .dropdown_button {
+        width: auto;
+        height: 100%;
+        display: block;
     }
 
     .main_container>nav .navigationBar {
-        width:200px;
-        height: 800px;
+        width: 200px;
+        height: auto;
         display: flex;
         justify-content: start;
         align-items: center;
@@ -171,10 +183,26 @@
         background-color: red;
         padding: 10px 0px;
         position: absolute;
-        top: 0px;
+        top: 100%;
         left: 0px;
-
+        display: none;
     }
+
+    .main_container>nav .navigationBar.active {
+         width: 200px;
+        height: auto;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        background-color: red;
+        padding: 10px 0px;
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        display: block;
+    }
+
 
     .main_container>nav .navigationBar .nav-link {
         padding: 3px 10px;
