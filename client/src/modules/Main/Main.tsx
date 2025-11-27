@@ -21,10 +21,10 @@ import {
 function Main(): React.JSX.Element {
 
 
-const handleDropdownMenu = (): void => {
+  const handleDropdownMenu = (): void => {
     const navBar = document.querySelector(".navigationBar") as HTMLElement;
     navBar.classList.toggle("active");
-  }
+  };
 
   return (
     <div className="main_container">
@@ -37,12 +37,12 @@ const handleDropdownMenu = (): void => {
           <button onClick={handleDropdownMenu}>click</button>
         </div>
         <div className="navigationBar">
-          <NavLink to="/" className="nav-link">Home</NavLink>
-          <NavLink to="/grindingSchemaModule" className="nav-link">Schema</NavLink>
-          <NavLink to="/speedCut" className="nav-link">Speed Cut</NavLink>
-          <NavLink to="/cykleTime" className="nav-link">Cykle time</NavLink>
-          <NavLink to="/grindWhellLife" className="nav-link">Grinding whell life</NavLink>
-          <NavLink to="/services" className="nav-link">Services</NavLink>
+          <NavLink to="/" onClick={handleDropdownMenu} className="nav-link">Home</NavLink>
+          <NavLink to="/grindingSchemaModule" onClick={handleDropdownMenu} className="nav-link">Schema</NavLink>
+          <NavLink to="/speedCut" onClick={handleDropdownMenu} className="nav-link">Speed Cut</NavLink>
+          <NavLink to="/cykleTime" onClick={handleDropdownMenu} className="nav-link">Cykle time</NavLink>
+          <NavLink to="/grindWhellLife" onClick={handleDropdownMenu} className="nav-link">Grinding whell life</NavLink>
+          <NavLink to="/services" onClick={handleDropdownMenu} className="nav-link">Services</NavLink>
         </div>
       </nav>
       <main>
