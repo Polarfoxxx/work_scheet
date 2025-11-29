@@ -20,7 +20,6 @@ function IntroComponent(): React.JSX.Element {
           Nižšie sú uvedené hlavné vplyvy rezn ej rýchlosti na obrobok:
         </p>
       </div>
-      <br />
       <div className="intro_main">
         <ul>
           <li>

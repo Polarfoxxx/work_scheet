@@ -1,5 +1,5 @@
 import React from "react";
-import { cutSpeed_API } from "../../../API";
+import { speed_of_rotation_API } from "../../../API";
 import "./style/speedOfRotationComponent_style.css"
 
 
@@ -17,7 +17,7 @@ function SpeedOfRotationComponent() {
         cutSpeed: cutSpeed.toString(),
         diametro: diametro.toString()
       }
-      cutSpeed_API(formData)
+      speed_of_rotation_API(formData)
         .then(res => {
           setreturnedSpeed(res ? res.message : 0);
         }).catch(err => {
@@ -71,7 +71,7 @@ function SpeedOfRotationComponent() {
           <div className="result-speed">
             {returnedSpeed}
             <span>
-              m/min
+              ot./min
             </span>
           </div>
         </div>

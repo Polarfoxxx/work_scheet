@@ -3,22 +3,22 @@ import { cutSpeed_API } from "../../../API";
 import "./style/cutSpeedomponent_style.css"
 
 function CutSpeedComponent() {
-  const [returnedSpeed, setreturnedSpeed] = React.useState<number>(0);
+  const [returnedCutSpeed, setreturnedCutSpeed] = React.useState<number>(0);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const diametro = formData.get("diametro");
-    const cutSpeed = formData.get("cutspeed");
+    const speedOfRotation = formData.get("speedOfRotation");
 
-    if (diametro && cutSpeed) {
+    if (diametro && speedOfRotation) {
       const formData = {
-        cutSpeed: cutSpeed.toString(),
+        speedOfRotation: speedOfRotation.toString(),
         diametro: diametro.toString()
       }
       cutSpeed_API(formData)
         .then(res => {
-          setreturnedSpeed(res ? res.message : 0);
+          setreturnedCutSpeed(res ? res.message : 0);
         }).catch(err => {
           console.error(err);
         })
@@ -34,26 +34,17 @@ function CutSpeedComponent() {
       </header>
       <main>
         <div className="form-container">
-          <form
-            action="#"
-            onSubmit={e => handleSubmit(e)}>
-            <label
-              htmlFor="diametro">
+          <form action="#" onSubmit={e => handleSubmit(e)}>
+            <label htmlFor="diametro">
               Vonkajší priemer BK:
             </label>
-            <input
-              id="diametro"
-              name="diametro" />
-            <label
-              htmlFor="cutspeed">
-              Rezná rýchlosť:
+            <input id="diametro" name="diametro" />
+            <label htmlFor="speedOfRotation">
+              Otáčky:
             </label>
-            <input
-              id="cutspeed"
-              name="cutspeed"
-              defaultValue={52} />
-            <button
-              type="submit">
+            <input id="speedOfRotation"
+              name="speedOfRotation" />
+            <button type="submit">
               Prepočet
             </button>
           </form>
@@ -68,7 +59,7 @@ function CutSpeedComponent() {
             </span>
           </div>
           <div className="result-speed">
-            {returnedSpeed}
+            {returnedCutSpeed}
             <span>
               m/min
             </span>

@@ -9,9 +9,8 @@ router.get("/cutSpeed", async (req, res) => {
             return res.status(500).json({ message: "zero value" });
         };
 
-        const calculateOne = speed * 60;
-        const calculateTwo = (dia / 1000) * Math.PI;
-        const calculateSpeed = calculateOne / calculateTwo;
+        const calculateOne = (dia / 1000) * Math.PI;
+        const calculateSpeed = calculateOne * speed;
         const roundedSpeed = Math.round(calculateSpeed);
         return res.status(200).json({ message: roundedSpeed });
 

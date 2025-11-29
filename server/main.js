@@ -5,7 +5,7 @@ const path = require("path");
 const dotenv = require("dotenv");
 //! --- Local imports ---
 const cutSpeed = require("./calculateFiles/cutSpeed_calculate");
-const whellRot = require("./calculateFiles/whellRot_calculate");
+const speedOfRotation = require("./calculateFiles/speedOfRotation");
 const cykleTime = require("./calculateFiles/cykleTime_calculate");
 const userLogIn = require("./servicesLogin/servicesLogin");
 const picsAnalyze = require("./calculateFiles/picsAnaliýze");
@@ -26,7 +26,7 @@ app.use(
 
 //! --- API routes ---
 app.use("/calculateCutSpeed", cutSpeed);
-app.use("/calculateWhellrot", whellRot);
+app.use("/calculateSpeedOfRotation", speedOfRotation);
 app.use("/cykleTime", cykleTime);
 app.use("/picsAnalyze", picsAnalyze);
 app.use("/grindWhellLife", grindWhellLife);
