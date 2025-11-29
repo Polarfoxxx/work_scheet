@@ -47,12 +47,10 @@
     background-color: var(--bg-color-primary);
     border-radius: 10px;
 }
+
 .main_container>nav .dropdown_button {
-    width: auto;
-    height: 100%;
     display: none;
-    padding: 0px 10px;
-}   
+}
 
 .main_container>nav .navigationBar {
     width: 100%;
@@ -167,54 +165,70 @@
         position: relative;
         z-index: 10;
     }
+
     .main_container>nav .dropdown_button {
-        width: auto;
+        width: 150px;
         height: 100%;
         display: block;
+        background-color: #07a749;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main_container>nav .dropdown_button button {
+        width: 80px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        background-color: #000000;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .main_container>nav .dropdown_button button:hover {
+        background-color: #f1f1f1;
+        transition: 300ms;
+        color: #000000;
     }
 
     .main_container>nav .navigationBar {
-        width: 200px;
-        height: auto;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        flex-direction: column;
-        background-color: red;
-        padding: 10px 0px;
-        position: absolute;
-        top: 100%;
-        left: 0px;
         display: none;
     }
 
     .main_container>nav .navigationBar.active {
-         width: 200px;
+        width: 100%;
         height: auto;
         display: flex;
         justify-content: start;
         align-items: center;
         flex-direction: column;
-        background-color: red;
-        padding: 10px 0px;
+        padding: 10px 20px;
         position: absolute;
         top: 100%;
         left: 0px;
         display: block;
+        background-color: black;
     }
 
-
-    .main_container>nav .navigationBar .nav-link {
+    .main_container>nav .navigationBar.active .nav-link {
         padding: 3px 10px;
         background-color: rgb(160, 160, 160);
         border-radius: 5px;
         color: #000000;
         text-decoration: none;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 15px;
         text-align: center;
         align-items: center;
-        width: 80px;
+        width: 100%;
+        height: 50px;
+        margin: 5px 0px;
+    }
+
+    .main_container>nav .navigationBar.active .nav-link:hover {
+        background-color: #07a749;
     }
 
     .main_container>main {

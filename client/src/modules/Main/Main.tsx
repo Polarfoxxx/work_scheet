@@ -34,7 +34,7 @@ function Main(): React.JSX.Element {
       </header>
       <nav>
         <div className="dropdown_button">
-          <button onClick={handleDropdownMenu}>click</button>
+          <button onClick={handleDropdownMenu}>Menu</button>
         </div>
         <div className="navigationBar">
           <NavLink to="/" onClick={handleDropdownMenu} className="nav-link">Home</NavLink>

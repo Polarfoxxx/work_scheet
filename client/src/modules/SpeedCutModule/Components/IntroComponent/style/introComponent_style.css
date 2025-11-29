@@ -1,23 +1,90 @@
 .intro{
-    background-color: transparent;
     width: 90%;
     height: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
 }
-.intro h2{
+.intro .intro_header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.intro .intro_header h2{
     text-align: center;
     margin-top: 20px;
     font-size: 24px;
     color: #333;
+    width: 100%;
+    height: auto;
 }
 
-.intro p{
+.intro .intro_header p{
     font-size: 13px;
     color: #555;
+    margin: 15px 0px;
+    width: 100%;
+    height: auto;
 }
 
-.intro ul li{
+
+.intro .intro_main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.intro .intro_main ul{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+}
+.intro .intro_main ul li{
     margin-bottom: 10px;
     font-size: 14px;
     color: #e41010;
     list-style-type: none;
+     width: 100%;
+    height: auto;
+}
+
+/* !------------------------------------ */
+/* !------------------------------------ */
+/* !------------------------------------ */
+@media (max-width: 950px) {
+
+    .intro{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: start;
+    }
+
+    .intro .intro_header h2{
+        font-size: 20px;
+    }
+
+    .intro .intro_header p{
+        font-size: 12px;
+    }
+
+    .intro .intro_main ul li{
+        font-size: 12px;
+    }
 }
