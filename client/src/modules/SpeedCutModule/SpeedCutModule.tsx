@@ -7,7 +7,7 @@ import {
 } from "./Components";
 
 function SpeedCutModule(): React.JSX.Element {
-  
+
   return (
     <div className="speed-cut-module">
       <header>

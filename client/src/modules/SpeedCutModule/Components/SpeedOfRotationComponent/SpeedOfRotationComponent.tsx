@@ -59,6 +59,17 @@ function SpeedOfRotationComponent() {
             </button>
           </form>
         </div>
+        <div className="formula-container">
+          <div className="formula-header">
+            <h4>Vzorec pre výpočet</h4>
+          </div>
+          <div className="formula-body">
+            <span>n = výsledne otáčky</span>
+            <span>V = požadovaná rezná rýchlosť</span>
+            <span>D = vonkajší priemer BK</span>
+            <span>n = (V * 60) / (D / 1000) * π</span>
+          </div>
+        </div>
       </main>
       {/* výsledok ......................................*/}
       <article>

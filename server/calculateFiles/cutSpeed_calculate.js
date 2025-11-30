@@ -2,17 +2,17 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/cutSpeed", async (req, res) => {
-    const { speed, dia } = req.query;
+    const { rotSpeed, dia } = req.query;
 
     try {
-        if (dia <= 0 || speed <= 0) {
+        if (dia <= 0 || rotSpeed <= 0) {
             return res.status(500).json({ message: "zero value" });
         };
 
-        const calculateOne = (dia / 1000) * Math.PI;
-        const calculateSpeed = calculateOne * speed;
-        const roundedSpeed = Math.round(calculateSpeed);
-        return res.status(200).json({ message: roundedSpeed });
+        const calculateOne = dia * Math.PI * rotSpeed
+        const calculateCutSpeed = calculateOne / 60000;
+        const roundedCutSpeed = Math.round(calculateCutSpeed * 100) / 100;
+        return res.status(200).json({ message: roundedCutSpeed });
 
     } catch (error) {
         console.error(error);
