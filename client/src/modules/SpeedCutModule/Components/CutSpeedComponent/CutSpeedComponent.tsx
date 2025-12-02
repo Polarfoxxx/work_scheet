@@ -49,13 +49,24 @@ function CutSpeedComponent() {
             </button>
           </form>
         </div>
+        <div className="formula-container">
+          <div className="formula-header">
+            <h4>Vzorec pre výpočet</h4>
+          </div>
+          <div className="formula-body">
+            <span>V = výsledna rezná rýchlosť</span>
+            <span>n = otáčky vretena</span>
+            <span>D = vonkajší priemer BK</span>
+            <span>V = ((D*π) * n)/60000 </span>
+          </div>
+        </div>
       </main>
       {/* výsledok ......................................*/}
       <article>
         <div className="result">
           <div className="result-text">
             <span>
-              Výsledné otačky:
+              Výsledná rezná rychlosť je:
             </span>
           </div>
           <div className="result-speed">

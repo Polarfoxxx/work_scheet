@@ -153,6 +153,9 @@
     margin-left: 8px;
 }
 
+.speed-of-rotation article .result .result-speed span::first-letter {
+    font-weight: bold;
+}
 
 /* !------------------------------------ */
 /* !------------------------------------ */
