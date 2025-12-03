@@ -10,7 +10,8 @@ import {
   ExcelSecondModule,
   CykleTimeModule,
   PicsAnalyzeModule,
-  GrindWhellLifeModule
+  GrindWhellLifeModule,
+  WhellSignalModule
 } from "../";
 import {
   Route,
@@ -57,6 +58,7 @@ function Main(): React.JSX.Element {
               <Route path="excelSecond" element={<ExcelSecondModule />} />
               <Route path="excelFirst" element={<ExcelFirstModule />} />
               <Route path="picsAnalyze" element={<PicsAnalyzeModule />} />
+              <Route path="whellSignalModule" element={<WhellSignalModule />} />
             </Route>
           </Route>
         </Routes>

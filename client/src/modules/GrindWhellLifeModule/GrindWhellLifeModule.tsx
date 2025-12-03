@@ -1,5 +1,6 @@
 import React from "react"
-import { grindWhellLife_API } from "../API"
+import { grindWhellLife_API } from "../API";
+import "./style/grindWhellLife_style.css";
 
 function GrindWhellLifeModule(): React.JSX.Element {
     const [whellLife, setWhellLife] = React.useState<any>(null);
