@@ -2,155 +2,155 @@ import React from 'react';
 import "./style/whellSignal_style.css";
 import { signalWhell_API } from '../../../API';
 
-
 function WhellSignalModule(): React.JSX.Element {
+
     const [countTprm_value, setCountTprm_value] = React.useState<number>(0);
-    const [sharpedWhell_value, setSharpedWhell_value] = React.useState<number>(0);
-    const [sharpedWhell_interval, setSharpedWhell_interval] = React.useState<number>(0);
+    const [sharpenedWheel_value, setSharpenedWheel_value] = React.useState<number>(0);
+    const [sharpenedWheel_interval, setSharpenedWheel_interval] = React.useState<number>(0);
 
-
-    const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const valueAllPieces = formData.get('valueAllPieces');
-        const countTprm = formData.get('countTprm');
-        const n_sharpening = formData.get('n_sharpening');
-        const v_sharpening = formData.get('sharpedWhell_value');
-        const whellSignalInput = formData.get('valueAllPieces');
-        const maxWhell_value = formData.get('maxWhell_value');
-        const minWhell_value = formData.get('minWhell_value');
 
-        if(valueAllPieces && countTprm && n_sharpening && v_sharpening && whellSignalInput && maxWhell_value && minWhell_value) {
-            signalWhell_API({
-                valueAllPieces: Number(valueAllPieces),
-                countTprm: Number(countTprm),
-                n_sharpening:  Number(n_sharpening),
-                v_sharpening: Number(v_sharpening),
-                whellSignalInput: Number(whellSignalInput),
-                maxWhell_value: Number(maxWhell_value),
-                minWhell_value: Number(minWhell_value)
-            });
+        const formData = Object.fromEntries(new FormData(e.currentTarget));
+
+        const payload = {
+            valueAllPieces: Number(formData.valueAllPieces ?? 0),
+            countTprm: Number(countTprm_value),                // čítame zo state
+            n_sharpening: Number(formData.n_sharpening ?? 0),
+            v_sharpening: Number(formData.v_sharpening ?? 0),
+            wheelSignalInput: Number(formData.wheelSignalInput ?? 0),
+            maxWheel_value: Number(formData.maxWheel_value ?? 0),
+            minWheel_value: Number(formData.minWheel_value ?? 0),
+            sharpenedWheel_interval: Number(formData.sharpenedWheel_interval ?? 0)
+        };
+
+        try {
+            const result = await signalWhell_API(payload);
+            console.log("API response:", result);
+        } catch (err) {
+            console.error("Error calling Whell Signal API:", err);
         }
-
     };
-
 
     return (
         <div className="whellSignal_module">
-            <header>
-                WhellSignalModule
-            </header>
+            <header>WhellSignalModule</header>
+
             <main>
                 <div className="whellSignal_form">
-                    <form action="#" onSubmit={e => handlesubmit(e)}>
+                    <form onSubmit={handleSubmit}>
+
+                        {/* *** TPRM BLOK *** */}
                         <div className="tprm_block">
-                            <div className="valueAllPieces"> {/* pre počet dielov */}
+                            <div className="valueAllPieces">
                                 <label htmlFor="valueAllPieces">Hromadný budget:</label>
                                 <input type="number" id="valueAllPieces" name="valueAllPieces" />
                             </div>
-                            <div className="countTprm"> {/* pre tprm */}
+
+                            <div className="countTprm">
                                 <label htmlFor="countTprm">Počet:</label>
+
+                                {/* Range */}
                                 <input
                                     id="countTprm"
                                     type="range"
-                                    min="1" max="10"
+                                    min="1"
+                                    max="10"
                                     value={countTprm_value}
-                                    onChange={e => { setCountTprm_value(Number(e.target.value)) }} />
+                                    onChange={e => setCountTprm_value(Number(e.target.value))}
+                                />
+
+                                {/* Number */}
                                 <input
                                     id="n_sharpening"
                                     name="n_sharpening"
                                     type="number"
-                                    step="1"
                                     value={countTprm_value}
-                                    onChange={e => { setCountTprm_value(Number(e.target.value)) }} />
+                                    onChange={e => setCountTprm_value(Number(e.target.value))}
+                                />
                             </div>
-                            {/*  <div>
-                                    <label htmlFor="valueAllPieces">Whell Signal Input:</label>
-                                    <input type="number" id="valueAllPieces" name="valueAllPieces" />
-                                </div>
-                                <div>
-                                    <label htmlFor="valueAllPieces">Whell Signal Input:</label>
-                                    <input type="number" id="valueAllPieces" name="valueAllPieces" />
-                                </div> */}
                         </div>
-                        {/* -------------------- */}
+
+                        {/* *** WHEEL PARAMETER *** */}
                         <div className="whell_param">
                             <div className="whell_size_param">
-                                <div className="maxWhell_value"> {/* maximalna velkost kotúca*/}
-                                    <label htmlFor="maxWhell_value">Veľký kotúč</label>
-                                    <input type="number" id="maxWhell_value" name="maxWhell_value" />
+
+                                <div className="maxWheel_value">
+                                    <label htmlFor="maxWheel_value">Veľký kotúč:</label>
+                                    <input type="number" id="maxWheel_value" name="maxWheel_value" />
                                 </div>
-                                <div className='minWhell_value'> {/* minimalna velkost kotúca*/}
-                                    <label htmlFor="minWhell_value">Malý kotúč:</label>
-                                    <input type="number" id="minWhell_value" name="minWhell_value" />
+
+                                <div className="minWheel_value">
+                                    <label htmlFor="minWheel_value">Malý kotúč:</label>
+                                    <input type="number" id="minWheel_value" name="minWheel_value" />
                                 </div>
-                                <div className='result_whell_size'> {/* vysledok velkosti kotúca*/}
-                                    <div>
-                                        result
-                                    </div>
+
+                                <div className='result_whell_size'>
+                                    result
                                 </div>
                             </div>
                         </div>
-                        {/*  <div>
-                            <div>
-                                <label htmlFor="valueAllPieces">Whell Signal Input:</label>
-                                <input type="number" id="valueAllPieces" name="valueAllPieces" />
-                            </div>
-                            <div>
-                                <label htmlFor="valueAllPieces">Whell Signal Input:</label>
-                                <input type="number" id="valueAllPieces" name="valueAllPieces" />
-                            </div>
-                        </div> */}
-                        {/* -------------------- */}
+
+                        {/* *** SHARPENING PARAMS *** */}
                         <div className="shaped_whell_param">
-                            <div className='sharpedWhell_value'> {/*velkost ostrenia */}
-                                <label htmlFor="sharpedWhell_value">Počet:</label>
+
+                            {/* v_sharpening */}
+                            <div className='sharpenedWheel_value'>
+                                <label htmlFor="v_sharpening">Veľkosť ostrenia:</label>
+
                                 <input
-                                    id="sharpedWhell_value"
+                                    id="v_sharpening_range"
                                     type="range"
-                                    min="1" max="10"
-                                    value={sharpedWhell_value}
-                                    onChange={e => { setSharpedWhell_value(Number(e.target.value)) }} />
+                                    min="1"
+                                    max="10"
+                                    value={sharpenedWheel_value}
+                                    onChange={e => setSharpenedWheel_value(Number(e.target.value))}
+                                />
+
                                 <input
-                                    id="sharpedWhell_value"
-                                    name="sharpedWhell_value"
+                                    id="v_sharpening"
+                                    name="v_sharpening"
                                     type="number"
-                                    step="1"
-                                    value={sharpedWhell_value}
-                                    onChange={e => { setSharpedWhell_value(Number(e.target.value)) }} />
+                                    value={sharpenedWheel_value}
+                                    onChange={e => setSharpenedWheel_value(Number(e.target.value))}
+                                />
                             </div>
-                            <div className='sharpedWhell_interval'> {/* pre pocet ostreni kotúca */}
-                                <label htmlFor="sharpedWhell_interval">Počet:</label>
+
+                            {/* sharpenedWheel_interval */}
+                            <div className='sharpenedWheel_interval'>
+                                <label htmlFor="sharpenedWheel_interval">Počet ostrení:</label>
+
                                 <input
-                                    id="sharpedWhell_interval"
+                                    id="sharpenedWheel_interval_range"
                                     type="range"
-                                    min="1" max="10"
-                                    value={sharpedWhell_interval}
-                                    onChange={e => { setSharpedWhell_interval(Number(e.target.value)) }} />
+                                    min="1"
+                                    max="10"
+                                    value={sharpenedWheel_interval}
+                                    onChange={e => setSharpenedWheel_interval(Number(e.target.value))}
+                                />
+
                                 <input
-                                    id="sharpedWhell_interval"
-                                    name="sharpedWhell_interval"
+                                    id="sharpenedWheel_interval"
+                                    name="sharpenedWheel_interval"
                                     type="number"
-                                    step="1"
-                                    value={sharpedWhell_interval}
-                                    onChange={e => { setSharpedWhell_interval(Number(e.target.value)) }} />
+                                    value={sharpenedWheel_interval}
+                                    onChange={e => setSharpenedWheel_interval(Number(e.target.value))}
+                                />
                             </div>
+
                             <div>
-                                <label htmlFor="valueAllPieces">Whell Signal Input:</label>
-                                <input type="number" id="valueAllPieces" name="valueAllPieces" />
+                                <label htmlFor="wheelSignalInput">Wheel Signal Input:</label>
+                                <input type="number" id="wheelSignalInput" name="wheelSignalInput" />
                             </div>
                         </div>
+
                         <button type="submit">Submit</button>
+
                     </form>
                 </div>
-                <div>
-
-                </div>
             </main>
-            <footer>
-
-            </footer>
         </div>
     );
 }
+
 export default WhellSignalModule;
