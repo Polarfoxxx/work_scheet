@@ -73,16 +73,16 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                 id="typeinp"
                                 type="range"
                                 min="0" max="100"
-                                value={typeinp }
+                                value={typeinp}
                                 onChange={e => { setTypeinp(Number(e.target.value)) }} />
                             <input id="n_sharpening" name="n_sharpening" type="number"
                                 step="1" />
-                                <div>
-                                    <input
-                                      value= {typeinp} type="number" 
-                                      onChange={e => { setTypeinp(Number(e.target.value)) }}
-                                      /> 
-                                </div>
+                            <div>
+                                <input
+                                    value={typeinp} type="number"
+                                    onChange={e => { setTypeinp(Number(e.target.value)) }}
+                                />
+                            </div>
                         </div>
                         <div>
                             <label htmlFor="v_sharpening">v_sharpening</label>
