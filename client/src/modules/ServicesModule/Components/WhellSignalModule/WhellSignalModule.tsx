@@ -6,14 +6,32 @@ import { signalWhell_API } from '../../../API';
 function WhellSignalModule(): React.JSX.Element {
     const [countTprm_value, setCountTprm_value] = React.useState<number>(0);
     const [sharpedWhell_value, setSharpedWhell_value] = React.useState<number>(0);
+    const [sharpedWhell_interval, setSharpedWhell_interval] = React.useState<number>(0);
 
 
     const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
+        const valueAllPieces = formData.get('valueAllPieces');
+        const countTprm = formData.get('countTprm');
+        const n_sharpening = formData.get('n_sharpening');
+        const v_sharpening = formData.get('sharpedWhell_value');
         const whellSignalInput = formData.get('valueAllPieces');
-        console.log('Whell Signal Input:', whellSignalInput);
-        // Add further processing logic here
+        const maxWhell_value = formData.get('maxWhell_value');
+        const minWhell_value = formData.get('minWhell_value');
+
+        if(valueAllPieces && countTprm && n_sharpening && v_sharpening && whellSignalInput && maxWhell_value && minWhell_value) {
+            signalWhell_API({
+                valueAllPieces: Number(valueAllPieces),
+                countTprm: Number(countTprm),
+                n_sharpening:  Number(n_sharpening),
+                v_sharpening: Number(v_sharpening),
+                whellSignalInput: Number(whellSignalInput),
+                maxWhell_value: Number(maxWhell_value),
+                minWhell_value: Number(minWhell_value)
+            });
+        }
+
     };
 
 
@@ -85,21 +103,37 @@ function WhellSignalModule(): React.JSX.Element {
                         </div> */}
                         {/* -------------------- */}
                         <div className="shaped_whell_param">
-                            <div className='sharpedWhell'>
-                                <label htmlFor="sharpedWhell">Počet:</label>
+                            <div className='sharpedWhell_value'> {/*velkost ostrenia */}
+                                <label htmlFor="sharpedWhell_value">Počet:</label>
                                 <input
-                                    id="sharpedWhell"
+                                    id="sharpedWhell_value"
                                     type="range"
                                     min="1" max="10"
                                     value={sharpedWhell_value}
                                     onChange={e => { setSharpedWhell_value(Number(e.target.value)) }} />
                                 <input
-                                    id="sharpedWhell"
-                                    name="sharpedWhell"
+                                    id="sharpedWhell_value"
+                                    name="sharpedWhell_value"
                                     type="number"
                                     step="1"
                                     value={sharpedWhell_value}
                                     onChange={e => { setSharpedWhell_value(Number(e.target.value)) }} />
+                            </div>
+                            <div className='sharpedWhell_interval'> {/* pre pocet ostreni kotúca */}
+                                <label htmlFor="sharpedWhell_interval">Počet:</label>
+                                <input
+                                    id="sharpedWhell_interval"
+                                    type="range"
+                                    min="1" max="10"
+                                    value={sharpedWhell_interval}
+                                    onChange={e => { setSharpedWhell_interval(Number(e.target.value)) }} />
+                                <input
+                                    id="sharpedWhell_interval"
+                                    name="sharpedWhell_interval"
+                                    type="number"
+                                    step="1"
+                                    value={sharpedWhell_interval}
+                                    onChange={e => { setSharpedWhell_interval(Number(e.target.value)) }} />
                             </div>
                             <div>
                                 <label htmlFor="valueAllPieces">Whell Signal Input:</label>
