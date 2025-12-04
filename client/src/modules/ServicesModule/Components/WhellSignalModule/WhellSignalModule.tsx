@@ -1,4 +1,6 @@
-
+import React from 'react';
+import "./style/whellSignal_style.css";
+import {signalWhell_API} from '../../../API';
 
 
 function WhellSignalModule(): React.JSX.Element {
@@ -14,16 +16,38 @@ function WhellSignalModule(): React.JSX.Element {
     };
 
 
-
     return (
-        <div>
+        <div className="whellSignal_module">
             <header>
                 WhellSignalModule
             </header>
             <main>
-                <div>
+                <div className="whellSignal_form">
                     <form action="#" onSubmit={e => handlesubmit(e)}>
-                        <div>
+                        <div className="tprm_block">
+                            <div>
+                                <div className=""> {/* pre počet dielov */}
+                                    <label htmlFor="valueAllPieces">Whell Signal Input:</label>
+                                    <input type="number" id="valueAllPieces" name="valueAllPieces" />
+                                </div>
+                                <div>
+                                    <label htmlFor="valueAllPieces">Whell Signal Input:</label>
+                                    <input type="number" id="valueAllPieces" name="valueAllPieces" />
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <label htmlFor="valueAllPieces">Whell Signal Input:</label>
+                                    <input type="number" id="valueAllPieces" name="valueAllPieces" />
+                                </div>
+                                <div>
+                                    <label htmlFor="valueAllPieces">Whell Signal Input:</label>
+                                    <input type="number" id="valueAllPieces" name="valueAllPieces" />
+                                </div>
+                            </div>
+                        </div>
+                        {/* -------------------- */}
+                        <div className="whell_param">
                             <div className=""> {/* pre počet dielov */}
                                 <label htmlFor="valueAllPieces">Whell Signal Input:</label>
                                 <input type="number" id="valueAllPieces" name="valueAllPieces" />
@@ -43,7 +67,27 @@ function WhellSignalModule(): React.JSX.Element {
                                 <input type="number" id="valueAllPieces" name="valueAllPieces" />
                             </div>
                         </div>
-
+                        {/* -------------------- */}
+                         <div className="whell_param">
+                            <div className=""> {/* pre počet dielov */}
+                                <label htmlFor="valueAllPieces">Whell Signal Input:</label>
+                                <input type="number" id="valueAllPieces" name="valueAllPieces" />
+                            </div>
+                            <div>
+                                <label htmlFor="valueAllPieces">Whell Signal Input:</label>
+                                <input type="number" id="valueAllPieces" name="valueAllPieces" />
+                            </div>
+                        </div>
+                        <div className="shaped_whell_param">
+                            <div>
+                                <label htmlFor="valueAllPieces">Whell Signal Input:</label>
+                                <input type="number" id="valueAllPieces" name="valueAllPieces" />
+                            </div>
+                            <div>
+                                <label htmlFor="valueAllPieces">Whell Signal Input:</label>
+                                <input type="number" id="valueAllPieces" name="valueAllPieces" />
+                            </div>
+                        </div>
                         <button type="submit">Submit</button>
                     </form>
                 </div>

@@ -1,0 +1,33 @@
+.whellSignal_module {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.whellSignal_module header {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--font-color-primary);
+    margin-top: 20px;
+        background-color: var(--primary-color);
+    padding: 10px 20px;
+}
+
+.whellSignal_module main {
+    width: 80%;
+    background-color: var(--bg-color-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.whellSignal_module main .whellSignal_form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
