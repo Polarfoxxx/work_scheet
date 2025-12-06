@@ -2,18 +2,26 @@ import axios from "axios";
 
 
 interface type_for_cutSpeed_API_params {
-    speedOfRotation: string;
-    diametro: string;
+    speedOfRotation: number;
+    diametro: number;
 }
 
-async function cutSpeed_API(params: type_for_cutSpeed_API_params): Promise<{message: number} | undefined> {
-    
+async function cutSpeed_API(params: type_for_cutSpeed_API_params): Promise<{ message: number } | undefined> {
+
     try {
-      const response = await axios.get(`/calculateCutSpeed/cutSpeed?rotSpeed=${params.speedOfRotation}&dia=${params.diametro}`, {
-            withCredentials: true});
+        const response = await axios.get(
+            "/calculateCutSpeed / cutSpeed",
+            {
+                params: {
+                    rotSpeed: params.speedOfRotation,
+                    dia: params.diametro
+                }
+            }
+        );
         return response.data;
     } catch (error) {
         console.error(error);
+        return undefined;
     };
 };
 
