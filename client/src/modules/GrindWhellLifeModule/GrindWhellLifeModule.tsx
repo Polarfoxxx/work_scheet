@@ -9,15 +9,22 @@ function GrindWhellLifeModule(): React.JSX.Element {
 
     const fetchWhellLife = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const maxWhell = Number(formData.get("maxWhell"));
-        const minWhell = Number(formData.get("minWhell"));
-        const n_sharpening = Number(formData.get("n_sharpening"));
-        const v_sharpening = Number(formData.get("v_sharpening"));
-
-        if (maxWhell && minWhell && n_sharpening && v_sharpening) {
-            const returneddata = await grindWhellLife_API({ maxWhell, minWhell, n_sharpening, v_sharpening });
-            console.log(returneddata);
+        const formData = Object.fromEntries( new FormData(e.currentTarget));
+        const payload = {
+            maxWhell: Number(formData.maxWhell ?? 0),
+            minWhell: Number(formData.minWhell ?? 0),
+            n_sharpening: Number(formData.n_sharpening ?? 0),   
+            v_sharpening: Number(formData.n_sharpening ?? 0),   
+        };
+        
+        if (payload.maxWhell && payload.minWhell && payload.n_sharpening && payload.v_sharpening) {
+            try {
+                const result = await grindWhellLife_API(payload);
+                setWhellLife(result);
+                console.log("API response:", result);
+            } catch (err) {
+                console.error("Error calling Grind Whell Life API:", err);
+            }
         }
     };
 

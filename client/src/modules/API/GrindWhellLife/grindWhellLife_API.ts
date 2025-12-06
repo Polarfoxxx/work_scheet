@@ -7,14 +7,22 @@ interface GrindWhellLifeParams {
     v_sharpening: number;
 };
 
-
-
-async function grindWhellLife_API({ maxWhell, minWhell, n_sharpening, v_sharpening }: GrindWhellLifeParams): Promise<any> {
-    
-
-const response = await axios.get(`/grindWhellLife/whellLife?maxWhell=${maxWhell}&minWhell=${minWhell}&n_sharpening=${n_sharpening}&v_sharpening=${v_sharpening}`);
-    console.log(response);
-    
+async function grindWhellLife_API(params: GrindWhellLifeParams): Promise<number | undefined> {
+    try {
+        const response = await axios.get("/grindWhellLife/whellLife", {
+            params: {
+                maxWhell: params.maxWhell,
+                minWhell: params.minWhell,
+                n_sharpening: params.n_sharpening,
+                v_sharpening: params.v_sharpening,
+            }
+        }
+        );
+        return response.data;
+    } catch (error) {
+        console.error("API Error (grindWhellLife_API):", error);
+        return undefined;
+    };
 };
 
 export default grindWhellLife_API;
