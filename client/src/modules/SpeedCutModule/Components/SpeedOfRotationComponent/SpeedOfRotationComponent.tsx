@@ -6,25 +6,28 @@ import "./style/speedOfRotationComponent_style.css"
 function SpeedOfRotationComponent() {
   const [returnedSpeed, setreturnedSpeed] = React.useState<number>(0);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const diametro = formData.get("diametro");
-    const cutSpeed = formData.get("cutspeed");
 
-    if (diametro && cutSpeed) {
-      const formData = {
-        cutSpeed: cutSpeed.toString(),
-        diametro: diametro.toString()
-      }
-      speed_of_rotation_API(formData)
-        .then(res => {
-          setreturnedSpeed(res ? res.message : 0);
-        }).catch(err => {
-          console.error(err);
-        })
-    }
-  }
+    const formData = Object.fromEntries(new FormData(e.currentTarget));
+    const payload = {
+      diametro: Number(formData.diametro ?? 0),
+      cutSpeed: Number(formData.cutspeed ?? 0)
+    };
+
+    if (payload.diametro && payload.cutSpeed) {
+      try {
+        const result = await speed_of_rotation_API(payload)
+        result?.message !== undefined
+          ? setreturnedSpeed(result.message)
+          : setreturnedSpeed(0);
+      } catch (err) {
+        console.error("Error calling Speed of Rotation API:", err);
+      };
+    } else {
+      alert("Prosím vyplňte všetky polia správne.");
+    };
+  };
 
   return (
     <div className="speed-of-rotation">

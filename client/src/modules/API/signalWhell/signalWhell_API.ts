@@ -24,13 +24,11 @@ async function signalWhell_API(params: TypeSignalWhell_APIParams): Promise<numbe
                     valueAllPieces: params.valueAllPieces,
                     countTprm: params.countTprm,
                     wheelSignalInput: params.wheelSignalInput,
-                    sharpenedWheel_interval: params.sharpenedWheel_interval ?? 0
+                    sharpenedWheel_interval: params.sharpenedWheel_interval
                 }
             }
         );
-
         return response.data;
-
     } catch (error) {
         console.error("API Error (signalWhell_API):", error);
         return undefined;

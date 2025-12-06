@@ -10,9 +10,7 @@ function WhellSignalModule(): React.JSX.Element {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
         const formData = Object.fromEntries(new FormData(e.currentTarget));
-
         const payload = {
             valueAllPieces: Number(formData.valueAllPieces ?? 0),
             countTprm: Number(countTprm_value),                // čítame zo state
@@ -23,7 +21,6 @@ function WhellSignalModule(): React.JSX.Element {
             minWheel_value: Number(formData.minWheel_value ?? 0),
             sharpenedWheel_interval: Number(formData.sharpenedWheel_interval ?? 0)
         };
-
         try {
             const result = await signalWhell_API(payload);
             console.log("API response:", result);
