@@ -24,8 +24,7 @@ async function signalWhell_API(params: TypeSignalWhell_APIParams): Promise<{ mes
                 wheelSignalInput: params.wheelSignalInput,
                 sharpenedWheel_interval: params.sharpenedWheel_interval
             }
-        }
-        );
+        });
         return response.data;
     } catch (error) {
         console.error("API Error (signalWhell_API):", error);
