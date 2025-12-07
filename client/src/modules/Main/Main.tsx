@@ -53,13 +53,12 @@ function Main(): React.JSX.Element {
           <Route path="/speedCut" element={<SpeedCutModule />} />
           <Route path="/cykleTime" element={<CykleTimeModule />} />
           <Route path="/grindWhellLife" element={<GrindWhellLifeModule />} />
-          <Route path="/services" element={<ServicesModule />}>
-            <Route path="mainInOwned" element={<MainInOwned />}> {/* <-- layout s navigáciou */}
-              <Route path="excelSecond" element={<ExcelSecondModule />} />
-              <Route path="excelFirst" element={<ExcelFirstModule />} />
-              <Route path="picsAnalyze" element={<PicsAnalyzeModule />} />
-              <Route path="whellSignalModule" element={<WhellSignalModule />} />
-            </Route>
+          <Route path="/services" element={<ServicesModule />} />
+          <Route path="/mainInOwned" element={<MainInOwned />}> {/* <-- layout s navigáciou */}
+            <Route path="excelSecond" element={<ExcelSecondModule />} />
+            <Route path="excelFirst" element={<ExcelFirstModule />} />
+            <Route path="picsAnalyze" element={<PicsAnalyzeModule />} />
+            <Route path="whellSignalModule" element={<WhellSignalModule />} />
           </Route>
         </Routes>
       </main>
