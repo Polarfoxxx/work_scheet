@@ -31,24 +31,26 @@ function ServicesModule(): React.JSX.Element {
 
   const loginUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const userName = formData.get("username");
-    const password = formData.get("password");
+    const formData = Object.fromEntries(new FormData(e.currentTarget));
+    const payload = {
+      userName: formData.username as string,
+      password: formData.password as string,
+    };
 
-    if (userName && password) {
-      const response_userLog = await servicesLogin_Api({ userName: userName.toString(), password: password.toString() })
+    if (payload.userName && payload.password) {
+      const result = await servicesLogin_Api(payload)
       try {
-        console.log(response_userLog);
-        if (response_userLog.status === 200) {
+        if (result.status === 200) {
           setProvideDATA({ ...provideDATA, isLogged: true });
           navigate('mainInOwned');
-        }
+        };
       } catch {
         console.error("Login failed");
-
       }
       /* e.currentTarget.reset(); */ // Reset form after submission
-    }
+    } else {
+      alert("Chybné uživatelské jméno nebo heslo.");
+    };
   };
 
 

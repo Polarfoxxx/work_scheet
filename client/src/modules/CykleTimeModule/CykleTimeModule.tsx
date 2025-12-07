@@ -1,10 +1,10 @@
 import React from 'react';
 import { cykleTime_API } from '../API';
 import './style/cykleTimeModule_style.css';
-import { type_for_cykleTime_response } from '../API/cykleTime/cykleTime_API';
+import { Type_for_cykleTime_response } from '../API/cykleTime/cykleTime_API';
 
 function CykleTimeModule(): React.JSX.Element {
-    const [result, setResult] = React.useState<type_for_cykleTime_response | undefined>({
+    const [result, setResult] = React.useState<Type_for_cykleTime_response | undefined>({
         thisCykle: 0,
         halfHourCykle: 0,
         onehourCykle: 0,
@@ -18,26 +18,29 @@ function CykleTimeModule(): React.JSX.Element {
     }
     );
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const calTime = formData.get("calculateTime");
-        const couPiec = formData.get("countPieces");
+        const formData = Object.fromEntries(new FormData(e.currentTarget));
+        const payload = {
+            calTime: Number(formData.calculateTime ?? 0),
+            couPiec: Number(formData.countPieces ?? 0),
+        };
 
-        if (calTime && couPiec) {
-            const formData = {
-                calTime: calTime.toString(),
-                couPiec: couPiec.toString()
+        if (payload.calTime && payload.couPiec) {
+            try {
+                const response = await cykleTime_API(payload);
+                response?.message !== undefined ?
+                    setResult(response.message) :
+                    setResult(undefined);
+                console.log("API response:", response);
+            } catch (err) {
+                console.error("Error calling Cykle Time API:", err);
             }
-            cykleTime_API(formData)
-                .then(res => {
-                    console.log(res);
-                    setResult(res ? res : undefined);
-                }).catch(err => {
-                    console.error(err);
-                })
+        } else {
+            alert("Proím vyplnit všechna pole formuláře.");
         };
     };
+
 
     return (
         <div className="cykleTimeModule">

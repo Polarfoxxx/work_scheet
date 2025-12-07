@@ -9,22 +9,26 @@ function GrindWhellLifeModule(): React.JSX.Element {
 
     const fetchWhellLife = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = Object.fromEntries( new FormData(e.currentTarget));
+        const formData = Object.fromEntries(new FormData(e.currentTarget));
         const payload = {
             maxWhell: Number(formData.maxWhell ?? 0),
             minWhell: Number(formData.minWhell ?? 0),
-            n_sharpening: Number(formData.n_sharpening ?? 0),   
-            v_sharpening: Number(formData.n_sharpening ?? 0),   
+            n_sharpening: Number(formData.n_sharpening ?? 0),
+            v_sharpening: Number(formData.n_sharpening ?? 0),
         };
-        
+
         if (payload.maxWhell && payload.minWhell && payload.n_sharpening && payload.v_sharpening) {
             try {
                 const result = await grindWhellLife_API(payload);
-                setWhellLife(result);
+                result?.message !== undefined ?
+                    setWhellLife(result.message) :
+                    setWhellLife(0)
                 console.log("API response:", result);
             } catch (err) {
                 console.error("Error calling Grind Whell Life API:", err);
             }
+        } else {
+            alert("Proím vyplnit všechna pole formuláře.");
         }
     };
 

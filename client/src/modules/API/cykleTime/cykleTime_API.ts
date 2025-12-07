@@ -1,35 +1,37 @@
 import axios from "axios";
 
 
-interface type_for_cykleTime_params {
-    calTime: string;
-    couPiec: string;
+type Type_for_cykleTime_params = {
+    calTime: number;
+    couPiec: number;
 };
 
-export interface type_for_cykleTime_response {
-        thisCykle: number,
-        halfHourCykle: number,
-        onehourCykle: number,
-        twoohourCykle: number,
-        threehourCykle: number,
-        fourhourCykle: number,
-        fivehourCykle: number,
-        sixHourCykle: number,
-        sevenHourCykle: number,
-        eightHourCykle: number,
+export type Type_for_cykleTime_response = {
+    thisCykle: number,
+    halfHourCykle: number,
+    onehourCykle: number,
+    twoohourCykle: number,
+    threehourCykle: number,
+    fourhourCykle: number,
+    fivehourCykle: number,
+    sixHourCykle: number,
+    sevenHourCykle: number,
+    eightHourCykle: number,
 };
 
-async function cykleTime_API(cykleData: type_for_cykleTime_params): Promise<type_for_cykleTime_response | undefined> {
-
+async function cykleTime_API(params: Type_for_cykleTime_params): Promise<{ message: Type_for_cykleTime_response } | undefined> {
     try {
-        const response = await axios.get(`/cykleTime/cykleCalk?calTime=${cykleData.calTime}&couPiec=${cykleData.couPiec}`, {
-            withCredentials: true
+        const response = await axios.get("/cykleTime/cykleCalk", {
+            params: {
+                calTime: params.calTime,
+                couPiec: params.couPiec,
+            }
         });
-        return response.data.message
-            ;
+        return response.data
     } catch (error) {
         console.error(error);
-    }
-}
+        return undefined;
+    };
+};
 
 export default cykleTime_API;

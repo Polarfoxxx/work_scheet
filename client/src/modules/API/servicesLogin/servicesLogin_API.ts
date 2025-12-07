@@ -1,26 +1,23 @@
 import axios from "axios";
 
-interface type {
+type Type_for_loginUser = {
     userName: string;
     password: string;
 }
 
-async function servicesLogin_Api(params: { userName: string; password: string }): Promise<any> {
+async function servicesLogin_Api(params: Type_for_loginUser): Promise<any> {
     try {
-        const response = await axios.post(`/login/user`,
-            {
-                username: params.userName,
-                password: params.password,
-            },
-            { withCredentials: true }
-        );
-        console.log(response.data);
-        return response;
-        
+        const response = await axios.post("/login/user", {
+            username: params.userName,
+            password: params.password,
+        });
+        return response.data;
+
     } catch (error) {
-        throw error;
-    }
-}
+        console.error("API Error (servicesLogin_Api):", error);
+        return undefined;
+    };
+};
 
 
 export default servicesLogin_Api;
