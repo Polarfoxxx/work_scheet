@@ -1,21 +1,19 @@
 import axios from "axios";
 
 
-interface type_for_speedOfRotation_API_params {
+type Type_for_speedOfRotation_API_params = {
     cutSpeed: number;
     diametro: number;
-}
+};
 
-async function speed_of_rotation_API(params: type_for_speedOfRotation_API_params): Promise<{ message: number } | undefined> {
+async function speed_of_rotation_API(params: Type_for_speedOfRotation_API_params): Promise<{ message: number } | undefined> {
     try {
-        const response = await axios.get(
-            "/calculatespeedOfRotation/speedOfRotation",
-            {
-                params: {
-                    cutSpeed: params.cutSpeed,
-                    dia: params.diametro
-                }
+        const response = await axios.get("/calculatespeedOfRotation/speedOfRotation", {
+            params: {
+                cutSpeed: params.cutSpeed,
+                dia: params.diametro
             }
+        }
         );
         return response.data;
     } catch (error) {

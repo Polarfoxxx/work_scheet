@@ -38,15 +38,17 @@ function ServicesModule(): React.JSX.Element {
     };
 
     if (payload.userName && payload.password) {
-      const result = await servicesLogin_Api(payload)
+      const result = await servicesLogin_Api(payload);
+      console.log("Login API result:", result);
       try {
-        if (result.status === 200) {
+        if (result.message === "OK") {
+          console.log("Login successful");
           setProvideDATA({ ...provideDATA, isLogged: true });
-          navigate('mainInOwned');
+          navigate('/mainInOwned');
         };
       } catch {
         console.error("Login failed");
-      }
+      };
       /* e.currentTarget.reset(); */ // Reset form after submission
     } else {
       alert("Chybné uživatelské jméno nebo heslo.");
@@ -77,7 +79,6 @@ function ServicesModule(): React.JSX.Element {
         </main>
       </div> :
       <div className="services-module">
-        <Outlet />
       </div>
   );
 }

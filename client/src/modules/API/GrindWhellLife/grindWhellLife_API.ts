@@ -1,13 +1,13 @@
 import axios from "axios";
 
-interface GrindWhellLifeParams {
+type Type_grindWhellLifeParams = {
     maxWhell: number;
     minWhell: number;
     n_sharpening: number;
     v_sharpening: number;
 };
 
-async function grindWhellLife_API(params: GrindWhellLifeParams): Promise<{ message: number } | undefined> {
+async function grindWhellLife_API(params: Type_grindWhellLifeParams): Promise<{ message: number } | undefined> {
     try {
         const response = await axios.get("/grindWhellLife/whellLife", {
             params: {
