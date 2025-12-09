@@ -49,3 +49,23 @@
     gap: 10px;
     flex-direction: column;
 }
+
+.whellSignal_module main .whellSignal_form form .tprm_block{
+    width: auto;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.whellSignal_module main .whellSignal_form form .tprm_block .valueAllPieces{
+    background-color: aqua;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

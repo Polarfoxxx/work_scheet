@@ -23,7 +23,7 @@ router.get('/signalOfWhell', (req, res) => {
         const coefficientMaschineSetting = countTprm * 1                                //! kooficient početnosti nastavovania
 
         const settingMashine_mistakes = 20                                             //! chybý nastavenia
-
+        
         return res.status(200).json({ message: cbnWorkLife })
 
     } catch (error) {

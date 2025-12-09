@@ -56,11 +56,14 @@ function WhellSignalModule(): React.JSX.Element {
                         <div className="tprm_block">
                             <div className="valueAllPieces">
                                 <label htmlFor="valueAllPieces">Hromadný budget:</label>
-                                <input type="number" id="valueAllPieces" name="valueAllPieces" />
+                                <input 
+                                type="number" 
+                                id="valueAllPieces" 
+                                placeholder='10000000'
+                                name="valueAllPieces" />
                             </div>
                             <div className="countTprm">
-                                <label htmlFor="countTprm">Počet:</label>
-                                {/* Range */}
+                                <label htmlFor="countTprm">Počet TPRM:</label>
                                 <input
                                     id="countTprm"
                                     type="range"
@@ -68,11 +71,11 @@ function WhellSignalModule(): React.JSX.Element {
                                     max="10"
                                     value={countTprm_value}
                                     onChange={e => setCountTprm_value(Number(e.target.value))} />
-                                {/* Number */}
                                 <input
                                     id="n_sharpening"
                                     name="n_sharpening"
                                     type="number"
+                                    placeholder='2'
                                     value={countTprm_value}
                                     onChange={e => setCountTprm_value(Number(e.target.value))} />
                             </div>
