@@ -27,7 +27,8 @@
     transition: 0.3s;
 }
 .services-container .outlet-container {
-    padding: 20px;
+    width: 100%;
+    height: 100%;
 }   
 
 

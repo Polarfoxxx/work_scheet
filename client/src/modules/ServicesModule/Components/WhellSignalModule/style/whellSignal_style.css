@@ -1,6 +1,6 @@
 .whellSignal_module {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,26 +8,44 @@
 }
 
 .whellSignal_module header {
+    width: 100%;
+    height: 50px;
     font-size: 24px;
     font-weight: bold;
-    color: var(--font-color-primary);
-    margin-top: 20px;
+    color: black;
     background-color: var(--primary-color);
-    padding: 10px 20px;
+    padding: 0px 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .whellSignal_module main {
     width: 80%;
     background-color: var(--bg-color-secondary);
-    padding: 20px;
+    padding: 35px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .whellSignal_module main .whellSignal_form {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
+}
+
+.whellSignal_module main .whellSignal_form form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
 }

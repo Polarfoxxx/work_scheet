@@ -7,28 +7,27 @@ function WhellSignalModule(): React.JSX.Element {
     const [countTprm_value, setCountTprm_value] = React.useState<number>(0);
     const [sharpenedWheel_value, setSharpenedWheel_value] = React.useState<number>(0);
     const [sharpenedWheel_interval, setSharpenedWheel_interval] = React.useState<number>(0);
+    const [supply_interval, setSupply_interval] = React.useState<number>(0);
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
         const formData = Object.fromEntries(new FormData(e.currentTarget));
         const payload = {
             valueAllPieces: Number(formData.valueAllPieces),
             countTprm: Number(countTprm_value),                // čítame zo state
-            n_sharpening: Number(formData.n_sharpening),
-            v_sharpening: Number(formData.v_sharpening),
-            wheelSignalInput: Number(formData.wheelSignalInput),
             maxWheel_value: Number(formData.maxWheel_value),
             minWheel_value: Number(formData.minWheel_value),
-            sharpenedWheel_interval: Number(formData.sharpenedWheel_interval)
+            sharpenedWheel_interval: Number(sharpenedWheel_interval),
+            sharpenedWheel_value: Number(sharpenedWheel_value),
+            supply_interval: Number(supply_interval),
         };
-        if (payload.countTprm > 0 &&
-            payload.n_sharpening > 0 &&
-            payload.v_sharpening > 0 &&
-            payload.sharpenedWheel_interval > 0 &&
-            payload.sharpenedWheel_interval > 0 &&
-            payload.v_sharpening > 0 &&
+        if (payload.valueAllPieces > 0 &&
             payload.countTprm > 0 &&
-            payload.n_sharpening > 0) {
+            payload.maxWheel_value > 0 &&
+            payload.minWheel_value > 0 &&
+            payload.sharpenedWheel_interval > 0 &&
+            payload.sharpenedWheel_value > 0 &&
+            payload.supply_interval > 0) {
             console.warn("At least one of countTprm, n_sharpening, v_sharpening, or sharpenedWheel_interval must be greater than zero.");
             try {
                 const response = await signalWhell_API(payload);
@@ -48,7 +47,7 @@ function WhellSignalModule(): React.JSX.Element {
     return (
         <div className="whellSignal_module">
             <header>
-                WhellSignalModule
+                Calculate signal state for grindwhell
             </header>
             <main>
                 <div className="whellSignal_form">
@@ -131,19 +130,41 @@ function WhellSignalModule(): React.JSX.Element {
                                     onChange={e => setSharpenedWheel_interval(Number(e.target.value))} />
                             </div>
                             <div>
-                                <label htmlFor="wheelSignalInput">Wheel Signal Input:</label>
-                                <input type="number" id="wheelSignalInput" name="wheelSignalInput" />
+
                             </div>
                         </div>
-                        <button type="submit">Submit</button>
+                        <div className='supply_interval'>
+                            <label htmlFor="supply_interval">Doba zaskladnenia:</label>
+                            <input
+                                id="supply_interval"
+                                type="range"
+                                min="1"
+                                max="10"
+                                value={supply_interval}
+                                onChange={e => setSupply_interval(Number(e.target.value))} />
+                            <input
+                                id="supply_interval"
+                                name="supply_interval"
+                                type="number"
+                                value={supply_interval}
+                                onChange={e => setSupply_interval(Number(e.target.value))} />
+                        </div>
+                        <div className='button_content'>
+                            <button type="submit">Submit</button>
+                        </div>
                     </form>
                 </div>
                 <div className='response_content'>
-                    <h1>
-                        {
-                            mainResult
-                        }
-                    </h1>
+                    <div className='response_header'>
+                        <h1>
+                            frefre
+                        </h1>
+                    </div>
+                    <div className='response_body'>
+                        <h1>
+                            {mainResult}
+                        </h1>
+                    </div>
                 </div>
             </main>
         </div>
