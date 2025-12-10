@@ -1,0 +1,1 @@
+export { default as EducationModule } from "./Education_module";

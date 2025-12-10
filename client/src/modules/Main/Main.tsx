@@ -11,7 +11,8 @@ import {
   CykleTimeModule,
   PicsAnalyzeModule,
   GrindWhellLifeModule,
-  WhellSignalModule
+  WhellSignalModule,
+  EducationModule
 } from "../";
 import {
   Route,
@@ -55,10 +56,11 @@ function Main(): React.JSX.Element {
           <Route path="/grindWhellLife" element={<GrindWhellLifeModule />} />
           <Route path="/services" element={<ServicesModule />} />
           <Route path="/mainInOwned" element={<MainInOwned />}> {/* <-- layout s navigáciou */}
+            <Route path="education" element={<EducationModule />} />
             <Route path="excelSecond" element={<ExcelSecondModule />} />
             <Route path="excelFirst" element={<ExcelFirstModule />} />
             <Route path="picsAnalyze" element={<PicsAnalyzeModule />} />
-            <Route path="whellSignalModule" element={<WhellSignalModule />} />
+            <Route path="whellSignal" element={<WhellSignalModule />} />
           </Route>
         </Routes>
       </main>
