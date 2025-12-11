@@ -11,7 +11,7 @@ function EducationModule(): React.JSX.Element {
                 <h1>Education</h1>
             </header>
             <main>
-                <div>
+                <div className="education_text">
                     <div className="content_text one">
                         <div><h5>1. Korundové zrná (Al₂O₃ oxid hlinitý)</h5></div>
                         <div><p>Najpoužívanejšie zrná na brúsenie kovov.</p></div>
@@ -74,7 +74,7 @@ function EducationModule(): React.JSX.Element {
                         </div>
                     </div>
                 </div>
-                <div className="table_content">
+                <div className="education_table">
                     <table>
                         <caption>Skratky, ktoré sa bežne používajú na označenie zŕn</caption>
                         <thead>
