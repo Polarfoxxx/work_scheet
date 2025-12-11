@@ -11,53 +11,124 @@ function EducationModule(): React.JSX.Element {
                 <h1>Education</h1>
             </header>
             <main>
-                <span>
-                    🔹 1. Korundové zrná (Al₂O₃ oxid hlinitý)
-                    Najpoužívanejšie zrná na brúsenie kovov.
-                    Podtypy:
-                    Normálny korund (A)
-                    – hnedý, tvrdý, húževnatý, na nehrdzavejúcu oceľ, konštrukčné ocele, liatinu.
-                    Poloušľachtilý korund (PA)
-                    – ružový, o niečo tvrdší a ostrejší, na jemnejšie brúsenie.
-                    Ušľachtilý / biely korund (WA)
-                    – veľmi tvrdý a ostrý, používa sa na kalené ocele a ostré hrany.
-                    Keramický korund (SG, microcrystalline alumina)
-                    – veľmi tvrdý, samoostriaci, pre vysoko výkonné brúsenie.
-                </span>
-                <span>
-                    🔹 2. Karbid kremíka (SiC)
-                    Ostriace, veľmi tvrdé čierne alebo zelené zrná.
-                    Použitie:
-                    krehké materiály: sklo, keramika, karbidové nástroje
-                    neželezné kovy: hliník, meď
-                    tvrdené povrchy, liatina
-                </span>
-                <span>
-                    🔹 3. Kubický nitrid bóru (CBN)
-                    Veľmi tvrdý syntetický materiál, druhý najtvrdší po diamante.
-                    Použitie:
-                    kalené ocele, rýchlorezné ocele (HSS), špeciálne nástrojové ocele
-                    vysoké teploty a zaťaženia
-                </span>
-                <span>
-                    🔹 4. Priemyselný diamant
-                    Najtvrdšie zrno, ale nevhodné na železné kovy (karbidizácia pri vysokých teplotách).
-                    Použitie:
-                    karbidy (HM), keramika
-                    sklo, grafit, kompozity
-                    presné jemné brúsenie
-                </span>
-                <span>
-                    🔹 5. Keramické a špeciálne hybridné zrná
-                    Používajú sa v moderných vysokovýkonných kotúčoch.
-                    Príklady:
-                    Keramické mikro-zrná (microcrystalline alumina)
-                    Zliatinové a zhlukové zrná (clustered grains)
-                    Zrno so samoostriacou schopnosťou
-                </span>
+                <div>
+                    <div className="content_text one">
+                        <div><h5>1. Korundové zrná (Al₂O₃ oxid hlinitý)</h5></div>
+                        <div><p>Najpoužívanejšie zrná na brúsenie kovov.</p></div>
+                        <div><p>Podtypy:</p></div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <div><h5>Normálny korund (A)</h5></div>
+                                    <div><p>hnedý, tvrdý, húževnatý, na nehrdzavejúcu oceľ, konštrukčné ocele, liatinu.</p></div>
+                                </li>
+                                <li>
+                                    <div><h5>Poloušľachtilý korund (PA)</h5></div>
+                                    <div><p>ružový, o niečo tvrdší a ostrejší, na jemnejšie brúsenie.</p></div>
+                                </li>
+                                <li>
+                                    <div><h5>Ušľachtilý / biely korund (WA)</h5></div>
+                                    <div><p>veľmi tvrdý a ostrý, používa sa na kalené ocele a ostré hrany.</p></div>
+                                </li>
+                                <li>
+                                    <div><h5>Keramický korund (SG, microcrystalline alumina)</h5></div>
+                                    <div><p>veľmi tvrdý, samoostriaci, pre vysoko výkonné brúsenie.</p></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="content_text two">
+                        <div><h5>2. Karbid kremíka (SiC)</h5></div>
+                        <div><p>Ostriace, veľmi tvrdé čierne alebo zelené zrná.</p></div>
+                        <div><p>Použitie:</p></div>
+                        <div><p>krehké materiály: sklo, keramika, karbidové nástroje, neželezné kovy: hliník, meď, tvrdené povrchy, liatina</p></div>
+                    </div>
+                    <div className="content_text third">
+                        <div><h5>3. Kubický nitrid bóru (CBN)</h5></div>
+                        <div><p>Veľmi tvrdý syntetický materiál, druhý najtvrdší po diamante.</p></div>
+                        <div><p>Použitie:</p></div>
+                        <div><p>kalené ocele, rýchlorezné ocele (HSS), špeciálne nástrojové ocelevysoké teploty a zaťaženia</p></div>
+                    </div>
+                    <div className="content_text fouth">
+                        <div><h5>4. Priemyselný diamant</h5></div>
+                        <div><p>Najtvrdšie zrno, ale nevhodné na železné kovy (karbidizácia pri vysokých teplotách).</p></div>
+                        <div><p>Použitie:</p></div>
+                        <div><p>karbidy (HM), keramika, sklo, grafit, kompozity presné jemné brúsenie</p></div>
+                    </div>
+                    <div className="content_text fifth">
+                        <div><h5>5. Keramické a špeciálne hybridné zrná</h5></div>
+                        <div><p>Používajú sa v moderných vysokovýkonných kotúčoch.</p></div>
+                        <div><p>Príklady:</p></div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <div><h5>Keramické mikro-zrná (microcrystalline alumina)</h5></div>
+                                </li>
+                                <li>
+                                    <div><h5>Zliatinové a zhlukové zrná (clustered grains)</h5></div>
+                                </li>
+                                <li>
+                                    <div><h5>Zrno so samoostriacou schopnosťou</h5></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div className="table_content">
+                    <table>
+                        <caption>Skratky, ktoré sa bežne používajú na označenie zŕn</caption>
+                        <thead>
+                            <tr>
+                                <th>Skratka</th>
+                                <th>Materiál</th>
+                                <th>Popis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                                <td>korund</td>
+                                <td>bežné brúsenie ocele</td>
+                            </tr>
+                            <tr>
+                                <td>PA / RA</td>
+                                <td>ružový korund</td>
+                                <td>kvalitnejšie brúsenie, tvrdšie ocele</td>
+                            </tr>
+                            <tr>
+                                <td>WA</td>
+                                <td>biely korund</td>
+                                <td>kalené ocele</td>
+                            </tr>
+                            <tr>
+                                <td>SA / SG</td>
+                                <td>keramický korund</td>
+                                <td>vysoký výkon</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                                <td>karbid kremíka</td>
+                                <td>krehké materiály, neželezné kovy</td>
+                            </tr>
+                            <tr>
+                                <td>GC</td>
+                                <td>zelený karbid kremíka</td>
+                                <td>tvrdé krehké materiály (karbidy)</td>
+                            </tr>
+                            <tr>
+                                <td>CBN / BN</td>
+                                <td>kubický nitrid bóru</td>
+                                <td>kalené ocele</td>
+                            </tr>
+                            <tr>
+                                <td>D</td>
+                                <td>diamant</td>
+                                <td>veľmi tvrdé materiály</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </main>
-            <div>
-            </div>
         </div>
     )
 };
