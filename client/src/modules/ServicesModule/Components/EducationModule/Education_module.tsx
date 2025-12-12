@@ -13,10 +13,10 @@ function EducationModule(): React.JSX.Element {
             <main>
                 <div className="education_text">
                     <div className="content_text one">
-                        <div><h5>1. Korundové zrná (Al₂O₃ oxid hlinitý)</h5></div>
-                        <div><p>Najpoužívanejšie zrná na brúsenie kovov.</p></div>
-                        <div><p>Podtypy:</p></div>
-                        <div>
+                        <div className="blockHeader"><h5>1. Korundové zrná (Al₂O₃ oxid hlinitý)</h5></div>
+                        <div className="blockText"><p>Najpoužívanejšie zrná na brúsenie kovov.</p></div>
+                        <div className="blockListHead"><p>Podtypy:</p></div>
+                        <div className="blocklistBody">
                             <ul>
                                 <li>
                                     <div><h5>Normálny korund (A)</h5></div>
@@ -38,28 +38,28 @@ function EducationModule(): React.JSX.Element {
                         </div>
                     </div>
                     <div className="content_text two">
-                        <div><h5>2. Karbid kremíka (SiC)</h5></div>
-                        <div><p>Ostriace, veľmi tvrdé čierne alebo zelené zrná.</p></div>
-                        <div><p>Použitie:</p></div>
-                        <div><p>krehké materiály: sklo, keramika, karbidové nástroje, neželezné kovy: hliník, meď, tvrdené povrchy, liatina</p></div>
+                        <div className="blockHeader"><h5>2. Karbid kremíka (SiC)</h5></div>
+                        <div className="blockText"><p>Ostriace, veľmi tvrdé čierne alebo zelené zrná.</p></div>
+                        <div className="blockListHead"><p>Použitie:</p></div>
+                        <div className="blocklistBody"><p>krehké materiály: sklo, keramika, karbidové nástroje, neželezné kovy: hliník, meď, tvrdené povrchy, liatina</p></div>
                     </div>
                     <div className="content_text third">
-                        <div><h5>3. Kubický nitrid bóru (CBN)</h5></div>
-                        <div><p>Veľmi tvrdý syntetický materiál, druhý najtvrdší po diamante.</p></div>
-                        <div><p>Použitie:</p></div>
-                        <div><p>kalené ocele, rýchlorezné ocele (HSS), špeciálne nástrojové ocelevysoké teploty a zaťaženia</p></div>
+                        <div className="blockHeader"><h5>3. Kubický nitrid bóru (CBN)</h5></div>
+                        <div className="blockText"><p>Veľmi tvrdý syntetický materiál, druhý najtvrdší po diamante.</p></div>
+                        <div className="blockListHead"><p>Použitie:</p></div>
+                        <div className="blocklistBody"><p>kalené ocele, rýchlorezné ocele (HSS), špeciálne nástrojové ocelevysoké teploty a zaťaženia</p></div>
                     </div>
                     <div className="content_text fouth">
-                        <div><h5>4. Priemyselný diamant</h5></div>
-                        <div><p>Najtvrdšie zrno, ale nevhodné na železné kovy (karbidizácia pri vysokých teplotách).</p></div>
-                        <div><p>Použitie:</p></div>
-                        <div><p>karbidy (HM), keramika, sklo, grafit, kompozity presné jemné brúsenie</p></div>
+                        <div className="blockHeader"><h5>4. Priemyselný diamant</h5></div>
+                        <div className="blockText"><p>Najtvrdšie zrno, ale nevhodné na železné kovy (karbidizácia pri vysokých teplotách).</p></div>
+                        <div className="blockListHead"><p>Použitie:</p></div>
+                        <div className="blocklistBody"><p>karbidy (HM), keramika, sklo, grafit, kompozity presné jemné brúsenie</p></div>
                     </div>
                     <div className="content_text fifth">
-                        <div><h5>5. Keramické a špeciálne hybridné zrná</h5></div>
-                        <div><p>Používajú sa v moderných vysokovýkonných kotúčoch.</p></div>
-                        <div><p>Príklady:</p></div>
-                        <div>
+                        <div className="blockHeader"><h5>5. Keramické a špeciálne hybridné zrná</h5></div>
+                        <div className="blockText"><p>Používajú sa v moderných vysokovýkonných kotúčoch.</p></div>
+                        <div className="blockListHead"><p>Príklady:</p></div>
+                        <div className="blocklistBody">
                             <ul>
                                 <li>
                                     <div><h5>Keramické mikro-zrná (microcrystalline alumina)</h5></div>
