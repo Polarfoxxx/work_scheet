@@ -3,18 +3,17 @@ import "./style/servicesModule_style.css";
 import { useContext } from "react";
 import { ContainerProvider } from "../Container";
 import servicesLogin_Api from "../API/servicesLogin/servicesLogin_API";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function ServicesModule(): React.JSX.Element {
   const { provideDATA, setProvideDATA } = useContext(ContainerProvider.Context);
   const navigate = useNavigate();
-  const location = useLocation();
+
 
   React.useEffect(() => {
-    provideDATA.isLogged ? navigate('MainInOwned') : navigate('');
-    return () => { setProvideDATA({ ...provideDATA, isLogged: false }) };   //! pri odchode nastane odhlásenie 
-  }, []);
+    provideDATA.isLogged ? navigate('/MainInOwned') : navigate('');
+   /*  return () => { setProvideDATA({ ...provideDATA, isLogged: false }) };  */  //! pri odchode nastane odhlásenie 
+  }, [provideDATA.isLogged]);
 
 
   const handleChangeColor = () => {
@@ -39,12 +38,13 @@ function ServicesModule(): React.JSX.Element {
 
     if (payload.userName && payload.password) {
       const result = await servicesLogin_Api(payload);
-      console.log("Login API result:", result);
       try {
         if (result.message === "OK") {
-          console.log("Login successful");
-          setProvideDATA({ ...provideDATA, isLogged: true });
-          navigate('/mainInOwned');
+          setProvideDATA({
+            ...provideDATA,
+            isLogged: true,
+            loginName: `${result.user.firstName} ${result.user.secondName}`
+          });
         };
       } catch {
         console.error("Login failed");

@@ -4,6 +4,7 @@ import { createContext, Dispatch, SetStateAction } from "react";
 type Type_for_provideDATA = {
     appColorTheme: "light" | "dark";
     isLogged: boolean;
+    loginName: string
 };
 
 type Type_for_DATA_context = {
@@ -13,12 +14,13 @@ type Type_for_DATA_context = {
 
 const defaultProvideDATA: Type_for_provideDATA = {
     appColorTheme: "light",
-    isLogged: false
+    isLogged: false,
+    loginName: ""
 };
 
 const Context = createContext<Type_for_DATA_context>({
     provideDATA: defaultProvideDATA,
-    setProvideDATA: () => { }
+    setProvideDATA: () => { },
 })
 
 

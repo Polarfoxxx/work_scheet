@@ -1,0 +1,1 @@
+export { default as WellcomeAdminModule } from "./WellcomeAdmin_module";
