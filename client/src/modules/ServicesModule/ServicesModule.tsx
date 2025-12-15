@@ -12,7 +12,6 @@ function ServicesModule(): React.JSX.Element {
 
   React.useEffect(() => {
     provideDATA.isLogged ? navigate('/MainInOwned') : navigate('');
-   /*  return () => { setProvideDATA({ ...provideDATA, isLogged: false }) };  */  //! pri odchode nastane odhlásenie 
   }, [provideDATA.isLogged]);
 
 
