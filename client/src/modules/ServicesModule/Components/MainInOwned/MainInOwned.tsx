@@ -4,6 +4,7 @@ import { Outlet, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ContainerProvider } from "../../../Container";
+import { LogOutButton } from "../../../services/LogOutButton";
 
 
 function MainInOwned(): React.JSX.Element {
@@ -12,8 +13,8 @@ function MainInOwned(): React.JSX.Element {
 
   React.useEffect(() => {
     provideDATA.isLogged ? navigate('') : navigate('/services');
-  }, [provideDATA.isLogged]);
-  
+  }, [provideDATA.isLogged, navigate]);
+
 
   return (
     <div className="services-container">
@@ -25,9 +26,9 @@ function MainInOwned(): React.JSX.Element {
         <NavLink to="whellSignal" className="nav-link">Whell signál</NavLink>
       </nav>
       <div className="outlet-container">
-        <div>
-
-        </div>
+            <div className="logOutBar">
+              <LogOutButton />
+            </div>
         <Outlet />
       </div>
     </div>
