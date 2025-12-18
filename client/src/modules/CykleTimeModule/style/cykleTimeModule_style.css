@@ -6,52 +6,113 @@
     align-items: center;
     justify-content: start;
     background-color: white;
+    font-size: 10px;
+
 }
 
 .cykleTimeModule>header {
-    width: 100%;
-    height: 60px;
+    background-color: rgb(10, 92, 51);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #282c34;
+    width: 100%;
+    height: 70px;
     color: white;
-    font-size: 20px;
-    font-weight: bold;
 }
 
 .cykleTimeModule>main {
-    flex: 1;
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    padding: 20px 60px;
+    gap: 20px;
+    padding: 10px;
 }
 
 .cykleTimeModule>main>div {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    place-content: center;
     background-color: #f0f0f0;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 
-.cykleTimeModule>main .formContainer {
-    flex-direction: column;
-    gap: 20px;
+.cykleTimeModule>main .formContentAndInfoContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+
 }
 
-.cykleTimeModule>main .formContainer>form {
-    width: 100%;
+.cykleTimeModule>main .formContentAndInfoContent .formContainer {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form {
+    width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    background-color: tomato;
+    place-content: center;
+    padding: 50px 0;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form>div>label {
+    width: auto;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form>div>input {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 0 10px;
+
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form .formButtonBlock {
+    height: 50%;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form .formButtonBlock>button {
+    width: 200px;
+    height: 30px;
+    border-radius: 12px;
+    border: 1px solid rgb(148, 148, 148);
+    background-color: var(--bg-color-primary);
+}
+
+
+
+/* !................................................. */
+/* !................................................. */
+/* !................................................. */
+
+.cykleTimeModule>main .formContentAndInfoContent .calculateInfoBlock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: azure;
 }

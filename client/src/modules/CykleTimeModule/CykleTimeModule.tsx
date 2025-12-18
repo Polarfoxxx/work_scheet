@@ -22,8 +22,8 @@ function CykleTimeModule(): React.JSX.Element {
         e.preventDefault();
         const formData = Object.fromEntries(new FormData(e.currentTarget));
         const payload = {
-            calTime: Number(formData.calculateTime ?? 0),
-            couPiec: Number(formData.countPieces ?? 0),
+            calTime: Number(formData.calculateTime),
+            couPiec: Number(formData.countPieces),
         };
 
         if (payload.calTime && payload.couPiec) {
@@ -50,44 +50,56 @@ function CykleTimeModule(): React.JSX.Element {
                 </h1>
             </header>
             <main>
-                <div className="formContainer">
-                    <form
-                        action="#"
-                        onSubmit={e => handleSubmit(e)}>
-                        <label
-                            htmlFor="calculateTime">
-                            Meraný čas:
-                        </label>
-                        <input
-                            id="calculateTime"
-                            name="calculateTime"
-                            defaultValue={60} />
-                        <label
-                            htmlFor="countPieces">
-                            Počet dielov:
-                        </label>
-                        <input
-                            id="countPieces"
-                            name="countPieces" />
-                        <button
-                            type="submit">
-                            Prepočet
-                        </button>
-                    </form>
-                </div>
-                <div>
-                    <div>
-                        <article>
-                            pocet dielov za 1min
-                            5 ks = 1min
-                            60/5 = 12s   = 12/60 = 0.2min
+                <div className='formContentAndInfoContent'>
+                    <div className="formContainer">
+                        <form
+                            action="#"
+                            onSubmit={e => handleSubmit(e)}>
+                            <div className='formTimeBlock'>
+                                <label
+                                    htmlFor="calculateTime">
+                                    Meraný čas počas ktorého je počítane množstvo opracovaných dielov
+                                </label>
+                                <input
+                                    id="calculateTime"
+                                    name="calculateTime"
+                                    placeholder='meraný čas'
+                                     />
+                            </div>
+                            <div className='formPieceBlock'>
+                                <label
+                                    htmlFor="countPieces">
+                                    Počet vyprodukovaných dielov počas meraného časoveho úseku
+                                </label>
+                                <input
+                                    id="countPieces"
+                                    name="countPieces"
+                                    placeholder='počet dielov' />
+                            </div>
+                            <div className='formButtonBlock'>
+                                  <button
+                                type="submit">
+                                Prepočet
+                            </button>
+                            </div>
+                          
+                        </form>
+                    </div>
+                    <div className='calculateInfoBlock'>
+                        <div>
+                            <article>
+                                pocet dielov za 1min
+                                5 ks = 1min
+                                60/5 = 12s   = 12/60 = 0.2min
 
-                            1/0,2 = 5ks
-                            60/12 = 5ks
-                        </article>
+                                1/0,2 = 5ks
+                                60/12 = 5ks
+                            </article>
+                        </div>
                     </div>
                 </div>
-                <div>
+
+                <div className='resultBlock'>
                     <div>
                         {
                             result && (

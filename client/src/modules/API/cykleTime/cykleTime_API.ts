@@ -21,12 +21,14 @@ export type Type_for_cykleTime_response = {
 
 async function cykleTime_API(params: Type_for_cykleTime_params): Promise<{ message: Type_for_cykleTime_response } | undefined> {
     try {
-        const response = await axios.get("/cykleTime/cykleCalk", {
+        const response = await axios.get("/calculateCykleTime/cykleCalk", {
             params: {
                 calTime: params.calTime,
                 couPiec: params.couPiec,
             }
         });
+        console.log(response.data);
+        
         return response.data
     } catch (error) {
         console.error(error);

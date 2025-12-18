@@ -12,8 +12,8 @@ function MainInOwned(): React.JSX.Element {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    provideDATA.isLogged ? navigate('') : navigate('/services');
-  }, [provideDATA.isLogged, navigate]);
+    !provideDATA.isLogged && navigate('/services');
+  }, [provideDATA.isLogged]);
 
 
   return (
@@ -24,11 +24,11 @@ function MainInOwned(): React.JSX.Element {
         <NavLink to="excelSecond" className="nav-link">Excel second</NavLink>
         <NavLink to="picsAnalyze" className="nav-link">Picture analýze</NavLink>
         <NavLink to="whellSignal" className="nav-link">Whell signál</NavLink>
+        <div className="logOutBar">
+          <LogOutButton />
+        </div>
       </nav>
       <div className="outlet-container">
-            <div className="logOutBar">
-              <LogOutButton />
-            </div>
         <Outlet />
       </div>
     </div>

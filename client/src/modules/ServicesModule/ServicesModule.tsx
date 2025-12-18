@@ -9,11 +9,9 @@ function ServicesModule(): React.JSX.Element {
   const { provideDATA, setProvideDATA } = useContext(ContainerProvider.Context);
   const navigate = useNavigate();
 
-
-  React.useEffect(() => {
-    provideDATA.isLogged ? navigate('/MainInOwned') : navigate('');
-  }, [provideDATA.isLogged]);
-
+   React.useEffect(() => {
+      !provideDATA.isLogged && navigate('/services');
+    }, [provideDATA.isLogged]);
 
   const handleChangeColor = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
@@ -44,6 +42,8 @@ function ServicesModule(): React.JSX.Element {
             isLogged: true,
             loginName: `${result.user.firstName} ${result.user.secondName}`
           });
+         navigate('/MainInOwned')
+
         };
       } catch {
         console.error("Login failed");
