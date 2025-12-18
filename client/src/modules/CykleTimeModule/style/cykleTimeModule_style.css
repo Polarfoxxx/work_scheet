@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .cykleTimeModule>main>div {
@@ -36,7 +36,7 @@
     height: 100%;
     display: flex;
     place-content: center;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color-fouth);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -44,7 +44,7 @@
 
 .cykleTimeModule>main .formContentAndInfoContent {
     width: 100%;
-    height: 100%;
+    height: 60%;
     display: flex;
     place-content: center;
 
@@ -54,15 +54,17 @@
     width: 70%;
     height: 100%;
     display: flex;
-    place-content: center;
+    align-items: start;
+    justify-content: center;
 }
 
 .cykleTimeModule>main .formContentAndInfoContent .formContainer>form {
     width: 400px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    place-content: center;
-    padding: 50px 0;
+    align-items: start;
+    justify-content: start;
 }
 
 .cykleTimeModule>main .formContentAndInfoContent .formContainer>form>div {
@@ -88,7 +90,7 @@
     height: 30px;
     border-radius: 10px;
     padding: 0 10px;
-
+    text-align: center;
 }
 
 .cykleTimeModule>main .formContentAndInfoContent .formContainer>form .formButtonBlock {
@@ -101,9 +103,23 @@
     border-radius: 12px;
     border: 1px solid rgb(148, 148, 148);
     background-color: var(--bg-color-primary);
+    cursor: pointer;
 }
 
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form .formButtonBlock>button:hover {
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
 
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form .formHeaderBlock {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* !................................................. */
 /* !................................................. */
@@ -114,5 +130,82 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    background-color: azure;
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .calculateInfoBlock .claculateMain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .calculateInfoBlock .claculateMain .calculateHeader {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .calculateInfoBlock .claculateMain>article {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+/* !................................................. */
+/* !................................................. */
+/* !................................................. */
+
+.cykleTimeModule>main .resultBlock {
+    width: 100%;
+    height: 100%s;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.cykleTimeModule>main .resultBlock .resultHeader {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

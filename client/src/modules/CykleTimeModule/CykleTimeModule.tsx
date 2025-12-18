@@ -55,6 +55,9 @@ function CykleTimeModule(): React.JSX.Element {
                         <form
                             action="#"
                             onSubmit={e => handleSubmit(e)}>
+                            <div className='formHeaderBlock'>
+                                <h4>Formulár prepočtu</h4>
+                            </div>
                             <div className='formTimeBlock'>
                                 <label
                                     htmlFor="calculateTime">
@@ -64,7 +67,7 @@ function CykleTimeModule(): React.JSX.Element {
                                     id="calculateTime"
                                     name="calculateTime"
                                     placeholder='meraný čas'
-                                     />
+                                />
                             </div>
                             <div className='formPieceBlock'>
                                 <label
@@ -77,43 +80,99 @@ function CykleTimeModule(): React.JSX.Element {
                                     placeholder='počet dielov' />
                             </div>
                             <div className='formButtonBlock'>
-                                  <button
-                                type="submit">
-                                Prepočet
-                            </button>
+                                <button
+                                    type="submit">
+                                    Prepočet
+                                </button>
                             </div>
-                          
+
                         </form>
                     </div>
                     <div className='calculateInfoBlock'>
-                        <div>
+                        <div className='claculateMain'>
+                            <div className='calculateHeader'>
+                                <h4>
+                                    Vzorec pre výpočet:
+                                </h4>
+                            </div>
                             <article>
-                                pocet dielov za 1min
-                                5 ks = 1min
-                                60/5 = 12s   = 12/60 = 0.2min
-
-                                1/0,2 = 5ks
-                                60/12 = 5ks
+                                <div className='calcBlock one'>
+                                    <p>pocet dielov za 1min</p>
+                                </div>
+                                <div className='calcBlock two'>
+                                    <p>5 ks = 1min</p>
+                                </div>
+                                <div className='calcBlock three'>
+                                    <p>60/5 = 12s   = 12/60 = 0.2min</p>
+                                </div>
+                                <div className='calcBlock four'>
+                                    <p>1/0,2 = 5ks</p>
+                                </div>
+                                <div className='calcBlock five'>
+                                    <p> 60/12 = 5ks</p>
+                                </div>
                             </article>
                         </div>
                     </div>
                 </div>
 
                 <div className='resultBlock'>
-                    <div>
+                    <div className='resultHeader'>
+                        <h4>Výsledny prepočet</h4>
+                    </div>
+                    <div className='resultMain'>
                         {
                             result && (
                                 <div className="resultContainer">
-                                    <p>Cyklov za 1 minútu: {result.thisCykle}</p>
-                                    <p>Cyklov za 30 minút: {result.halfHourCykle}</p>
-                                    <p>Cyklov za 1 hodinu: {result.onehourCykle}</p>
-                                    <p>Cyklov za 2 hodiny: {result.twoohourCykle}</p>
-                                    <p>Cyklov za 3 hodiny: {result.threehourCykle}</p>
-                                    <p>Cyklov za 4 hodiny: {result.fourhourCykle}</p>
-                                    <p>Cyklov za 5 hodín: {result.fivehourCykle}</p>
-                                    <p>Cyklov za 6 hodín: {result.sixHourCykle}</p>
-                                    <p>Cyklov za 7 hodín: {result.sevenHourCykle}</p>
-                                    <p>Cyklov za 8 hodín: {result.eightHourCykle}</p>
+                                    <div className='resultMainResult'>
+                                        <p>Dielou za 1 minútu: {Math.round(result.thisCykle*1000)/1000}</p>
+                                    </div>
+                                    <div className='resultother'>
+                                        <div>
+                                            <h4>Dielou za 30 minút:</h4>
+                                            <p>{result.halfHourCykle} dielov</p>
+                                        </div>
+
+                                        <div>
+                                            <h4>Dielou za 1 hodinu:</h4>
+                                            <p>{result.onehourCykle} dielov</p>
+                                        </div>
+
+                                        <div>
+                                            <h4>Dielou za 2 hodiny:</h4>
+                                            <p>{result.twoohourCykle} dielov</p>
+                                        </div>
+
+                                        <div>
+                                            <h4>Dielou za 3 hodiny:</h4>
+                                            <p>{result.threehourCykle} dielov</p>
+                                        </div>
+
+                                        <div>
+                                            <h4>Dielou za 4 hodiny:</h4>
+                                            <p>{result.fourhourCykle} dielov</p>
+                                        </div>
+
+                                        <div>
+                                            <h4>Dielou za 5 hodín:</h4>
+                                            <p>{result.fivehourCykle} dielov</p>
+                                        </div>
+
+                                        <div>
+                                            <h4>Dielou za 6 hodín:</h4>
+                                            <p>{result.sixHourCykle} dielov</p>
+                                        </div>
+
+                                        <div>
+                                            <h4>Dielou za 7 hodín:</h4>
+                                            <p>{result.sevenHourCykle} dielov</p>
+                                        </div>
+
+                                        <div>
+                                            <h4>Dielou za 8 hodín:</h4>
+                                            <p>{result.eightHourCykle} dielov</p>
+                                        </div>
+                                    </div>
                                 </div>
                             )}
                     </div>
