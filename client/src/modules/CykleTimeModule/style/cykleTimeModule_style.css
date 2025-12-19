@@ -199,6 +199,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .cykleTimeModule>main .resultBlock .resultMain .resultContainer>div {
@@ -208,4 +209,311 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultMainResult {
+    font-size: 30px;
+    background-color: var(--bg-color-primary);
+    border-radius: 15px;
+    font-weight: bolder;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultother {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultother>div {
+    width: 70%;
+    height: 30px;
+    border: 1px solid rgb(186, 186, 186);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    background-color: var(--bg-color-third);
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultother>div>h4 {
+    font-size: 13px;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultother>div>p {
+    font-size: 12px;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultGraph {
+    width: 80%;
+
+}
+
+
+/* !--------------------------------------------------------------------------------------- */
+/* !--------------------------------------------------------------------------------------- */
+/* !--------------------------------------------------------------------------------------- */
+@media (max-width: 950px) {
+
+    .cykleTimeModule {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background-color: white;
+    font-size: 10px;
+
+}
+
+.cykleTimeModule>header {
+    background-color: rgb(10, 92, 51);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    color: white;
+}
+
+.cykleTimeModule>main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px;
+}
+
+.cykleTimeModule>main>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+    background-color: var(--bg-color-fouth);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex-direction: column;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding: 10px;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form>div>label {
+    width: auto;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form>div>input {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form .formButtonBlock {
+    height: 50%;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form .formButtonBlock>button {
+    width: 200px;
+    height: 30px;
+    border-radius: 12px;
+    border: 1px solid rgb(148, 148, 148);
+    background-color: var(--bg-color-primary);
+    cursor: pointer;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form .formButtonBlock>button:hover {
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .formContainer>form .formHeaderBlock {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* !................................................. */
+/* !................................................. */
+/* !................................................. */
+
+.cykleTimeModule>main .formContentAndInfoContent .calculateInfoBlock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .calculateInfoBlock .claculateMain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .calculateInfoBlock .claculateMain .calculateHeader {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cykleTimeModule>main .formContentAndInfoContent .calculateInfoBlock .claculateMain>article {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+/* !................................................. */
+/* !................................................. */
+/* !................................................. */
+
+.cykleTimeModule>main .resultBlock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.cykleTimeModule>main .resultBlock .resultHeader {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultMainResult {
+    font-size: 25px;
+    background-color: var(--bg-color-primary);
+    border-radius: 15px;
+    font-weight: bolder;
+    height: 200px;
+    text-align: center;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultother {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultother>div {
+    width: 100%;
+    height: 30px;
+    border: 1px solid rgb(186, 186, 186);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    background-color: var(--bg-color-third);
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultother>div>h4 {
+    font-size: 13px;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultother>div>p {
+    font-size: 12px;
+}
+
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultGraph {
+    width: 80%;
+
+}
+
 }

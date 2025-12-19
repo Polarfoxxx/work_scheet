@@ -125,7 +125,7 @@ function CykleTimeModule(): React.JSX.Element {
                             result && (
                                 <div className="resultContainer">
                                     <div className='resultMainResult'>
-                                        <p>Dielou za 1 minútu: {Math.round(result.thisCykle*1000)/1000}</p>
+                                        <p>Dielou za 1 minútu: {Math.round(result.thisCykle * 1000) / 1000} dielou</p>
                                     </div>
                                     <div className='resultother'>
                                         <div>
@@ -172,6 +172,9 @@ function CykleTimeModule(): React.JSX.Element {
                                             <h4>Dielou za 8 hodín:</h4>
                                             <p>{result.eightHourCykle} dielov</p>
                                         </div>
+                                    </div>
+                                    <div className='resultGraph'>
+                                        infograph
                                     </div>
                                 </div>
                             )}
