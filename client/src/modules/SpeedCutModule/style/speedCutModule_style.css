@@ -12,13 +12,15 @@
 
 
 .speed-cut-module>header {
-    background-color: rgb(10, 92, 51);
+    background-color: var(--bg-color-five);
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 70px;
+    height: 50px;
     color: white;
+    margin: 5px;
+    border-radius: 10px;
 }
 
 .speed-cut-module>main {
@@ -100,12 +102,15 @@
     }
 
     .speed-cut-module>header {
-        background-color: rgb(10, 92, 51);
+        background-color: var(--bg-color-five);
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         height: 50px;
+        color: white;
+        margin: 5px;
+        border-radius: 0px;
     }
 
     .speed-cut-module>main {
