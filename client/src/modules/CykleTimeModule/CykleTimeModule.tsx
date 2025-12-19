@@ -96,20 +96,37 @@ function CykleTimeModule(): React.JSX.Element {
                                 </h4>
                             </div>
                             <article>
-                                <div className='calcBlock one'>
-                                    <p>pocet dielov za 1min</p>
+                                <div className='formsBlock'>
+                                    <div className='formsTitle'>
+                                        <h4>Vzorec</h4>
+                                    </div>
+                                    <div className='formBody'>
+                                        <div className='calcBlock one'>
+                                            <p>Pocet dielov = n za čas = t v sekunách</p>
+                                        </div>
+                                        <div className='calcBlock two'>
+                                            <p>t / n = tn - čas na jeden diel v sekundách</p>
+                                        </div>
+                                        <div className='calcBlock three'>
+                                            <p>tn / 60 = Výsledný takt v min</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className='calcBlock two'>
-                                    <p>5 ks = 1min</p>
-                                </div>
-                                <div className='calcBlock three'>
-                                    <p>60/5 = 12s   = 12/60 = 0.2min</p>
-                                </div>
-                                <div className='calcBlock four'>
-                                    <p>1/0,2 = 5ks</p>
-                                </div>
-                                <div className='calcBlock five'>
-                                    <p> 60/12 = 5ks</p>
+                                <div className='examleForms'>
+                                    <div className='exampleTitle'>
+                                        <h4>Príklad prepočtu</h4>
+                                    </div>
+                                    <div className='examleBopdy'>
+                                        <div className='calcBlock four'>
+                                            <p>Pocet dielov = 10 za čas = 60s</p>
+                                        </div>
+                                        <div className='calcBlock five'>
+                                            <p>60/10 = 6s</p>
+                                        </div>
+                                        <div className='calcBlock six'>
+                                            <p>6/60 = 0,1s</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </article>
                         </div>
@@ -125,7 +142,8 @@ function CykleTimeModule(): React.JSX.Element {
                             result && (
                                 <div className="resultContainer">
                                     <div className='resultMainResult'>
-                                        <p>Dielou za 1 minútu: {Math.round(result.thisCykle * 1000) / 1000} dielou</p>
+                                        <p className='titleRes'>Dielou za 1 minútu</p>
+                                        <p className='titleValue'>{Math.round(result.thisCykle * 1000) / 1000}</p>
                                     </div>
                                     <div className='resultother'>
                                         <div>

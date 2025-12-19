@@ -158,7 +158,7 @@
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     font-size: 15px;
 }
 
@@ -217,7 +217,10 @@
     border-radius: 15px;
     font-weight: bolder;
 }
-
+.cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultMainResult .titleValue {
+    font-size: 35px;
+    color: red;
+}
 .cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultother {
     display: flex;
     justify-content: start;
@@ -483,6 +486,7 @@
     height: 200px;
     text-align: center;
 }
+
 
 .cykleTimeModule>main .resultBlock .resultMain .resultContainer .resultother {
     display: flex;
