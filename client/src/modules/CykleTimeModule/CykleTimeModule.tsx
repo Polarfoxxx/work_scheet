@@ -85,7 +85,6 @@ function CykleTimeModule(): React.JSX.Element {
                                     Prepočet
                                 </button>
                             </div>
-
                         </form>
                     </div>
                     <div className='calculateInfoBlock'>
