@@ -23,7 +23,6 @@ import {
 
 function Main(): React.JSX.Element {
 
-
   const handleDropdownMenu = (): void => {
     const navBar = document.querySelector(".navigationBar") as HTMLElement;
     navBar.classList.toggle("active");

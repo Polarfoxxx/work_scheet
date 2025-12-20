@@ -66,7 +66,7 @@ function CykleTimeModule(): React.JSX.Element {
                                 <input
                                     id="calculateTime"
                                     name="calculateTime"
-                                    placeholder='meraný čas'
+                                    placeholder='meraný čas v sec'
                                 />
                             </div>
                             <div className='formPieceBlock'>

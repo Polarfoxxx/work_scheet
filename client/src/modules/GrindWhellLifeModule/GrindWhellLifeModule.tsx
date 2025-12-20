@@ -38,76 +38,80 @@ function GrindWhellLifeModule(): React.JSX.Element {
     }
 
     return (
-        <div>
+        <div className="grindWhellModule">
             <header>
-                <h1>enknlnkl</h1>
+                <h1>Životnosť kotúča</h1>
             </header>
             <main>
-                <div>
-                    <form action="#" onSubmit={(e) => fetchWhellLife(e)}>
-                        <div>
-                            <label htmlFor="maxWhell">maxWhell</label>
-                            <input id="maxWhell" name="maxWhell" type="number" />
-                        </div>
-                        <div>
-                            <label htmlFor="minWhell">mixWhell</label>
-                            <input id="minWhell" name="minWhell" type="number" />
-                        </div>
-                        <div>
-                            <label htmlFor="n_sharpening">n_sharpening</label>
-                            <input id="n_sharpening" name="n_sharpening" type="number" />
-                        </div>
-                        <div>
-                            <label htmlFor="v_sharpening">v_sharpening</label>
-                            <input id="v_sharpening" name="v_sharpening" type="number" step={0.001} />
-                        </div>
-                        <div>
-                            <label htmlFor="someCheckbox">2 kus</label>
-                            <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
-                        </div>
-                        <button type="submit">Get grind whell life</button>
-                    </form>
-                </div>
-                <div>
-                    <form action="#" onSubmit={(e) => fetchWhellLife(e)}>
-                        <div>
-                            <label htmlFor="maxWhell">maxWhell</label>
-                            <input id="maxWhell" name="maxWhell" type="number" />
-                        </div>
-                        <div>
-                            <label htmlFor="minWhell">mixWhell</label>
-                            <input id="minWhell" name="minWhell" type="number" />
-                        </div>
-                        <div>
-                            <label htmlFor="n_sharpening">n_sharpening</label>
-                            <input
-                                id="typeinp"
-                                type="range"
-                                min="0" max="100"
-                                value={typeinp}
-                                onChange={e => { setTypeinp(Number(e.target.value)) }} />
-                            <input id="n_sharpening" name="n_sharpening" type="number"
-                                step="1" />
+                <div className="grindWhellContent">
+                    <div >
+                        <form action="#" onSubmit={(e) => fetchWhellLife(e)}>
                             <div>
-                                <input
-                                    value={typeinp} type="number"
-                                    onChange={e => { setTypeinp(Number(e.target.value)) }}
-                                />
+                                <label htmlFor="maxWhell">maxWhell</label>
+                                <input id="maxWhell" name="maxWhell" type="number" />
                             </div>
-                        </div>
-                        <div>
-                            <label htmlFor="v_sharpening">v_sharpening</label>
-                            <input id="v_sharpening" name="v_sharpening" type="number" step={0.001} />
-                        </div>
-                        <div>
-                            <label htmlFor="someCheckbox">2 kus</label>
-                            <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
-                        </div>
-                        <button type="submit">Get grind whell life</button>
-                    </form>
+                            <div>
+                                <label htmlFor="minWhell">mixWhell</label>
+                                <input id="minWhell" name="minWhell" type="number" />
+                            </div>
+                            <div>
+                                <label htmlFor="n_sharpening">n_sharpening</label>
+                                <input id="n_sharpening" name="n_sharpening" type="number" />
+                            </div>
+                            <div>
+                                <label htmlFor="v_sharpening">v_sharpening</label>
+                                <input id="v_sharpening" name="v_sharpening" type="number" step={0.001} />
+                            </div>
+                            <div>
+                                <label htmlFor="someCheckbox">2 kus</label>
+                                <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
+                            </div>
+                            <button type="submit">Get grind whell life</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="#" onSubmit={(e) => fetchWhellLife(e)}>
+                            <div>
+                                <label htmlFor="maxWhell">maxWhell</label>
+                                <input id="maxWhell" name="maxWhell" type="number" />
+                            </div>
+                            <div>
+                                <label htmlFor="minWhell">mixWhell</label>
+                                <input id="minWhell" name="minWhell" type="number" />
+                            </div>
+                            <div>
+                                <label htmlFor="n_sharpening">n_sharpening</label>
+                                <input
+                                    id="typeinp"
+                                    type="range"
+                                    min="0" max="100"
+                                    value={typeinp}
+                                    onChange={e => { setTypeinp(Number(e.target.value)) }} />
+                                <input id="n_sharpening" name="n_sharpening" type="number"
+                                    step="1" />
+                                <div>
+                                    <input
+                                        value={typeinp} type="number"
+                                        onChange={e => { setTypeinp(Number(e.target.value)) }}
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <label htmlFor="v_sharpening">v_sharpening</label>
+                                <input id="v_sharpening" name="v_sharpening" type="number" step={0.001} />
+                            </div>
+                            <div>
+                                <label htmlFor="someCheckbox">2 kus</label>
+                                <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
+                            </div>
+                            <button type="submit">Get grind whell life</button>
+                        </form>
+                    </div>
+                    <div>
+                    </div>
                 </div>
                 <div>
-
+                    fewfewfefefe
                 </div>
             </main>
             <footer>
