@@ -44,34 +44,12 @@ function GrindWhellLifeModule(): React.JSX.Element {
             </header>
             <main>
                 <div className="grindWhellContent">
-                    <div >
+                    <div className="formContainer">
+                        <div className="formHeader">
+                            <h4>Výpočet údajov</h4>
+                        </div>
                         <form action="#" onSubmit={(e) => fetchWhellLife(e)}>
-                            <div>
-                                <label htmlFor="maxWhell">maxWhell</label>
-                                <input id="maxWhell" name="maxWhell" type="number" />
-                            </div>
-                            <div>
-                                <label htmlFor="minWhell">mixWhell</label>
-                                <input id="minWhell" name="minWhell" type="number" />
-                            </div>
-                            <div>
-                                <label htmlFor="n_sharpening">n_sharpening</label>
-                                <input id="n_sharpening" name="n_sharpening" type="number" />
-                            </div>
-                            <div>
-                                <label htmlFor="v_sharpening">v_sharpening</label>
-                                <input id="v_sharpening" name="v_sharpening" type="number" step={0.001} />
-                            </div>
-                            <div>
-                                <label htmlFor="someCheckbox">2 kus</label>
-                                <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
-                            </div>
-                            <button type="submit">Get grind whell life</button>
-                        </form>
-                    </div>
-                    <div>
-                        <form action="#" onSubmit={(e) => fetchWhellLife(e)}>
-                            <div>
+                            <div className="formContainer">
                                 <label htmlFor="maxWhell">maxWhell</label>
                                 <input id="maxWhell" name="maxWhell" type="number" />
                             </div>
@@ -107,7 +85,8 @@ function GrindWhellLifeModule(): React.JSX.Element {
                             <button type="submit">Get grind whell life</button>
                         </form>
                     </div>
-                    <div>
+                    <div className="resultBlock">
+                        sdsasa
                     </div>
                 </div>
                 <div>
