@@ -70,8 +70,7 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                 <div>
                                     <input
                                         value={typeinp} type="number"
-                                        onChange={e => { setTypeinp(Number(e.target.value)) }}
-                                    />
+                                        onChange={e => { setTypeinp(Number(e.target.value)) }} />
                                 </div>
                             </div>
                             <div>

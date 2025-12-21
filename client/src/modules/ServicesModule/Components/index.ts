@@ -5,3 +5,4 @@ export * from './PicsAnalyzeModule';
 export * from './WhellSignalModule';
 export * from './EducationModule';
 export * from './WelcomeAdminModule';
+export * from './TkzCalculateModule';

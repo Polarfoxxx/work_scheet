@@ -1,5 +1,6 @@
 import React from "react";
 import "./style/main_style.css";
+import { Route, Routes, NavLink } from "react-router-dom";
 import {
   SpeedCutModule,
   GrindingSchemaModule,
@@ -13,13 +14,9 @@ import {
   GrindWhellLifeModule,
   WhellSignalModule,
   EducationModule,
-  WellcomeAdminModule
+  WellcomeAdminModule,
+  TkzCalculateModule
 } from "../";
-import {
-  Route,
-  Routes,
-  NavLink
-} from "react-router-dom";
 
 function Main(): React.JSX.Element {
 
@@ -62,6 +59,7 @@ function Main(): React.JSX.Element {
             <Route path="excelFirst" element={<ExcelFirstModule />} />
             <Route path="picsAnalyze" element={<PicsAnalyzeModule />} />
             <Route path="whellSignal" element={<WhellSignalModule />} />
+            <Route path="tkzCalculate" element={<TkzCalculateModule />} />
           </Route>
         </Routes>
       </main>

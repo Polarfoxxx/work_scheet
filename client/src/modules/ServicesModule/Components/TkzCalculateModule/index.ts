@@ -1,0 +1,1 @@
+export { default as TkzCalculateModule } from "./TkzCalculate_module";

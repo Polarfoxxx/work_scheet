@@ -8,7 +8,7 @@ import { LogOutButton } from "../../../services/LogOutButton";
 
 
 function MainInOwned(): React.JSX.Element {
-  const { provideDATA, setProvideDATA } = useContext(ContainerProvider.Context);
+  const { provideDATA } = useContext(ContainerProvider.Context);
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -24,6 +24,7 @@ function MainInOwned(): React.JSX.Element {
         <NavLink to="excelSecond" className="nav-link">Excel second</NavLink>
         <NavLink to="picsAnalyze" className="nav-link">Picture analýze</NavLink>
         <NavLink to="whellSignal" className="nav-link">Whell signál</NavLink>
+        <NavLink to="tkzCalculate" className="nav-link">Whell signál</NavLink>
         <div className="logOutBar">
           <LogOutButton />
         </div>
