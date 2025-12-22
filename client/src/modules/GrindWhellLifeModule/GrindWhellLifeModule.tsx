@@ -5,7 +5,8 @@ import "./style/grindWhellLife_style.css";
 function GrindWhellLifeModule(): React.JSX.Element {
     const [whellLife, setWhellLife] = React.useState<any>(null);
     const [onhecked, setOnhecked] = React.useState<boolean>(false);
-    const [typeinp, setTypeinp] = React.useState<number>(0);
+    const [n_sharpening, setN_sharpening] = React.useState<number>(0);
+    const [x_sharpening, setX_sharpening] = React.useState<number>(0);
 
     const fetchWhellLife = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -46,43 +47,56 @@ function GrindWhellLifeModule(): React.JSX.Element {
                 <div className="grindWhellContent">
                     <div className="formContainer">
                         <div className="formHeader">
-                            <h4>Výpočet údajov</h4>
+                            <h4>Formulár výpočtu</h4>
                         </div>
                         <form action="#" onSubmit={(e) => fetchWhellLife(e)}>
                             <div className="formContainer">
-                                <label htmlFor="maxWhell">maxWhell</label>
+                                <label htmlFor="maxWhell">Veľkosť brúsneho kotúča pri maximálnej veľkosti</label>
                                 <input id="maxWhell" name="maxWhell" type="number" />
                             </div>
                             <div>
-                                <label htmlFor="minWhell">mixWhell</label>
+                                <label htmlFor="minWhell">Veľkosť brúsneho kotúča pri minimálnej veľkosti</label>
                                 <input id="minWhell" name="minWhell" type="number" />
                             </div>
                             <div>
-                                <label htmlFor="n_sharpening">n_sharpening</label>
+                                <label htmlFor="n_sharpening">Cyklus orovnania brúsneho kotúča n-diely</label>
                                 <input
-                                    id="typeinp"
+                                    id="n_sharpening"
                                     type="range"
                                     min="0" max="100"
-                                    value={typeinp}
-                                    onChange={e => { setTypeinp(Number(e.target.value)) }} />
+                                    value={n_sharpening}
+                                    onChange={e => { setN_sharpening(Number(e.target.value)) }} />
                                 <div>
                                     <input
-                                        value={typeinp} type="number"
-                                        onChange={e => { setTypeinp(Number(e.target.value)) }} />
+                                        value={n_sharpening} type="number"
+                                        onChange={e => { setN_sharpening(Number(e.target.value)) }} />
                                 </div>
                             </div>
                             <div>
-                                <label htmlFor="v_sharpening">v_sharpening</label>
-                                <input id="v_sharpening" name="v_sharpening" type="number" step={0.001} />
-                            </div>
-                            <div>
+                                <label htmlFor="x_sharpening">Hodnota orovnávania</label>
+                                <input
+                                    id="x_sharpening"
+                                    type="range"
+                                    min="0" max="100"
+                                    value={x_sharpening}
+                                    onChange={e => { setX_sharpening(Number(e.target.value)) }} />
+                                <div>
+                                    <input
+                                        value={x_sharpening} type="number"
+                                        onChange={e => { setX_sharpening(Number(e.target.value)) }} />
+                                </div>
                                 <label htmlFor="someCheckbox">2 kus</label>
                                 <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
                             </div>
                             <button type="submit">Get grind whell life</button>
                         </form>
-                        <div className="resultBlock">
-                            sdsasa
+                    </div>
+                    <div className="resultBlock">
+                        <div className="resultBlockHeader">
+                            <h4>Vzorec pre výpočet</h4>
+                        </div>
+                        <div className="resultBlockBody">
+
                         </div>
                     </div>
                 </div>
