@@ -37,8 +37,8 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-     background-color: var(--bg-color-fouth);
-  border-radius: 8px;
+    background-color: var(--bg-color-fouth);
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -49,7 +49,7 @@
     width: 100%;
     height: 100%;
     gap: 15px;
-    
+
 }
 
 .grindWhellModule>main .grindWhellContent>div {
@@ -59,11 +59,11 @@
     width: 100%;
     height: 100%;
     flex-direction: column;
-   
+
 }
 
 .grindWhellModule>main .grindWhellContent .formContainer {
-    width: 60%;
+    width: 100%;
     font-size: 20px;
     display: flex;
     align-items: center;
@@ -81,26 +81,42 @@
 }
 
 .grindWhellModule>main .grindWhellContent .formContainer>form {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
-
-.grindWhellModule>main .grindWhellContent .formContainer>form>div {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: start;
-    padding-left: 30px;
+    padding: 10px;
+    flex-direction: column;
 }
 
-.grindWhellModule>main .grindWhellContent .formContainer>form>div>label {
+.grindWhellModule>main .grindWhellContent .formContainer>form>.formBody {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grindWhellModule>main .grindWhellContent .formContainer>form>.formBody .formlockOne {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.grindWhellModule>main .grindWhellContent .formContainer>form .formBody .formlockOne .formContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.grindWhellModule>main .grindWhellContent .formContainer>form .formBody .formlockOne .formContainer>label {
     width: auto;
     height: 25px;
     display: flex;
@@ -109,7 +125,7 @@
     font-size: 13px;
 }
 
-.grindWhellModule>main .grindWhellContent .formContainer>form>div>input {
+.grindWhellModule>main .grindWhellContent .formContainer>form .formBody .formlockOne .formContainer>input {
     width: 300px;
     height: 30px;
     border-radius: 10px;
@@ -117,7 +133,7 @@
     text-align: center;
 }
 
-.grindWhellModule>main .grindWhellContent .formContainer>form>div>div>input {
+.grindWhellModule>main .grindWhellContent .formContainer>form .formBody .formlockOne .formContainer>div>input {
     width: 300px;
     height: 30px;
     border-radius: 10px;
