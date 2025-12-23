@@ -12,10 +12,10 @@ function GrindWhellLifeModule(): React.JSX.Element {
         e.preventDefault();
         const formData = Object.fromEntries(new FormData(e.currentTarget));
         const payload = {
-            maxWhell: Number(formData.maxWhell ?? 0),
-            minWhell: Number(formData.minWhell ?? 0),
-            n_sharpening: Number(formData.n_sharpening ?? 0),
-            v_sharpening: Number(formData.n_sharpening ?? 0),
+            maxWhell: Number(formData.maxWhell),
+            minWhell: Number(formData.minWhell),
+            n_sharpening: Number(formData.n_sharpening),
+            v_sharpening: Number(formData.n_sharpening),
         };
 
         if (payload.maxWhell && payload.minWhell && payload.n_sharpening && payload.v_sharpening) {
@@ -133,29 +133,43 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                 </div>
                             </div>
                             <div className="formButton">
-                                <div className="formButton">
-                                    <button type="submit">Get grind whell life</button>
-                                </div>
+                                <button type="submit">Get grind whell life</button>
                             </div>
                         </form>
                     </div>
-                    <div className="resultBlock">
-                        <div className="resultBlockHeader">
+                    <div className="calculateBlock">
+                        <div className="calculateHeader">
                             <h4>Vzorec pre výpočet</h4>
                         </div>
-                        <div className="resultBlockBody">
+                        <div className="calculateBody">
+                            <div className="calculateBodyContent">
+  <div>
+
+                            </div>
+                            <div>
+
+                            </div>
+                            </div>
+                          
                         </div>
                     </div>
                 </div>
-                <div>
-                    fewfewfefefe
+                <div className="resultBlock">
+                    <div className="resultBlockOne">
+                        <div className="resultBlockHeader">
+                            <h2>{whellLife}</h2>
+                        </div>
+                        <div className="resultBlockBody">
+
+                        </div>
+                    </div>
+                    <div className="resultBlockTwo">
+
+                    </div>
                 </div>
             </main>
-            <footer>
-
-            </footer>
         </div>
     )
 }
 
-export default GrindWhellLifeModule
+export default GrindWhellLifeModule;
