@@ -1,9 +1,11 @@
 import React from "react"
 import { grindWhellLife_API } from "../API";
 import "./style/grindWhellLife_style.css";
+import { Type_forReturned_API } from "../API";
+
 
 function GrindWhellLifeModule(): React.JSX.Element {
-    const [whellLife, setWhellLife] = React.useState<any>(null);
+    const [whellLife, setWhellLife] = React.useState<Type_forReturned_API["data"]["message"] | null>(null);
     const [onhecked, setOnhecked] = React.useState<boolean>(false);
     const [n_sharpening, setN_sharpening] = React.useState<number>(0);
     const [x_sharpening, setX_sharpening] = React.useState<number>(0);
@@ -14,17 +16,17 @@ function GrindWhellLifeModule(): React.JSX.Element {
         const payload = {
             maxWhell: Number(formData.maxWhell),
             minWhell: Number(formData.minWhell),
-            n_sharpening: Number(formData.n_sharpening),
-            v_sharpening: Number(formData.n_sharpening),
+            n_sharpening: Number(n_sharpening),
+            x_sharpening: Number(x_sharpening),
         };
 
-        if (payload.maxWhell && payload.minWhell && payload.n_sharpening && payload.v_sharpening) {
+        if (payload.maxWhell && payload.minWhell && payload.n_sharpening && payload.x_sharpening) {
             try {
-                const result = await grindWhellLife_API(payload);
-                result?.message !== undefined ?
-                    setWhellLife(result.message) :
-                    setWhellLife(0)
-                console.log("API response:", result);
+                const response = await grindWhellLife_API(payload);
+                response?.status === 200 ?
+                    setWhellLife(response.data.message) :
+                    setWhellLife(null)
+                console.log("API response:", response);
             } catch (err) {
                 console.error("Error calling Grind Whell Life API:", err);
             }
@@ -93,17 +95,17 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                 </div>
                                 <div className="formlockOne">
                                     <div className="formContainer">
-                                        <label htmlFor="maxWhell">Veľkosť brúsneho kotúča pri maximálnej veľkosti</label>
-                                        <input id="maxWhell" name="maxWhell" type="number" />
+                                        <label htmlFor="">xxxxxxxx</label>
+                                        <input id="" name="" type="number" />
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="minWhell">Veľkosť brúsneho kotúča pri minimálnej veľkosti</label>
-                                        <input id="minWhell" name="minWhell" type="number" />
+                                        <label htmlFor="">Veľk</label>
+                                        <input id="" name="" type="number" />
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="n_sharpening">Cyklus orovnania brúsneho kotúča n-diely</label>
+                                        <label htmlFor="">Cyklus orovnania brúsneho kotúča n-diely</label>
                                         <input
-                                            id="n_sharpening"
+                                            id=""
                                             type="range"
                                             min="0" max="100"
                                             value={n_sharpening}
@@ -115,9 +117,9 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                         </div>
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="x_sharpening">Hodnota orovnávania</label>
+                                        <label htmlFor="">Hodnota orovnávania</label>
                                         <input
-                                            id="x_sharpening"
+                                            id=""
                                             type="range"
                                             min="0" max="100"
                                             value={x_sharpening}
@@ -127,8 +129,8 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                                 value={x_sharpening} type="number"
                                                 onChange={e => { setX_sharpening(Number(e.target.value)) }} />
                                         </div>
-                                        <label htmlFor="someCheckbox">2 kus</label>
-                                        <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
+                                        <label htmlFor="">2 kus</label>
+                                        <input id="" type="checkbox" checked={onhecked} onChange={handleChecked} />
                                     </div>
                                 </div>
                             </div>
@@ -143,24 +145,44 @@ function GrindWhellLifeModule(): React.JSX.Element {
                         </div>
                         <div className="calculateBody">
                             <div className="calculateBodyContent">
-  <div>
+                                <div>
 
-                            </div>
-                            <div>
+                                </div>
+                                <div>
 
+                                </div>
                             </div>
-                            </div>
-                          
                         </div>
                     </div>
                 </div>
                 <div className="resultBlock">
                     <div className="resultBlockOne">
                         <div className="resultBlockHeader">
-                            <h2>{whellLife}</h2>
                         </div>
                         <div className="resultBlockBody">
+                            <div>
+                                <h4>Výpečet</h4>
+                            </div>
+                            <div>
+                                {
+                                    whellLife
+                                        ?
+                                        <div>
+                                            <h4>
+                                                {whellLife.lifePerSharpening}
+                                            </h4>
+                                            <h4>
+                                                {whellLife.wearPerSharpening}
+                                            </h4>
+                                        </div>
+                                        :
+                                        <div>
+                                            <h4>
 
+                                            </h4>
+                                        </div>
+                                }
+                            </div>
                         </div>
                     </div>
                     <div className="resultBlockTwo">
