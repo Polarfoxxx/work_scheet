@@ -19,7 +19,6 @@ function GrindWhellLifeModule(): React.JSX.Element {
             n_sharpening: Number(n_sharpening),
             x_sharpening: Number(x_sharpening),
             cykleTime: Number(formData.cykleTime),
-            productionMystake: 
         };
 
         if (payload.maxWhell && payload.minWhell && payload.n_sharpening && payload.x_sharpening) {
