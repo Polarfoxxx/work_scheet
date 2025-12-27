@@ -5,6 +5,7 @@ type Type_grindWhellLifeParams = {
     minWhell: number;
     n_sharpening: number;
     x_sharpening: number;
+    cykleTime: number | undefined
 };
 
 export type Type_forReturned_API = {
@@ -12,7 +13,8 @@ export type Type_forReturned_API = {
     data: {
         message: {
             wearPerSharpening: number,
-            lifePerSharpening: number
+            lifePerSharpening: number,
+            lifePerTime: number | undefined
         };
     };
 };
@@ -27,9 +29,10 @@ async function grindWhellLife_API(params: Type_grindWhellLifeParams): Promise<Ty
                 minWhell: params.minWhell,
                 n_sharpening: params.n_sharpening,
                 x_sharpening: params.x_sharpening,
+                cykleTime: params.cykleTime,
             }
         });
-        return response.data;
+        return response;
     } catch (error) {
         console.error("API Error (grindWhellLife_API):", error);
         return undefined;
