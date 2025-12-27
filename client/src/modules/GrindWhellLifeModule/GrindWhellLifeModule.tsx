@@ -118,37 +118,41 @@ function GrindWhellLifeModule(): React.JSX.Element {
                     </div>
                 </div>
                 <div className="resultBlock">
-                    <div className="resultBlockOne">
-                        <div className="resultBlockHeader">
-                        </div>
-                        <div className="resultBlockBody">
-                            <div>
-                                <h4>Výpečet</h4>
-                            </div>
-                            <div>
-                                {
-                                    whellLife !== null
-                                        ?
-                                        <div>
-                                            <h4>
-                                                {whellLife.lifePerSharpening}
-                                            </h4>
-                                            <h4>
-                                                {whellLife.wearPerSharpening}
-                                            </h4>
-                                        </div>
-                                        :
-                                        <div>
-                                            <h4>
-                                                nic
-                                            </h4>
-                                        </div>
-                                }
-                            </div>
+                    <div className="resultBlockHeader">
+                        <div>
+                            <h4>Výpočet</h4>
                         </div>
                     </div>
-                    <div className="resultBlockTwo">
-
+                    <div className="resultBlockBody">
+                        <div className="resultBlock One">
+                            <div className="resBlock One">
+                                <div className="resTitle">
+                                    <h3>Počet orovnávania:</h3>
+                                </div>
+                                <div className="resValue">
+                                    <p>{whellLife?.wearPerSharpening ? whellLife.wearPerSharpening : ""}</p>
+                                </div>
+                                <div className="resUnit">
+                                    <p>orovnaní</p>
+                                </div>
+                            </div >
+                            <div className="resBlock two">
+                                <div className="resTitle">
+                                    <h3>Životnosť kotúča na n počet dielov:</h3>
+                                </div>
+                                <div className="resValue">
+                                    <p>{whellLife?.lifePerSharpening ? whellLife.lifePerSharpening : ""}</p>
+                                </div>
+                                <div className="resUnit">
+                                    <p>dielou</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="resultBlock two">
+                            <div className="">
+                                <h1>graf</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
