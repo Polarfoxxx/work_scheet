@@ -3,11 +3,11 @@ const router = express.Router();
 
 router.get("/whellLife", async (req, res) => {
     const {
-         maxWhell, 
-         minWhell,
-          n_sharpening,
-           x_sharpening, 
-           cykleTime,
+        maxWhell,
+        minWhell,
+        n_sharpening,
+        x_sharpening,
+        cykleTime,
         productionMystake } = req.query;
 
     try {

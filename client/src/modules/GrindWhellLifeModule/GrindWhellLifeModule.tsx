@@ -7,8 +7,8 @@ import { Type_forReturned_API } from "../API";
 function GrindWhellLifeModule(): React.JSX.Element {
     const [whellLife, setWhellLife] = React.useState<Type_forReturned_API["data"]["message"] | null>(null);
     const [onhecked, setOnhecked] = React.useState<boolean>(false);
-    const [n_sharpening, setN_sharpening] = React.useState<number>(0);
-    const [x_sharpening, setX_sharpening] = React.useState<number>(0);
+    const [n_sharpening, setN_sharpening] = React.useState<number | undefined>(undefined);
+    const [x_sharpening, setX_sharpening] = React.useState<number | undefined>(undefined);
 
     const fetchWhellLife = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -19,7 +19,8 @@ function GrindWhellLifeModule(): React.JSX.Element {
             n_sharpening: Number(n_sharpening),
             x_sharpening: Number(x_sharpening),
             cykleTime: Number(formData.cykleTime),
-            productionMystake: Number(formData.productionMystake)
+            productionMystake: Number(formData.productionMystake),
+            duoGrinding: onhecked
         };
 
         if (payload.maxWhell && payload.minWhell && payload.n_sharpening && payload.x_sharpening) {
@@ -56,60 +57,47 @@ function GrindWhellLifeModule(): React.JSX.Element {
                             <div className="formBody">
                                 <div className="formlockOne">
                                     <div className="formContainer">
-                                        <label htmlFor="maxWhell">Veľkosť brúsneho kotúča pri maximálnej veľkosti</label>
-                                        <input id="maxWhell" name="maxWhell" type="number" min={0} />
+                                        <label htmlFor="maxWhell">Maximálna veľkosť BK</label>
+                                        <input id="maxWhell" name="maxWhell" type="number" min={0} step={0.1} placeholder="Veľkosť veľkého BK" />
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="minWhell">Veľkosť brúsneho kotúča pri minimálnej veľkosti</label>
-                                        <input id="minWhell" name="minWhell" type="number" min={0} />
+                                        <label htmlFor="minWhell">Minimálna veľkosť BK</label>
+                                        <input id="minWhell" name="minWhell" type="number" min={0} step={0.1} placeholder="Veľkosť malého BK" />
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="n_sharpening">Cyklus orovnania brúsneho kotúča n-diely</label>
-                                        <input id="n_sharpening" type="range" min="0" max="500" value={n_sharpening} onChange={e => { setN_sharpening(Number(e.target.value)) }} />
+                                        <label htmlFor="n_sharpening">Orovnávaci cyklus n-diely</label>
+                                        <input id="n_sharpening" type="range" min="0" max="400" step={0.1} value={n_sharpening} onChange={e => { setN_sharpening(Number(e.target.value)) }} />
                                         <div>
-                                            <input value={n_sharpening} type="number" onChange={e => { setN_sharpening(Number(e.target.value)) }} />
+                                            <input value={n_sharpening} type="number" placeholder="Orovnať po N dieloch" onChange={e => { setN_sharpening(Number(e.target.value)) }} />
                                         </div>
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="x_sharpening">Hodnota orovnávania</label>
-                                        <input id="x_sharpening" type="range" min="0" max="100" value={x_sharpening} onChange={e => { setX_sharpening(Number(e.target.value)) }} />
+                                        <label htmlFor="x_sharpening">Hodnota orovnávania x</label>
+                                        <input id="x_sharpening" type="range" min="0" max="100" step={0.1} value={x_sharpening} onChange={e => { setX_sharpening(Number(e.target.value)) }} />
                                         <div>
-                                            <input value={x_sharpening} type="number" onChange={e => { setX_sharpening(Number(e.target.value)) }} />
+                                            <input value={x_sharpening} type="number" placeholder="Veľkosť orovnania" onChange={e => { setX_sharpening(Number(e.target.value)) }} />
                                         </div>
-                                        <label htmlFor="someCheckbox">2 kus</label>
-                                        <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
+                                        <div className="formContainer checkBox">
+                                            <label htmlFor="someCheckbox">Brúsenie po 2 ks</label>
+                                            <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
+                                        </div>
                                     </div>
+
                                 </div>
                                 {/* .+---------- */}
                                 <div className="formlockOne">
                                     <div className="formContainer">
                                         <label htmlFor="cykleTime">Cyklový čas</label>
-                                        <input id="cykleTime" name="cykleTime" min={0} type="number" />
+                                        <input id="cykleTime" name="cykleTime" min={0} step={0.1} type="number" placeholder="Čas cyklu v minutách" />
                                     </div>
                                     <div className="formContainer">
                                         <label htmlFor="productionMystake">Chyba nastavenia</label>
-                                        <input id="productionMystake" name="productionMystake" min={0} max={100} type="number" placeholder="percentualná odchyľka chybného nastavenia" />
+                                        <input id="productionMystake" name="productionMystake" step={0.1} min={0} max={100} type="number" placeholder="Chyba nastavenia v %" />
                                     </div>
-                                    <div className="formContainer">
-                                        <label htmlFor=""></label>
-                                        <input id="" type="range" min="0" max="100" value={n_sharpening} onChange={e => { setN_sharpening(Number(e.target.value)) }} />
-                                        <div>
-                                            <input value={n_sharpening} type="number" onChange={e => { setN_sharpening(Number(e.target.value)) }} />
-                                        </div>
-                                    </div>
-                                    <div className="formContainer">
-                                        <label htmlFor="">Hodnota orovnávania</label>
-                                        <input id="" type="range" min="0" max="100" value={x_sharpening} onChange={e => { setX_sharpening(Number(e.target.value)) }} />
-                                        <div>
-                                            <input value={x_sharpening} type="number" onChange={e => { setX_sharpening(Number(e.target.value)) }} />
-                                        </div>
-                                        <label htmlFor="">2 kus</label>
-                                        <input id="" type="checkbox" checked={onhecked} onChange={handleChecked} />
+                                    <div className="formButton">
+                                        <button type="submit">Get grind whell life</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="formButton">
-                                <button type="submit">Get grind whell life</button>
                             </div>
                         </form>
                     </div>
@@ -120,10 +108,10 @@ function GrindWhellLifeModule(): React.JSX.Element {
                         <div className="calculateBody">
                             <div className="calculateBodyContent">
                                 <div>
-
+                                    <p></p>
                                 </div>
                                 <div>
-
+                                    <p></p>
                                 </div>
                             </div>
                         </div>

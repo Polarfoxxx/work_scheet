@@ -6,7 +6,8 @@ type Type_grindWhellLifeParams = {
     n_sharpening: number;
     x_sharpening: number;
     cykleTime: number | undefined;
-    productionMystake: number
+    productionMystake: number;
+    duoGrinding: boolean
 };
 
 export type Type_forReturned_API = {
@@ -22,7 +23,8 @@ export type Type_forReturned_API = {
 
 
 async function grindWhellLife_API(params: Type_grindWhellLifeParams): Promise<Type_forReturned_API | undefined> {
-
+    console.log(params);
+    
     try {
         const response = await axios.get("/calculateGrindWhellLife/whellLife", {
             params: {
