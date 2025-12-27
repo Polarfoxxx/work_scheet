@@ -2,7 +2,13 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/whellLife", async (req, res) => {
-    const { maxWhell, minWhell, n_sharpening, x_sharpening, cykleTime } = req.query;
+    const {
+         maxWhell, 
+         minWhell,
+          n_sharpening,
+           x_sharpening, 
+           cykleTime,
+        productionMystake } = req.query;
 
     try {
         if (maxWhell <= 0 && minWhell <= 0 && n_sharpening <= 0 && x_sharpening <= 0) {
@@ -20,7 +26,7 @@ router.get("/whellLife", async (req, res) => {
                 wearPerSharpening: wearPerSharpening, //!počet orovaní
                 lifePerSharpening: lifePerSharpening, //!počet dielov
                 lifePerTime: lifePerTime || undefined //!čas životnosti podla tkz
-                
+
             }
         });
     } catch {

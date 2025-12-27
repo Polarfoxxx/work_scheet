@@ -19,6 +19,7 @@ function GrindWhellLifeModule(): React.JSX.Element {
             n_sharpening: Number(n_sharpening),
             x_sharpening: Number(x_sharpening),
             cykleTime: Number(formData.cykleTime),
+            productionMystake: Number(formData.productionMystake)
         };
 
         if (payload.maxWhell && payload.minWhell && payload.n_sharpening && payload.x_sharpening) {
@@ -87,10 +88,10 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                     </div>
                                     <div className="formContainer">
                                         <label htmlFor="productionMystake">Chyba nastavenia</label>
-                                        <input id="productionMystake" name="productionMystake" min={0} type="number" />
+                                        <input id="productionMystake" name="productionMystake" min={0} max={100} type="number" placeholder="percentualná odchyľka chybného nastavenia" />
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="">Cyklus orovnania brúsneho kotúča n-diely</label>
+                                        <label htmlFor=""></label>
                                         <input id="" type="range" min="0" max="100" value={n_sharpening} onChange={e => { setN_sharpening(Number(e.target.value)) }} />
                                         <div>
                                             <input value={n_sharpening} type="number" onChange={e => { setN_sharpening(Number(e.target.value)) }} />

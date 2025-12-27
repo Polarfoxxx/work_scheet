@@ -5,7 +5,8 @@ type Type_grindWhellLifeParams = {
     minWhell: number;
     n_sharpening: number;
     x_sharpening: number;
-    cykleTime: number | undefined
+    cykleTime: number | undefined;
+    productionMystake: number
 };
 
 export type Type_forReturned_API = {
@@ -30,6 +31,7 @@ async function grindWhellLife_API(params: Type_grindWhellLifeParams): Promise<Ty
                 n_sharpening: params.n_sharpening,
                 x_sharpening: params.x_sharpening,
                 cykleTime: params.cykleTime,
+                productionMystake: params.productionMystake
             }
         });
         return response;
