@@ -10,18 +10,6 @@
 
 }
 
-.cykleTimeModule>header {
-    background-color: var(--bg-color-five);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 50px;
-    color: white;
-    margin: 5px;
-    border-radius: 10px;
-}
-
 .cykleTimeModule>main {
     width: 100%;
     height: 100%;
@@ -289,19 +277,6 @@
         justify-content: start;
         background-color: white;
         font-size: 10px;
-
-    }
-
-    .cykleTimeModule>header {
-        background-color: var(--bg-color-five);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 50px;
-        color: white;
-        margin: 5px;
-        border-radius: 0px;
     }
 
     .cykleTimeModule>main {

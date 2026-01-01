@@ -9,18 +9,6 @@
     font-size: 10px;
 }
 
-.grindWhellModule>header {
-    background-color: var(--bg-color-five);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 50px;
-    color: white;
-    margin: 5px;
-    border-radius: 10px;
-}
-
 .grindWhellModule>main {
     display: flex;
     align-items: center;

@@ -4,7 +4,7 @@ import { Outlet, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ContainerProvider } from "../../../Container";
-import { LogOutButton } from "../../../services/LogOutButton";
+import { LogOutButton } from "../../../services/Components";
 
 
 function MainInOwned(): React.JSX.Element {

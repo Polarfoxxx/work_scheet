@@ -2,6 +2,7 @@ import React from 'react';
 import { cykleTime_API } from '../API';
 import './style/cykleTimeModule_style.css';
 import { Type_for_cykleTime_response } from '../API/cykleTime/cykleTime_API';
+import { PageHeaderComponent } from '../services';
 
 function CykleTimeModule(): React.JSX.Element {
     const [result, setResult] = React.useState<Type_for_cykleTime_response | undefined>({
@@ -44,11 +45,7 @@ function CykleTimeModule(): React.JSX.Element {
 
     return (
         <div className="cykleTimeModule">
-            <header>
-                <h1>
-                    Cykly za čas
-                </h1>
-            </header>
+            <PageHeaderComponent headerTitle={"Výpočet cyklového času"} />
             <main>
                 <div className='formContentAndInfoContent'>
                     <div className="formContainer">

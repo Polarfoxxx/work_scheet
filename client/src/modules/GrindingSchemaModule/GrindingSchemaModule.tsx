@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stage, Layer, Line, Text } from "react-konva";
 import './style/grindingSchema_style.css';
+import { PageHeaderComponent } from '../services';
 
 function GrindingSchemaModule(): React.JSX.Element {
   const [positions, setPositions] = React.useState(200);
@@ -25,10 +26,8 @@ function GrindingSchemaModule(): React.JSX.Element {
 
   return (
     <div className='grindingSchema'>
-      <header className='grindingSchema_header'>
-        Schema
-      </header>
-      <article className='grindingSchema_article'>
+      <PageHeaderComponent headerTitle={"Schéma"} />
+      <main className='grindingSchema_article'>
         <div className='grindingSchema_article_leftSide'>
           <Stage width={800} height={600} style={{ border: '1px solid grey' }}>
             <Layer>
@@ -48,7 +47,7 @@ function GrindingSchemaModule(): React.JSX.Element {
             rigt side
           </p>
         </div>
-      </article>
+      </main>
     </div>
 
   );

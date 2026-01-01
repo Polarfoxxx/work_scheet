@@ -1,5 +1,6 @@
 import React from "react";
-import "./style/speedCutModule_style.css"
+import "./style/speedCutModule_style.css";
+import { PageHeaderComponent } from "../services";
 import {
   IntroComponent,
   SpeedOfRotationComponent,
@@ -10,9 +11,7 @@ function SpeedCutModule(): React.JSX.Element {
 
   return (
     <div className="speed-cut-module">
-      <header>
-        <h1>Výpočet renzej rýchlosti alebo otáčok</h1>
-      </header>
+        <PageHeaderComponent headerTitle={"Výpočet reznej rýchlosti a otáčok brúsnej fortuny"}/>
       <main>
         <div className="introComponent">
           <IntroComponent />

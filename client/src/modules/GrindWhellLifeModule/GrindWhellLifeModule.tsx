@@ -2,6 +2,7 @@ import React from "react"
 import { grindWhellLife_API } from "../API";
 import "./style/grindWhellLife_style.css";
 import { Type_forReturned_API } from "../API";
+import { PageHeaderComponent } from "../services";
 
 
 function GrindWhellLifeModule(): React.JSX.Element {
@@ -44,9 +45,7 @@ function GrindWhellLifeModule(): React.JSX.Element {
 
     return (
         <div className="grindWhellModule">
-            <header>
-                <h1>Životnosť kotúča</h1>
-            </header>
+            <PageHeaderComponent headerTitle={"Výpočet životnosti brúsneho kotúča"} />
             <main>
                 <div className="grindWhellContent">
                     <div className="formContainer">
