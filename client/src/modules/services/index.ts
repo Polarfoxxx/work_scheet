@@ -1,1 +1,1 @@
-export * from "./LogOutButton";
+export * from "./Components";
