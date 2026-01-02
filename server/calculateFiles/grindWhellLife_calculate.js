@@ -1,53 +1,61 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/whellLife", async (req, res) => {
-    const {
-        maxWhell,
-        minWhell,
-        n_sharpening,
-        x_sharpening,
-        cykleTime,
-        productionMystake } = req.query;
-
+router.get("/wheelLife", async (req, res) => {
     try {
-        if (maxWhell <= 0 && minWhell <= 0 && n_sharpening <= 0 && x_sharpening <= 0) {
-            return res.status(500).json({ message: "zero value" });
-        };
-        const totalWear = maxWhell - minWhell;
-        const wearPerSharpening = Math.round((totalWear / x_sharpening) * 100) / 100;
+        const maxWheel = Number(req.query.maxWhell);
+        const minWheel = Number(req.query.minWhell);
+        const nSharpening = Number(req.query.n_sharpening);
+        const xSharpening = Number(req.query.x_sharpening);
+        const cycleTime = Number(req.query.cykleTime);
+        const productionMistake = Number(req.query.productionMystake || 0);
 
-
-        if (!productionMystake) {
-            const lifePerSharpening = Math.round((wearPerSharpening * n_sharpening) * 100) / 100;
-            const lifePerTime = Math.round((lifePerSharpening * cykleTime) * 100) / 100;
-            const lifePerWorkShift = Math.round(lifePerTime / 450);
-
-            return res.status(200).json({
-                message: {
-                    withMystake: productionMystake ? true : false,          //!s chybov ?
-                    wearPerSharpening: wearPerSharpening,                   //!počet orovaní
-                    lifePerSharpening: lifePerSharpening,                   //!počet dielov
-                    lifePerTime: lifePerTime || undefined,                  //!čas životnosti podla tkz na min
-                    lifePerWorkShift: lifePerWorkShift,                     //!čas životnosti na zmeny
-                }
+        // validácia vstupov
+        if (
+            !maxWheel || 
+            !minWheel || 
+            !nSharpening || 
+            !xSharpening || 
+            maxWheel <= minWheel
+        ) {
+            return res.status(400).json({
+                message: "Invalid input values"
             });
-        } else {
-            const lifePerSharpening_withMistake = Math.round(lifePerSharpening - ((lifePerSharpening / 100) * productionMystake))
-            const lifePerTime_withMistake = Math.round((lifePerSharpening_withMistake * cykleTime) * 100) / 100;
-            const lifePerWorkShift_withMistake = Math.round(lifePerTime / 450);
-
-            return res.status(200).json({
-                withMystake: productionMystake ? true : false,          //!s chybov ?
-                wearPerSharpening: wearPerSharpening,                   //!počet orovaní
-                lifePerSharpening: lifePerSharpening_withMistake,       //!počet dielov
-                lifePerTime: lifePerTime_withMistake || undefined,      //!čas životnosti podla tkz na min
-                lifePerWorkShift: lifePerWorkShift_withMistake,         //!čas životnosti na zmeny
-            })
         }
-    } catch {
-        return res.status(500).json({ message: "Internal Server Error" });
-    }
-})
 
-module.exports = router
+        const totalWear = maxWheel - minWheel;
+        const wearPerSharpening = Number((totalWear / xSharpening).toFixed(2));
+
+        let lifePerSharpening = Number(
+            (wearPerSharpening * nSharpening).toFixed(2)
+        );
+
+        // započítanie výrobných chýb
+        if (productionMistake > 0) {
+            lifePerSharpening = Number(
+                (lifePerSharpening * (1 - productionMistake / 100)).toFixed(2)
+            );
+        }
+
+        const lifePerTime = Number(
+            (lifePerSharpening * cycleTime).toFixed(2)
+        );
+
+        const lifePerWorkShift = Math.round(lifePerTime / 450);
+
+        return res.status(200).json({
+            withMistake: productionMistake > 0,
+            wearPerSharpening,          // počet ostrení
+            lifePerSharpening,          // počet dielov
+            lifePerTime,                // čas životnosti v minútach
+            lifePerWorkShift            // životnosť v pracovných zmenách
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+});
+
+module.exports = router;
