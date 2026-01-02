@@ -6,26 +6,27 @@
 
 
 [data-theme="dark"] {
-  --primary-color: #282c34;             /* header */
+  --primary-color: #282c34;                     /* header */
   --secondary-color: #818cab;
-  --font-color-primary: #e1e1ff;        /* title */
-  --font-color-secondary: #e1e1ff;      /* p */
+  --font-color-primary: #e1e1ff;                /* title */
+  --font-color-secondary: #e1e1ff;              /* p */
   --bg-color-primary: #161625;
   --bg-color-secondary: #161625;
   --heading-color: #818cab;
 }
 
 [data-theme="light"] {
-  --primary-color: #ffffff;             /* header */
+  --primary-color: #ffffff;                     /* header */
   --secondary-color: #818cab;         
-  --font-color-primary: #e1e1ff;        /* title */
-  --font-color-secondary: #000000;      /* p */
+  --font-color-primary: #e1e1ff;                /* title */
+  --font-color-secondary: #000000;              /* p */
   --bg-color-primary: rgb(176, 219, 156);
   --bg-color-secondary: rgb(236, 250, 229);
   --bg-color-third: rgb(112, 178, 178);
   --bg-color-fouth: #f0f0f0;
   --bg-color-five: rgb(19, 64, 7);
   --bg-color-six: rgb(237, 252, 232);
+  --bg-color-seven: rgb(215, 215, 215);       /* input block */
   --heading-color: #818cab;
 }
 

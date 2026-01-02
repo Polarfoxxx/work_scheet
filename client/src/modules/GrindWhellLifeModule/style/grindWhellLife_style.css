@@ -25,9 +25,11 @@
     justify-content: center;
     width: 100%;
     height: 100%;
+    max-height: 100%;
     background-color: var(--bg-color-fouth);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
 }
 
 .grindWhellModule>main .grindWhellContent {
@@ -83,6 +85,7 @@
     display: flex;
     align-items: center;
     justify-content: start;
+    gap: 5px;
 }
 
 .grindWhellModule>main .grindWhellContent .formContainer>form>.formBody .formlockOne {
@@ -92,6 +95,7 @@
     justify-content: start;
     align-items: start;
     flex-direction: column;
+    gap: 3px;
 }
 
 .grindWhellModule>main .grindWhellContent .formContainer>form .formBody .formlockOne .formContainer {
@@ -101,7 +105,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    background-color: var(--bg-color-seven);
+    padding: 3px;
+    border-radius: 10px;
 
 }
 
@@ -121,18 +127,18 @@
 
 .grindWhellModule>main .grindWhellContent .formContainer>form .formBody .formlockOne .formContainer>label {
     width: auto;
-    height: 25px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .grindWhellModule>main .grindWhellContent .formContainer>form .formBody .formlockOne .formContainer>input[type="number"],
 input[type="range"] {
     width: 80%;
     min-width: 180px;
-    height: 30px;
+    height: 25px;
     border-radius: 10px;
     padding: 0 10px;
     text-align: center;
@@ -155,10 +161,10 @@ input[type="range"] {
 .grindWhellModule>main .grindWhellContent .formContainer>form .formButton {
     width: 100%;
     height: 50px;
-    margin-top: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 25px;
 }
 
 .grindWhellModule>main .grindWhellContent .formContainer>form .formButton>button {
@@ -181,6 +187,10 @@ input[type="range"] {
 .grindWhellModule>main .grindWhellContent .calculateBlock {
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .grindWhellModule>main .grindWhellContent .calculateBlock .calculateHeader {
@@ -199,6 +209,7 @@ input[type="range"] {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    background-color: aqua;
 }
 
 .grindWhellModule>main .grindWhellContent .calculateBlock .calculateBody .calculateBodyContent {
@@ -210,6 +221,7 @@ input[type="range"] {
     padding: 15px;
     border-radius: 15px;
     background-color: var(--primary-color);
+    flex-direction: column;
 
 }
 
@@ -233,7 +245,6 @@ input[type="range"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
 }
 
 .grindWhellModule>main .resultBlock .resultBlockBody {
@@ -245,25 +256,65 @@ input[type="range"] {
     flex-direction: row;
 }
 
-.grindWhellModule>main .resultBlock .resultBlockBody>div {
+.grindWhellModule>main .resultBlock .resultBlockBody .resultBlock {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.One {
- align-items: start;
-    justify-content: start;
     gap: 10px;
 }
-.grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.One  .resBlock {
-  width: 100%;
-    height: 40px;
+
+.grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.numberBlock {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: start;
-    background-color: blanchedalmond;
-    gap: 30px;
+    gap: 1px;
+    padding: 10px;
+}
+
+
+.grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.numberBlock .resBlock {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: rgb(171, 233, 157);
+    gap: 10px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+/* -------------------------------- */
+.grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.numberBlock .resBlock .resTitle {
+    width: 200%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.numberBlock .resBlock .resValue {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.numberBlock .resBlock .resUnit {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+
 }

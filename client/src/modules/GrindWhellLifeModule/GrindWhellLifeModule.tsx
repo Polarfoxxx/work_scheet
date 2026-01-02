@@ -56,46 +56,46 @@ function GrindWhellLifeModule(): React.JSX.Element {
                             <div className="formBody">
                                 <div className="formlockOne">
                                     <div className="formContainer">
-                                        <label htmlFor="maxWhell">Maximálna veľkosť BK</label>
+                                        <label htmlFor="maxWhell">Maximálna veľkosť BK - Dmax</label>
                                         <input id="maxWhell" name="maxWhell" type="number" min={0} step={0.1} placeholder="Veľkosť veľkého BK" />
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="minWhell">Minimálna veľkosť BK</label>
+                                        <label htmlFor="minWhell">Minimálna veľkosť BK - Dmin</label>
                                         <input id="minWhell" name="minWhell" type="number" min={0} step={0.1} placeholder="Veľkosť malého BK" />
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="n_sharpening">Orovnávaci cyklus n-diely</label>
-                                        <input id="n_sharpening" type="range" min="0" max="400" step={0.1} value={n_sharpening} onChange={e => { setN_sharpening(Number(e.target.value)) }} />
+                                        <label htmlFor="n_sharpening">Orovnávaci cyklus - n-diely</label>
+                                        <input id="n_sharpening" type="range" min="0" max="400" step={1} value={n_sharpening} onChange={e => { setN_sharpening(Number(e.target.value)) }} />
                                         <div>
                                             <input value={n_sharpening} type="number" placeholder="Orovnať po N dieloch" onChange={e => { setN_sharpening(Number(e.target.value)) }} />
                                         </div>
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="x_sharpening">Hodnota orovnávania x</label>
-                                        <input id="x_sharpening" type="range" min="0" max="100" step={0.1} value={x_sharpening} onChange={e => { setX_sharpening(Number(e.target.value)) }} />
+                                        <label htmlFor="x_sharpening">Hodnota orovnávania - Xvalue</label>
+                                        <input id="x_sharpening" type="range" min="0" max="0.1" step={0.001} value={x_sharpening} onChange={e => { setX_sharpening(Number(e.target.value)) }} />
                                         <div>
-                                            <input value={x_sharpening} type="number" placeholder="Veľkosť orovnania" onChange={e => { setX_sharpening(Number(e.target.value)) }} />
-                                        </div>
-                                        <div className="formContainer checkBox">
-                                            <label htmlFor="someCheckbox">Brúsenie po 2 ks</label>
-                                            <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
+                                            <input value={x_sharpening} type="number" min="0" max="0.1" step={0.001} placeholder="Veľkosť orovnania" onChange={e => { setX_sharpening(Number(e.target.value)) }} />
                                         </div>
                                     </div>
-
                                 </div>
                                 {/* .+---------- */}
                                 <div className="formlockOne">
                                     <div className="formContainer">
-                                        <label htmlFor="cykleTime">Cyklový čas</label>
+                                        <label htmlFor="cykleTime">Cyklový čas - tkz</label>
                                         <input id="cykleTime" name="cykleTime" min={0} step={0.1} type="number" placeholder="Čas cyklu v minutách" />
                                     </div>
                                     <div className="formContainer">
-                                        <label htmlFor="productionMystake">Chyba nastavenia</label>
+                                        <label htmlFor="productionMystake">Chyba nastavenia - Er</label>
                                         <input id="productionMystake" name="productionMystake" step={0.1} min={0} max={100} type="number" placeholder="Chyba nastavenia v %" />
                                     </div>
+                                    <div className="formContainer checkBox">
+                                        <label htmlFor="someCheckbox">Brúsenie po 2 ks</label>
+                                        <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
+                                    </div>  
                                     <div className="formButton">
                                         <button type="submit">Get grind whell life</button>
                                     </div>
+
                                 </div>
                             </div>
                         </form>
@@ -107,10 +107,13 @@ function GrindWhellLifeModule(): React.JSX.Element {
                         <div className="calculateBody">
                             <div className="calculateBodyContent">
                                 <div>
-                                    <p></p>
+                                    <p>Brúsny kotúč veľký rozmer Dmax - Brúsny kotúč min rozmer Dmin = Funkčny hodnota P_value</p>
                                 </div>
                                 <div>
-                                    <p></p>
+                                    <p>Funkčny hodnota P_value / Hodnota úberu Xvalue = Počet možných orovnaní Sh_value</p>
+                                </div>
+                                 <div>
+                                    <p>Počet možných orovnaní Sh_value * Orovnávací cyklus n-diely = Počet vyprodukovaných dielov na životnoť brúsneho kotúča PROD_value</p>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +126,7 @@ function GrindWhellLifeModule(): React.JSX.Element {
                         </div>
                     </div>
                     <div className="resultBlockBody">
-                        <div className="resultBlock One">
+                        <div className="resultBlock numberBlock">
                             <div className="resBlock One">
                                 <div className="resTitle">
                                     <h3>Počet orovnávania:</h3>
@@ -138,6 +141,28 @@ function GrindWhellLifeModule(): React.JSX.Element {
                             <div className="resBlock two">
                                 <div className="resTitle">
                                     <h3>Životnosť kotúča na n počet dielov:</h3>
+                                </div>
+                                <div className="resValue">
+                                    <p>{whellLife?.lifePerSharpening ? whellLife.lifePerSharpening : ""}</p>
+                                </div>
+                                <div className="resUnit">
+                                    <p>dielou</p>
+                                </div>
+                            </div>
+                            <div className="resBlock three">
+                                <div className="resTitle">
+                                    <h3>Životnosť kotúča podľa času:</h3>
+                                </div>
+                                <div className="resValue">
+                                    <p>{whellLife?.lifePerSharpening ? whellLife.lifePerSharpening : ""}</p>
+                                </div>
+                                <div className="resUnit">
+                                    <p>dielou</p>
+                                </div>
+                            </div>
+                            <div className="resBlock four">
+                                <div className="resTitle">
+                                    <h3>Životnosť kotúča na zmeny:</h3>
                                 </div>
                                 <div className="resValue">
                                     <p>{whellLife?.lifePerSharpening ? whellLife.lifePerSharpening : ""}</p>

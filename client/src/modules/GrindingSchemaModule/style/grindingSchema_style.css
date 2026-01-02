@@ -7,7 +7,7 @@
     background-color: #f5f5f5;
 }
 
-.grindingSchema article {
+.grindingSchema main {
     flex: 1;
     width: 100%;
     display: flex;
