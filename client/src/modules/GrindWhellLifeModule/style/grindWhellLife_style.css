@@ -209,12 +209,11 @@ input[type="range"] {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: aqua;
 }
 
 .grindWhellModule>main .grindWhellContent .calculateBlock .calculateBody .calculateBodyContent {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -222,9 +221,19 @@ input[type="range"] {
     border-radius: 15px;
     background-color: var(--primary-color);
     flex-direction: column;
-
+gap: 10px;
 }
-
+.grindWhellModule>main .grindWhellContent .calculateBlock .calculateBody .calculateBodyContent >div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 13px;
+    padding: 10px;
+    background-color: var(--bg-color-primary);
+    border-radius: 5px;
+}
 
 /* !......................................................................... */
 
@@ -306,7 +315,9 @@ input[type="range"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(247, 55, 55);
 }
 
 .grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.numberBlock .resBlock .resUnit {
@@ -314,7 +325,7 @@ input[type="range"] {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     font-size: 15px;
 
 }

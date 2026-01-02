@@ -92,7 +92,7 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                     <div className="formContainer checkBox">
                                         <label htmlFor="someCheckbox">Brúsenie po 2 ks</label>
                                         <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
-                                    </div>  
+                                    </div>
                                     <div className="formButton">
                                         <button type="submit">Get grind whell life</button>
                                     </div>
@@ -107,13 +107,13 @@ function GrindWhellLifeModule(): React.JSX.Element {
                         </div>
                         <div className="calculateBody">
                             <div className="calculateBodyContent">
-                                <div>
+                                <div className="calculateBox one">
                                     <p>Brúsny kotúč veľký rozmer Dmax - Brúsny kotúč min rozmer Dmin = Funkčny hodnota P_value</p>
                                 </div>
-                                <div>
+                                <div className="calculateBox two">
                                     <p>Funkčny hodnota P_value / Hodnota úberu Xvalue = Počet možných orovnaní Sh_value</p>
                                 </div>
-                                 <div>
+                                <div className="calculateBox three">
                                     <p>Počet možných orovnaní Sh_value * Orovnávací cyklus n-diely = Počet vyprodukovaných dielov na životnoť brúsneho kotúča PROD_value</p>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                     <p>dielou</p>
                                 </div>
                             </div>
-                             <div className="resBlock four">
+                            <div className="resBlock four">
                                 <div className="resTitle">
                                     <h3>S chybov:</h3>
                                 </div>
