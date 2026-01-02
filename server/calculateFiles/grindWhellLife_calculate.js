@@ -14,21 +14,37 @@ router.get("/whellLife", async (req, res) => {
         if (maxWhell <= 0 && minWhell <= 0 && n_sharpening <= 0 && x_sharpening <= 0) {
             return res.status(500).json({ message: "zero value" });
         };
-
         const totalWear = maxWhell - minWhell;
         const wearPerSharpening = Math.round((totalWear / x_sharpening) * 100) / 100;
-        const lifePerSharpening = Math.round((wearPerSharpening * n_sharpening) * 100) / 100;
 
-        const lifePerTime = Math.round((lifePerSharpening * cykleTime) * 100) / 100
 
-        return res.status(200).json({
-            message: {
-                wearPerSharpening: wearPerSharpening, //!počet orovaní
-                lifePerSharpening: lifePerSharpening, //!počet dielov
-                lifePerTime: lifePerTime || undefined //!čas životnosti podla tkz
+        if (!productionMystake) {
+            const lifePerSharpening = Math.round((wearPerSharpening * n_sharpening) * 100) / 100;
+            const lifePerTime = Math.round((lifePerSharpening * cykleTime) * 100) / 100;
+            const lifePerWorkShift = Math.round(lifePerTime / 450);
 
-            }
-        });
+            return res.status(200).json({
+                message: {
+                    withMystake: productionMystake ? true : false,          //!s chybov ?
+                    wearPerSharpening: wearPerSharpening,                   //!počet orovaní
+                    lifePerSharpening: lifePerSharpening,                   //!počet dielov
+                    lifePerTime: lifePerTime || undefined,                  //!čas životnosti podla tkz na min
+                    lifePerWorkShift: lifePerWorkShift,                     //!čas životnosti na zmeny
+                }
+            });
+        } else {
+            const lifePerSharpening_withMistake = Math.round(lifePerSharpening - ((lifePerSharpening / 100) * productionMystake))
+            const lifePerTime_withMistake = Math.round((lifePerSharpening_withMistake * cykleTime) * 100) / 100;
+            const lifePerWorkShift_withMistake = Math.round(lifePerTime / 450);
+
+            return res.status(200).json({
+                withMystake: productionMystake ? true : false,          //!s chybov ?
+                wearPerSharpening: wearPerSharpening,                   //!počet orovaní
+                lifePerSharpening: lifePerSharpening_withMistake,       //!počet dielov
+                lifePerTime: lifePerTime_withMistake || undefined,      //!čas životnosti podla tkz na min
+                lifePerWorkShift: lifePerWorkShift_withMistake,         //!čas životnosti na zmeny
+            })
+        }
     } catch {
         return res.status(500).json({ message: "Internal Server Error" });
     }

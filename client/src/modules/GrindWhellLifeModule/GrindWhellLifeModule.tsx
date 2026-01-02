@@ -171,6 +171,17 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                     <p>dielou</p>
                                 </div>
                             </div>
+                             <div className="resBlock four">
+                                <div className="resTitle">
+                                    <h3>S chybov:</h3>
+                                </div>
+                                <div className="resValue">
+                                    <p>{whellLife?.withMystake ? "s chybou" : "bez chyby"}</p>
+                                </div>
+                                <div className="resUnit">
+                                    <p></p>
+                                </div>
+                            </div>
                         </div>
                         <div className="resultBlock two">
                             <div className="">

@@ -14,9 +14,11 @@ export type Type_forReturned_API = {
     status: number,
     data: {
         message: {
+            withMystake: boolean,
             wearPerSharpening: number,
             lifePerSharpening: number,
-            lifePerTime: number | undefined
+            lifePerTime: number | undefined,
+            lifePerWorkShift: number
         };
     };
 };
@@ -24,7 +26,7 @@ export type Type_forReturned_API = {
 
 async function grindWhellLife_API(params: Type_grindWhellLifeParams): Promise<Type_forReturned_API | undefined> {
     console.log(params);
-    
+
     try {
         const response = await axios.get("/calculateGrindWhellLife/whellLife", {
             params: {
