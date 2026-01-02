@@ -14,7 +14,7 @@ export type Type_forReturned_API = {
     status: number,
     data: {
         message: {
-            withMystake: boolean,
+            withMistake: boolean,
             wearPerSharpening: number,
             lifePerSharpening: number,
             lifePerTime: number | undefined,
@@ -25,8 +25,6 @@ export type Type_forReturned_API = {
 
 
 async function grindWhellLife_API(params: Type_grindWhellLifeParams): Promise<Type_forReturned_API | undefined> {
-    console.log(params);
-
     try {
         const response = await axios.get("/calculateGrindWhellLife/whellLife", {
             params: {
@@ -38,6 +36,8 @@ async function grindWhellLife_API(params: Type_grindWhellLifeParams): Promise<Ty
                 productionMystake: params.productionMystake
             }
         });
+        console.log(response);
+        
         return response;
     } catch (error) {
         console.error("API Error (grindWhellLife_API):", error);

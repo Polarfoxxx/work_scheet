@@ -27,6 +27,7 @@ function GrindWhellLifeModule(): React.JSX.Element {
         if (payload.maxWhell && payload.minWhell && payload.n_sharpening && payload.x_sharpening) {
             try {
                 const response = await grindWhellLife_API(payload);
+
                 response?.status === 200 ?
                     setWhellLife(response.data.message) :
                     setWhellLife(null)
@@ -154,10 +155,10 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                     <h3>Životnosť kotúča podľa času:</h3>
                                 </div>
                                 <div className="resValue">
-                                    <p>{whellLife?.lifePerSharpening ? whellLife.lifePerSharpening : ""}</p>
+                                    <p>{whellLife?.lifePerTime ? whellLife.lifePerTime : ""}</p>
                                 </div>
                                 <div className="resUnit">
-                                    <p>dielou</p>
+                                    <p>min</p>
                                 </div>
                             </div>
                             <div className="resBlock four">
@@ -165,7 +166,7 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                     <h3>Životnosť kotúča na zmeny:</h3>
                                 </div>
                                 <div className="resValue">
-                                    <p>{whellLife?.lifePerSharpening ? whellLife.lifePerSharpening : ""}</p>
+                                    <p>{whellLife?.lifePerWorkShift ? whellLife.lifePerWorkShift : ""}</p>
                                 </div>
                                 <div className="resUnit">
                                     <p>dielou</p>
@@ -176,7 +177,7 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                     <h3>S chybov:</h3>
                                 </div>
                                 <div className="resValue">
-                                    <p>{whellLife?.withMystake ? "s chybou" : "bez chyby"}</p>
+                                    <p>{whellLife?.withMistake ? "s chybou" : "bez chyby"}</p>
                                 </div>
                                 <div className="resUnit">
                                     <p></p>

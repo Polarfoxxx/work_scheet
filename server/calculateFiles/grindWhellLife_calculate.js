@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/wheelLife", async (req, res) => {
+router.get("/whellLife", async (req, res) => {
     try {
         const maxWheel = Number(req.query.maxWhell);
         const minWheel = Number(req.query.minWhell);
@@ -12,10 +12,10 @@ router.get("/wheelLife", async (req, res) => {
 
         // validácia vstupov
         if (
-            !maxWheel || 
-            !minWheel || 
-            !nSharpening || 
-            !xSharpening || 
+            !maxWheel ||
+            !minWheel ||
+            !nSharpening ||
+            !xSharpening ||
             maxWheel <= minWheel
         ) {
             return res.status(400).json({
@@ -44,11 +44,13 @@ router.get("/wheelLife", async (req, res) => {
         const lifePerWorkShift = Math.round(lifePerTime / 450);
 
         return res.status(200).json({
-            withMistake: productionMistake > 0,
-            wearPerSharpening,          // počet ostrení
-            lifePerSharpening,          // počet dielov
-            lifePerTime,                // čas životnosti v minútach
-            lifePerWorkShift            // životnosť v pracovných zmenách
+            message: {
+                withMistake: productionMistake > 0,
+                wearPerSharpening,          // počet ostrení
+                lifePerSharpening,          // počet dielov
+                lifePerTime,                // čas životnosti v minútach
+                lifePerWorkShift            // životnosť v pracovných zmenách
+            }
         });
 
     } catch (error) {
