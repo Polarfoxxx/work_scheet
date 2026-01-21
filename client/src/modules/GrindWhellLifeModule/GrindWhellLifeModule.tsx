@@ -83,7 +83,7 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                 <div className="formlockOne">
                                     <div className="formContainer">
                                         <label htmlFor="cykleTime">Cyklový čas - tkz</label>
-                                        <input id="cykleTime" name="cykleTime" min={0} step={0.1} type="number" placeholder="Čas cyklu v minutách" />
+                                        <input id="cykleTime" name="cykleTime" min={0} step={0.001} type="number" placeholder="Čas cyklu v minutách" />
                                     </div>
                                     <div className="formContainer">
                                         <label htmlFor="productionMystake">Chyba nastavenia - Er</label>

@@ -18,7 +18,8 @@ export type Type_forReturned_API = {
             wearPerSharpening: number,
             lifePerSharpening: number,
             lifePerTime: number | undefined,
-            lifePerWorkShift: number
+            lifePerWorkShift: number,
+            duoGrinding: boolean
         };
     };
 };
