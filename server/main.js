@@ -11,6 +11,7 @@ const userLogIn = require("./servicesLogin/servicesLogin");
 const picsAnalyze = require("./calculateFiles/picsAnaliýze");
 const grindWhellLife = require("./calculateFiles/grindWhellLife_calculate");
 const signalOfWhell = require("./calculateFiles/signalOf Whell");
+const calculateCalcTkz = require("./calculateFiles/calculateTkz");
 //! --- Config ---
 dotenv.config();
 const app = express();
@@ -32,6 +33,7 @@ app.use("/calculateCykleTime", cykleTime);
 app.use("/calculatePicsAnalyze", picsAnalyze);
 app.use("/calculateGrindWhellLife", grindWhellLife);
 app.use("/calculateSignalOfWhell", signalOfWhell);
+app.use("/calculateCalcTkz", calculateCalcTkz);
 app.use("/login", userLogIn);
 
 //! --- Pripojenie statickeho suboru v tomto pripade buildu ---
