@@ -1,8 +1,6 @@
 import React from "react";
 
 
-
-
 function CalculateTkz_Module(): React.JSX.Element {
 
 
