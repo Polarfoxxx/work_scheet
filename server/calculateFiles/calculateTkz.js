@@ -53,8 +53,13 @@ router.get("/calculateTz", async (req, res) => {
     const luft_posuv = data.aufmass - data.pridavok;
     const luft_posuv_čas = luft_posuv * data.luft
 
+    const posuv_prvy_hrub = data.pridavok - data.zbk1;
+    const posuv_prvy_hrub_cas = posuv_prvy_hrub * data.v1;
+
+
     const posuv_bordmass_po_aufmass = bordmass - aufmass;
     const posuv_bordmass_po_aufmass_čas = posuv_bordmass_po_aufmass / (rychloposuv / 1000);
+
 
     const hodnota_prveho_dotyku = 
 
