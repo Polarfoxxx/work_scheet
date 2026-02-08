@@ -16,6 +16,7 @@ const {
 
 router.get("/calculateTz", async (req, res) => {
     const data = {
+        machineType: (Number(req.query.machineType)),
         idm: (Number(req.query.idm)),
         adm: (Number(req.query.adm)),
         breite: (Number(req.query.breite)),
@@ -61,7 +62,6 @@ router.get("/calculateTz", async (req, res) => {
     const posuv_bordmass_po_aufmass_čas = posuv_bordmass_po_aufmass / (rychloposuv / 1000);
 
 
-    const hodnota_prveho_dotyku = 
 
 
 
