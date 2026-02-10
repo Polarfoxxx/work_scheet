@@ -17,7 +17,7 @@ const {
 
 router.get("/calculateTz", async (req, res) => {
     const data = {
-        machineType: (Number(req.query.machineType)),
+        machineType: (String(req.query.machineType)),
         idm: (Number(req.query.idm)),
         adm: (Number(req.query.adm)),
         breite: (Number(req.query.breite)),
@@ -46,15 +46,19 @@ router.get("/calculateTz", async (req, res) => {
         });
     };
 
-    const dads = calculate_Nova2G(data)
-
-
-
-   
-
-
-
-
+    switch (data.machineType) {
+        case "NOVA_2G":
+            calculate_Nova2G(data)
+            break;
+        case "NOVA_2G":
+            console.log('Je to 2');
+            break;
+        case "NOVA_2G":
+            console.log('Je to 3');
+            break;
+        default:
+            console.log('Neznáma hodnota');
+    }
 
 
     return res.status(200).json({

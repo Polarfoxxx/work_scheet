@@ -8,12 +8,17 @@ function calculate_Nova2G(data) {
 
     const hodnota_úberu_na_stenu = data.pridavok / 2
 
-    const luft_posuv = data.aufmass - data.pridavok;
-    const luft_posuv_čas = luft_posuv * data.luft
+    const rychloposuv_posuv = data.aufmass - data.pridavok;
+    const rychloposuv_posuv_čas = rychloposuv_posuv * data.rychloposuv
 
     const posuv_prvy_hrub = data.pridavok - data.zbk1;
     const posuv_prvy_hrub_cas = posuv_prvy_hrub * data.v1;
 
+    const posuv_druhy_hrub = data.zbk2 - data.zbk1
+    const posuv_druhy_hrub_cas = posuv_druhy_hrub * data.v2;
+
+    const posuv_treti_hrub = data.zbk3 - data.zbk2
+    const posuv_treti_hrub_cas = posuv_treti_hrub * data.v3;
 
     const posuv_bordmass_po_aufmass = bordmass - aufmass;
     const posuv_bordmass_po_aufmass_čas = posuv_bordmass_po_aufmass / (rychloposuv / 1000);
