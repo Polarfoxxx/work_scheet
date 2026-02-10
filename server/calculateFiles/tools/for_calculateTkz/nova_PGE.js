@@ -1,6 +1,6 @@
 
 
-function calculate_Nova2G(data, res) {
+function calculate_NovaPGE(data, res) {
 
     const obvod_kruhu = 2 * pi * (idm / 2);
     const plocha = breite * obvod_kruhu;
@@ -35,4 +35,4 @@ return res.status(200).json({
     }
 });
 
-module.exports = calculate_Nova2G
+module.exports = calculate_NovaPGE

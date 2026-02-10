@@ -1,5 +1,5 @@
 const express = require("express");
-const calculate_Nova2G = require("./tools/for_calculateTkz");
+const { calculate_Nova2G, calculate_NovaPGE } = require("./tools");
 const router = express.Router();
 const {
     atan2,
@@ -48,29 +48,16 @@ router.get("/calculateTz", async (req, res) => {
 
     switch (data.machineType) {
         case "NOVA_2G":
-            calculate_Nova2G(data)
-            break;
-        case "NOVA_2G":
-            console.log('Je to 2');
-            break;
-        case "NOVA_2G":
-            console.log('Je to 3');
-            break;
+            return calculate_Nova2G(data, res);
+        case "NOVA_PGE_U_M":
+            return calculate_NovaPGE(data, res);
+        case "NOVA_4G":
+            return calculate_Nova4G(data, res);
         default:
-            console.log('Neznáma hodnota');
-    }
-
-
-    return res.status(200).json({
-        message: {
-            obvod_kruhu: obvod_kruhu,
-            plocha: plocha,
-            prídavok_stenu: pridavok / 2,
-            odobrany_objem: odobrany_objem,
-            hodnota_úberu_na_stenu: hodnota_úberu_na_stenu,
-
-        }
-    })
-})
+            return res.status(400).json({
+                message: 'Neznámy typ stroja'
+            });
+    };
+});
 
 module.exports = router;
