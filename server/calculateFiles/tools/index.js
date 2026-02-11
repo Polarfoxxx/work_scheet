@@ -1,6 +1,6 @@
 // services/machines/index.js
 const calculate_Nova2G = require('./for_calculateTkz/nova_2G');
-const calculate_NovaPGE = require('./nova3g');
+const calculate_NovaPGE = require('./for_calculateTkz/nova_PGE');
 
 module.exports = {
   calculate_Nova2G,

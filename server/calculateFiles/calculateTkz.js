@@ -38,6 +38,7 @@ router.get("/calculateTz", async (req, res) => {
         sl: (Number(req.query.sl)),
         t: (Number(req.query.t)),
         sr: (Number(req.query.sr)),
+        idealny_uber: (Number(req.query.ideal_uber))
     };
 
     if (data.idm == undefined) {
