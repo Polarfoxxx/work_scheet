@@ -1,65 +1,46 @@
 import React from "react";
 import { calculateTkz_API } from "../../../API";
+import { Nova_2G, Nova_Pge } from "./Components";
 
 
 function CalculateTkz_Module(): React.JSX.Element {
+    const [selectTypeMachine, setSelectTypeMachine] = React.useState<undefined | "NOVA_2G" | "NOVA_PGE">(undefined);
+    const [selectJSX_Form, set_SelectJSX_Form] = React.useState<React.JSX.Element | null>(null)
 
 
-    const handleSubmit_calculateTZ = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit_calculateTZ = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = Object.fromEntries(new FormData(e.currentTarget));
-        const payload = {
-
-        };
+        switch (selectTypeMachine) {
+            case "NOVA_2G":
+                set_SelectJSX_Form(Nova_2G)
+                break
+            case "NOVA_PGE":
+                set_SelectJSX_Form(Nova_Pge)
+                break
+            default:
+                set_SelectJSX_Form(null)
+        }
     };
+
+
 
     return (
         <div className="calculateTkz">
             <div className="calculate block">
+                <form action="#" onSubmit={e => handleSubmit_calculateTZ(e)}>
+                    <div className="formCalculate">
+                        <div className="type_mashineBlock">
+                            <label htmlFor="pet-select">Choose a pet:</label>
+                            <select id="pet-select">
+                                <option value="">--Please choose an option--</option>
+                                <option value="dog">Dog</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
                 <div>
-                    <form action="#" onSubmit={e => handleSubmit_calculateTZ(e)}>
-                        <div className="formCalculate">
-                            <div className="formBlock one">
-                                <label htmlFor="vehicleType">Machine type</label>
-                                <input name="vehicleType" type="number" />
-                            </div>
-                            <div className="piciesInfoVlock">
-                                <div className="formBlock one">
-                                    <label htmlFor="idm">IDM</label>
-                                    <input name="idm" type="number" />
-                                </div>
-                                <div className="formBlock one">
-                                    <label htmlFor="adm">ADM</label>
-                                    <input name="adm" type="number" />
-                                </div>
-                                <div className="formBlock one">
-                                    <label htmlFor="breite">BREITE</label>
-                                    <input name="breite" type="number" />
-                                </div>
-                            </div>
-                            <div className="formBlock one">
-                                <label htmlFor=""></label>
-                                <input type="number" />
-                            </div>
-                        </div>
-                        <div className="formCalculate">
-                            <div className="formBlock one">
-                                <label htmlFor=""></label>
-                                <input type="number" />
-                            </div>
-                            <div className="formBlock one">
-                                <label htmlFor=""></label>
-                                <input type="number" />
-                            </div>
-                        </div>
-                        <div className="formCalculate">
-                            <button type="submit">Calculate</button>
-                        </div>
-                    </form>
+                    {selectJSX_Form}
                 </div>
-            </div>
-            <div>
-
             </div>
         </div>
     )
