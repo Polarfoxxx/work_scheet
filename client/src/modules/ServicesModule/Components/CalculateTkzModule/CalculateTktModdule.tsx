@@ -1,6 +1,7 @@
 import React from "react";
 import { calculateTkz_API } from "../../../API";
 import { Nova_2G, Nova_Pge } from "./Components";
+import "./style/calculateTkz_style.css"
 
 
 function CalculateTkz_Module(): React.JSX.Element {
@@ -33,7 +34,8 @@ function CalculateTkz_Module(): React.JSX.Element {
                             <label htmlFor="pet-select">Choose a pet:</label>
                             <select id="pet-select">
                                 <option value="">--Please choose an option--</option>
-                                <option value="dog">Dog</option>
+                                <option value="dog">NOVA 2G </option>
+                                <option value="dog">NOVA PGE</option>
                             </select>
                         </div>
                     </div>

@@ -24,17 +24,17 @@ function calculate_Nova2G(data, res) {
 
     const posuv_dobrus = data.idm - data.zbk4;
     const posuv_dobrus_čas = posuv_dobrus / data.t;
+
+
+    return res.status(200).json({
+        message: {
+            obvod_kruhu,
+            plocha,
+            prídavok_stenu: pridavok / 2,
+            odobrany_objem,
+            hodnota_úberu_na_stenu
+        }
+    });
 };
-
-
-return res.status(200).json({
-    message: {
-        obvod_kruhu,
-        plocha,
-        prídavok_stenu: pridavok / 2,
-        odobrany_objem,
-        hodnota_úberu_na_stenu
-    }
-});
 
 module.exports = calculate_Nova2G

@@ -24,7 +24,7 @@ function MainInOwned(): React.JSX.Element {
         <NavLink to="excelSecond" className="nav-link">Excel second</NavLink>
         <NavLink to="picsAnalyze" className="nav-link">Picture analýze</NavLink>
         <NavLink to="whellSignal" className="nav-link">Whell signál</NavLink>
-        <NavLink to="tkzCalculate" className="nav-link">Whell signál</NavLink>
+        <NavLink to="tkzCalculate" className="nav-link">Calculate Tz</NavLink>
         <div className="logOutBar">
           <LogOutButton />
         </div>
