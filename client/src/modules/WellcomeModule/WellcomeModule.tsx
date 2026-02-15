@@ -5,8 +5,6 @@ import "./style/wellcomeModule_style.css";
 function WellcomeModule(): React.JSX.Element {
 
 
-
-  
   return (
     <div className="wellcome-mod">
       <div className="left-section">
