@@ -15,7 +15,7 @@ import {
   WhellSignalModule,
   EducationModule,
   WellcomeAdminModule,
-  TkzCalculateModule
+  CalculateTkz_Module
 } from "../";
 
 function Main(): React.JSX.Element {
@@ -59,7 +59,7 @@ function Main(): React.JSX.Element {
             <Route path="excelFirst" element={<ExcelFirstModule />} />
             <Route path="picsAnalyze" element={<PicsAnalyzeModule />} />
             <Route path="whellSignal" element={<WhellSignalModule />} />
-            <Route path="tkzCalculate" element={<TkzCalculateModule />} />
+            <Route path="tkzCalculate" element={<CalculateTkz_Module />} />
           </Route>
         </Routes>
       </main>

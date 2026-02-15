@@ -22,17 +22,17 @@ function calculate_NovaPGE(data, res) {
 
     const posuv_bordmass_po_aufmass = bordmass - aufmass;
     const posuv_bordmass_po_aufmass_čas = posuv_bordmass_po_aufmass / (rychloposuv / 1000);
+
+
+    return res.status(200).json({
+        message: {
+            obvod_kruhu,
+            plocha,
+            prídavok_stenu: pridavok / 2,
+            odobrany_objem,
+            hodnota_úberu_na_stenu
+        }
+    });
 };
-
-
-return res.status(200).json({
-    message: {
-        obvod_kruhu,
-        plocha,
-        prídavok_stenu: pridavok / 2,
-        odobrany_objem,
-        hodnota_úberu_na_stenu
-    }
-});
 
 module.exports = calculate_NovaPGE
