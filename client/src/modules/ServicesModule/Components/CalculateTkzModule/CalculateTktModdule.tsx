@@ -9,14 +9,17 @@ function CalculateTkz_Module(): React.JSX.Element {
     const [selectJSX_Form, set_SelectJSX_Form] = React.useState<React.JSX.Element | null>(null)
 
 
-    const handleSubmit_calculateTZ = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        switch (selectTypeMachine) {
+    const handleChangeMachine = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+        const selected_Machine = event.target.value
+
+
+
+        switch (selected_Machine) {
             case "NOVA_2G":
-                set_SelectJSX_Form(Nova_2G)
+                set_SelectJSX_Form(<Nova_2G />)
                 break
             case "NOVA_PGE":
-                set_SelectJSX_Form(Nova_Pge)
+                set_SelectJSX_Form(<Nova_Pge />)
                 break
             default:
                 set_SelectJSX_Form(null)
@@ -24,24 +27,23 @@ function CalculateTkz_Module(): React.JSX.Element {
     };
 
 
-
     return (
         <div className="calculateTkz">
-            <div className="calculate block">
-                <form action="#" onSubmit={e => handleSubmit_calculateTZ(e)}>
-                    <div className="formCalculate">
-                        <div className="type_mashineBlock">
-                            <label htmlFor="pet-select">Choose a pet:</label>
-                            <select id="pet-select">
-                                <option value="">--Please choose an option--</option>
-                                <option value="dog">NOVA 2G </option>
-                                <option value="dog">NOVA PGE</option>
-                            </select>
-                        </div>
+            <div className="calculate_block">
+                <div className="formCalculate_select">
+                    <div className="type_mashineBlock">
+                        <label htmlFor="machine-select">Choose a maschine:</label>
+                        <select id="machine-select" onChange={e => handleChangeMachine(e)}>
+                            <option value="">--Please choose an option--</option>
+                            <option value="NOVA_2G">NOVA 2G </option>
+                            <option value="NOVA_PGE">NOVA PGE</option>
+                        </select>
                     </div>
-                </form>
-                <div>
-                    {selectJSX_Form}
+                </div>
+                <div className="displaySelectMachineBlock">
+                    {
+                        selectJSX_Form
+                    }
                 </div>
             </div>
         </div>
