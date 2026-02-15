@@ -22,8 +22,6 @@ function CalculateTkz_Module(): React.JSX.Element {
         }
     };
 
-
-
     return (
         <div className="calculateTkz">
             <div className="calculate block">
