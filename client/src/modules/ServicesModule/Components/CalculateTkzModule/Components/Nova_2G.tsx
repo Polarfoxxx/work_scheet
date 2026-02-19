@@ -5,13 +5,16 @@ import React from "react";
 function Nova_2G(): React.JSX.Element {
 
 
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+        e.preventDefault()
 
+    };
 
 
 
     return (
         <div className="nova2gForm">
-            <form action="#">
+            <form action="#" onSubmit={e => handleSubmit(e)}>
                 <div className="piecesDataBlock">
                     <div className="formBlock">
                         <label htmlFor="idm">Vnúroný priemer</label>
@@ -93,6 +96,9 @@ function Nova_2G(): React.JSX.Element {
                         <label htmlFor="autotast">Autotast</label>
                         <input type="checkbox" name="autotast" step={0.01} />
                     </div>
+                </div>
+                <div className="formButtonBlock">
+                    <button type="submit">Výpočet</button>
                 </div>
             </form>
         </div>

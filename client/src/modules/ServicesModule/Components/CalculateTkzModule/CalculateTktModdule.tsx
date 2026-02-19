@@ -2,6 +2,7 @@ import React from "react";
 import { calculateTkz_API } from "../../../API";
 import { Nova_2G, Nova_Pge } from "./Components";
 import "./style/calculateTkz_style.css"
+import { PageHeaderComponent } from "../../../services/Components";
 
 
 function CalculateTkz_Module(): React.JSX.Element {
@@ -30,6 +31,9 @@ function CalculateTkz_Module(): React.JSX.Element {
         <div className="calculateTkz">
             <div className="calculate_block">
                 <div className="formCalculate_select">
+                    <div className="headerBlock">
+                        <PageHeaderComponent headerTitle="Calculate produc time" />
+                    </div>
                     <div className="type_mashineBlock">
                         <label htmlFor="machine-select">Choose a maschine:</label>
                         <select id="machine-select" onChange={e => handleChangeMachine(e)}>
@@ -40,9 +44,14 @@ function CalculateTkz_Module(): React.JSX.Element {
                     </div>
                 </div>
                 <div className="displaySelectMachineBlock">
-                    {
-                        selectJSX_Form
-                    }
+                    <div >
+                        {
+                            selectJSX_Form
+                        }
+                    </div>
+                    <div>
+                        njbkjbjk
+                    </div>
                 </div>
             </div>
         </div>
