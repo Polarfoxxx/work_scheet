@@ -44,13 +44,18 @@ function CalculateTkz_Module(): React.JSX.Element {
                     </div>
                 </div>
                 <div className="displaySelectMachineBlock">
-                    <div >
+                    <div className="formSelectBlock">
                         {
                             selectJSX_Form
                         }
                     </div>
-                    <div>
-                        njbkjbjk
+                    <div className="calculateValueBlock">
+                        <div className="reportValueBlock">
+
+                        </div>
+                        <div className="reportGrafBlock">
+
+                        </div>
                     </div>
                 </div>
             </div>
