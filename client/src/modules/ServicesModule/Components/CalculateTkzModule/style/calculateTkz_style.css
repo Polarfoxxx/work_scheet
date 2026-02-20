@@ -24,8 +24,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    gap: 50px;
 }
+
+.calculateTkz .calculate_block .formCalculate_select >div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /* ----------------------------------------- */
 /* ----------------------------------------- */
@@ -37,15 +46,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    background-color: rgb(211, 211, 211);
     flex-direction: row;
 }
 
-.calculateTkz .calculate_block .displaySelectMachineBlock > div{
-  width: 100%;
+.calculateTkz .calculate_block .displaySelectMachineBlock .formSelectBlock {
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(215, 228, 228);   
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.calculateTkz .calculate_block .displaySelectMachineBlock .calculateValueBlock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+
+}
+
+.calculateTkz .calculate_block .displaySelectMachineBlock .calculateValueBlock >div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+
 }

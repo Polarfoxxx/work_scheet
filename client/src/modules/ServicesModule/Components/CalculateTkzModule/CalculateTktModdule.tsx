@@ -51,10 +51,10 @@ function CalculateTkz_Module(): React.JSX.Element {
                     </div>
                     <div className="calculateValueBlock">
                         <div className="reportValueBlock">
-
+                            result
                         </div>
                         <div className="reportGrafBlock">
-
+                            gbfdgbfd
                         </div>
                     </div>
                 </div>
