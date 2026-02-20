@@ -1,5 +1,63 @@
 .services-module {
-    width: 100%;    
+    width: 100%;
     height: 100%;
     background-color: #ffffff;
+}
+
+.services-module>header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-module>main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.services-module>main .changeColorBlock {
+    width: 100%;
+    height: 50px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-module>main .logInFormBlock {
+    width: 100%;
+    height:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+.services-module>main .logInFormBlock .servicesLogo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+}
+
+.services-module>main .logInFormBlock .servicesLogo>img {
+    width: 80%;
+}
+
+
+.services-module>main .logInFormBlock .formLogBlock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

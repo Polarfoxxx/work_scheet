@@ -4,14 +4,17 @@ import { useContext } from "react";
 import { ContainerProvider } from "../Container";
 import servicesLogin_Api from "../API/servicesLogin/servicesLogin_API";
 import { useNavigate } from "react-router-dom";
+import { PageHeaderComponent } from "../services/Components";
+
+
 
 function ServicesModule(): React.JSX.Element {
   const { provideDATA, setProvideDATA } = useContext(ContainerProvider.Context);
   const navigate = useNavigate();
 
-   React.useEffect(() => {
-      !provideDATA.isLogged && navigate('/services');
-    }, [provideDATA.isLogged]);
+  React.useEffect(() => {
+    !provideDATA.isLogged && navigate('/services');
+  }, [provideDATA.isLogged]);
 
   const handleChangeColor = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
@@ -42,7 +45,7 @@ function ServicesModule(): React.JSX.Element {
             isLogged: true,
             loginName: `${result.user.firstName} ${result.user.secondName}`
           });
-         navigate('/MainInOwned')
+          navigate('/MainInOwned')
 
         };
       } catch {
@@ -58,22 +61,26 @@ function ServicesModule(): React.JSX.Element {
   return (
     <div className="services-module">
       <header>
-        <h2>Log In</h2>
+        <PageHeaderComponent headerTitle="LogIn" />
       </header>
       <main>
-        <div>
+        <div className="changeColorBlock">
           <button onClick={handleChangeColor}>change color {provideDATA.appColorTheme === "dark" ? "light" : "dark"}</button>
         </div>
-        <div>
-          <form className="login-form" onSubmit={e => loginUser(e)}>
-            <label htmlFor="username">Username:</label>
-            <input type="text" id="username" name="username" required />
-            <label htmlFor="password">Password:</label>
-            <input type="password" id="password" name="password" required />
-            <button type="submit" >Log In</button>
-          </form>
+        <div className="logInFormBlock">
+          <div className="servicesLogo">
+            <img src="/img/services_tech.png" alt="" />
+          </div>
+          <div className="formLogBlock">
+            <form className="login-form" onSubmit={e => loginUser(e)}>
+              <label htmlFor="username">Username:</label>
+              <input type="text" id="username" name="username" required />
+              <label htmlFor="password">Password:</label>
+              <input type="password" id="password" name="password" required />
+              <button type="submit" >Log In</button>
+            </form>
+          </div>
         </div>
-        <p>This is the Services module. Here you can log in to access exclusive features and services.</p>
       </main>
     </div>
   );

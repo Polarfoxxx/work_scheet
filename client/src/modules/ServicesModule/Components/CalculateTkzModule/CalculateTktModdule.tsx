@@ -14,7 +14,6 @@ function CalculateTkz_Module(): React.JSX.Element {
         const selected_Machine = event.target.value
 
 
-
         switch (selected_Machine) {
             case "NOVA_2G":
                 set_SelectJSX_Form(<Nova_2G />)
