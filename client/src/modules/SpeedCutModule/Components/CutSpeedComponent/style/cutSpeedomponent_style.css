@@ -173,4 +173,60 @@
         max-height: 300px;
     }
 
+    .speed-cut-component main .formula-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        padding: 0 5px;
+        background-color: #e0f7f1;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .speed-cut-component article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .speed-cut-component article .result {
+        display: flex;
+        flex-direction: row;
+        font-size: 15px;
+        color: #000000;
+        gap: 15px;
+    }
+
+    .speed-cut-component article .result>div {
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
+    .speed-cut-component article .result .result-speed {
+        font-size: 22px;
+        color: #000000;
+        font-weight: bold;
+        background-color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px 0;
+        min-width: 160px;
+        color: red;
+        border: 1px solid red;
+    }
+    .speed-cut-component article .result .result-speed > span{
+        font-size: 15px;
+    }
 }
