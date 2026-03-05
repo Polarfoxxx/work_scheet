@@ -58,7 +58,7 @@ function CykleTimeModule(): React.JSX.Element {
                             <div className='formTimeBlock'>
                                 <label
                                     htmlFor="calculateTime">
-                                    Meraný čas počas ktorého je počítane množstvo opracovaných dielov
+                                    Meraný čas pre výpočet
                                 </label>
                                 <input
                                     id="calculateTime"
@@ -69,7 +69,7 @@ function CykleTimeModule(): React.JSX.Element {
                             <div className='formPieceBlock'>
                                 <label
                                     htmlFor="countPieces">
-                                    Počet vyprodukovaných dielov počas meraného časoveho úseku
+                                    Počet vyprodukovaných dielov počas meranej hodnoty
                                 </label>
                                 <input
                                     id="countPieces"

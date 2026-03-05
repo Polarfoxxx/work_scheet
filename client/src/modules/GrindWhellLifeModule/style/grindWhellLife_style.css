@@ -339,13 +339,14 @@ input[type="range"] {
 @media (max-width: 950px) {
     .grindWhellModule {
         width: 100%;
-        height: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: start;
         background-color: white;
         font-size: 10px;
+        padding: 5px 10px;
     }
 
     .grindWhellModule>main {
@@ -426,6 +427,7 @@ input[type="range"] {
         align-items: center;
         justify-content: start;
         gap: 5px;
+        flex-direction: column;
     }
 
     .grindWhellModule>main .grindWhellContent .formContainer>form>.formBody .formlockOne {
