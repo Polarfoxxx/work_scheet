@@ -322,6 +322,10 @@ input[type="range"] {
     font-weight: bold;
     color: rgb(247, 55, 55);
 }
+.grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.numberBlock .resBlock .resValue >p{
+    color: rgb(45, 26, 224);
+}
+
 
 .grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.numberBlock .resBlock .resUnit {
     width: 100%;
@@ -661,6 +665,7 @@ input[type="range"] {
         border-radius: 5px;
         font-size: 12px;
         padding: 0 10px;
+        background-color: rgb(234, 255, 233);
     }
 
     .grindWhellModule>main .resultBlock .resultBlockBody .resultBlock.numberBlock .resBlock .resValue {
