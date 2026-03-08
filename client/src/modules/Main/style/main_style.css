@@ -103,12 +103,13 @@
     align-items: center;
     justify-content: end;
     background-color: #282c34;
-    color: white;
     bottom: 0;
     padding-right: 20px;
     font-size: 13px;
 }
-
+.main_container>footer >p{
+    color: #07a749;
+}
 /* !------------------------------------ */
 /* !------------------------------------ */
 /* !------------------------------------ */
