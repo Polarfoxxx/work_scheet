@@ -60,9 +60,7 @@ function ServicesModule(): React.JSX.Element {
 
   return (
     <div className="services-module">
-      <header>
         <PageHeaderComponent headerTitle="LogIn" />
-      </header>
       <main>
         <div className="changeColorBlock">
           <button onClick={handleChangeColor}>change color {provideDATA.appColorTheme === "dark" ? "light" : "dark"}</button>

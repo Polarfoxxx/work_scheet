@@ -21,6 +21,9 @@
     align-items: center;
 }
 
+.pageHeaderComponent .headerContent>h4 {
+    color: white;
+}
 
 @media (max-width: 950px) {
     .pageHeaderComponent {
