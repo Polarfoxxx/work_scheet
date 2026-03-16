@@ -90,8 +90,8 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                         <input id="productionMystake" name="productionMystake" step={0.1} min={0} max={100} type="number" placeholder="Chyba nastavenia v %" />
                                     </div>
                                     <div className="formContainer checkBox">
-                                        <label htmlFor="someCheckbox">Brúsenie po 2 ks</label>
-                                        <input id="someCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
+                                        <label htmlFor="grindCountCheckbox">Brúsenie po 2 ks</label>
+                                        <input id="grindCountCheckbox" type="checkbox" checked={onhecked} onChange={handleChecked} />
                                     </div>
                                     <div className="formButton">
                                         <button type="submit">Get grind whell life</button>
@@ -169,18 +169,18 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                     <p>{whellLife?.lifePerWorkShift ? whellLife.lifePerWorkShift : ""}</p>
                                 </div>
                                 <div className="resUnit">
-                                    <p>dielou</p>
+                                    <p>zmeny</p>
                                 </div>
                             </div>
-                            <div className="resBlock five">
+                             <div className="resBlock five">
                                 <div className="resTitle">
-                                    <h3>Životnosť kotúča na zmeny:</h3>
+                                    <h3>Produkcia 1ks / 2ks:</h3>
                                 </div>
                                 <div className="resValue">
-                                    <p>{whellLife?.lifePerWorkShift ? whellLife.lifePerWorkShift : ""}</p>
+                                    <p>{whellLife?.returnedDuoGrinding}</p>
                                 </div>
                                 <div className="resUnit">
-                                    <p>dielou</p>
+                                    <p>ks</p>
                                 </div>
                             </div>
                             <div className="resBlock six">

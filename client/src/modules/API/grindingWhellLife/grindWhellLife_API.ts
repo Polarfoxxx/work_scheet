@@ -19,7 +19,7 @@ export type Type_forReturned_API = {
             lifePerSharpening: number,
             lifePerTime: number | undefined,
             lifePerWorkShift: number,
-            duoGrinding: boolean
+            returnedDuoGrinding: string
         };
     };
 };
@@ -34,7 +34,8 @@ async function grindWhellLife_API(params: Type_grindWhellLifeParams): Promise<Ty
                 n_sharpening: params.n_sharpening,
                 x_sharpening: params.x_sharpening,
                 cykleTime: params.cykleTime,
-                productionMystake: params.productionMystake
+                productionMystake: params.productionMystake,
+                duoGrinding: params.duoGrinding
             }
         });
         console.log(response);

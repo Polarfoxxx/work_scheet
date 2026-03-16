@@ -11,6 +11,7 @@ router.get("/whellLife", async (req, res) => {
         const productionMistake = Number(req.query.productionMystake || 0);
         const duoGrinding = req.query.duoGrinding
 
+
         // validácia vstupov
         if (!maxWheel || !minWheel || !nSharpening || !xSharpening || maxWheel <= minWheel) {
             return res.status(400).json({
@@ -29,6 +30,7 @@ router.get("/whellLife", async (req, res) => {
 
         const lifePerTime = Number((lifePerSharpening * cycleTime).toFixed(2));
         const lifePerWorkShift = Math.round(lifePerTime / 450);
+        let returnedTechGrind = duoGrinding ? "2" : "1"
 
         return res.status(200).json({
             message: {
@@ -36,7 +38,8 @@ router.get("/whellLife", async (req, res) => {
                 wearPerSharpening: wearPerSharpening,                                                               // počet ostrení
                 lifePerSharpening: duoGrinding ? lifePerSharpening : lifePerSharpening * 2,                         // počet dielov
                 lifePerTime: lifePerTime,                                                                           // čas životnosti v minútach
-                lifePerWorkShift: lifePerWorkShift                                                                  // životnosť v pracovných zmenách
+                lifePerWorkShift: lifePerWorkShift,                                                                 // životnosť v pracovných zmenách
+                returnedDuoGrinding: returnedTechGrind
             }
         });
 
