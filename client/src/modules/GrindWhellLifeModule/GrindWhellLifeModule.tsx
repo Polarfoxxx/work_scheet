@@ -172,7 +172,18 @@ function GrindWhellLifeModule(): React.JSX.Element {
                                     <p>dielou</p>
                                 </div>
                             </div>
-                            <div className="resBlock four">
+                            <div className="resBlock five">
+                                <div className="resTitle">
+                                    <h3>Životnosť kotúča na zmeny:</h3>
+                                </div>
+                                <div className="resValue">
+                                    <p>{whellLife?.lifePerWorkShift ? whellLife.lifePerWorkShift : ""}</p>
+                                </div>
+                                <div className="resUnit">
+                                    <p>dielou</p>
+                                </div>
+                            </div>
+                            <div className="resBlock six">
                                 <div className="resTitle">
                                     <h3>S chybov:</h3>
                                 </div>
