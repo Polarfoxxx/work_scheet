@@ -16,15 +16,26 @@ function MainInOwned(): React.JSX.Element {
   }, [provideDATA.isLogged]);
 
 
+  const handleOnDropDownClick = (): void {
+    const navBar = document.querySelector(".navigationBar") as HTMLElement;
+    navBar.classList.toggle("active");
+  };
+
+
   return (
     <div className="services-container">
       <nav className="navigationBar">
-        <NavLink to="education" className="nav-link">Education</NavLink>
-        <NavLink to="excelFirst" className="nav-link">Excel one</NavLink>
-        <NavLink to="excelSecond" className="nav-link">Excel second</NavLink>
-        <NavLink to="picsAnalyze" className="nav-link">Picture analýze</NavLink>
-        <NavLink to="whellSignal" className="nav-link">Whell signál</NavLink>
-        <NavLink to="tkzCalculate" className="nav-link">Calculate Tz</NavLink>
+        <div className="dropdownButton">
+          <button onClick={handleOnDropDownClick}>Menu 2</button>
+        </div>
+        <div className="naviLocation">
+          <NavLink to="education" className="nav-link">Education</NavLink>
+          <NavLink to="excelFirst" className="nav-link">Excel one</NavLink>
+          <NavLink to="excelSecond" className="nav-link">Excel second</NavLink>
+          <NavLink to="picsAnalyze" className="nav-link">Picture analýze</NavLink>
+          <NavLink to="whellSignal" className="nav-link">Whell signál</NavLink>
+          <NavLink to="tkzCalculate" className="nav-link">Calculate Tz</NavLink>
+        </div>
         <div className="logOutBar">
           <LogOutButton />
         </div>

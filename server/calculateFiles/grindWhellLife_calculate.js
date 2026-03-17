@@ -9,11 +9,11 @@ router.get("/whellLife", async (req, res) => {
         const xSharpening = Number(req.query.x_sharpening);
         const cycleTime = Number(req.query.cykleTime);
         const productionMistake = Number(req.query.productionMystake || 0);
-        const duoGrinding = req.query.duoGrinding
+        const duoGrinding = req.query.duoGrinding === "true";
 
 
         // validácia vstupov
-        if (!maxWheel || !minWheel || !nSharpening || !xSharpening || maxWheel <= minWheel) {
+        if (!maxWheel || !minWheel || !nSharpening || !xSharpening || !cycleTime || maxWheel <= minWheel) {
             return res.status(400).json({
                 message: "Invalid input values"
             });
@@ -30,16 +30,16 @@ router.get("/whellLife", async (req, res) => {
 
         const lifePerTime = Number((lifePerSharpening * cycleTime).toFixed(2));
         const lifePerWorkShift = Math.round(lifePerTime / 450);
-        let returnedTechGrind = duoGrinding ? "2" : "1"
+
 
         return res.status(200).json({
             message: {
                 withMistake: productionMistake > 0,
                 wearPerSharpening: wearPerSharpening,                                                               // počet ostrení
-                lifePerSharpening: duoGrinding ? lifePerSharpening : lifePerSharpening * 2,                         // počet dielov
+                lifePerSharpening: !duoGrinding ? lifePerSharpening : lifePerSharpening * 2,                         // počet dielov
                 lifePerTime: lifePerTime,                                                                           // čas životnosti v minútach
                 lifePerWorkShift: lifePerWorkShift,                                                                 // životnosť v pracovných zmenách
-                returnedDuoGrinding: returnedTechGrind
+                returnedDuoGrinding: duoGrinding ? "2" : "1"
             }
         });
 
