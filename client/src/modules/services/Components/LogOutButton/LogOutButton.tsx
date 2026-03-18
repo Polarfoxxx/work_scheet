@@ -1,6 +1,7 @@
 import React from "react";
 import { ContainerProvider } from "../../../Container";
 import { useContext } from "react";
+import "./style/logOutButton_style.css";
 
 function LogOutButton(): React.JSX.Element {
     const { provideDATA, setProvideDATA } = useContext(ContainerProvider.Context);

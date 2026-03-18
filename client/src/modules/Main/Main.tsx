@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./style/main_style.css";
 import { Route, Routes, NavLink } from "react-router-dom";
 import {
@@ -19,10 +19,11 @@ import {
 } from "../";
 
 function Main(): React.JSX.Element {
+  const navbar_Ref = useRef<HTMLDivElement | null>(null)
+
 
   const handleDropdownMenu = (): void => {
-    const navBar = document.querySelector(".navigationBar") as HTMLElement;
-    navBar.classList.toggle("active");
+    navbar_Ref.current?.classList.toggle("active")
   };
 
   return (
@@ -35,7 +36,7 @@ function Main(): React.JSX.Element {
         <div className="dropdown_button">
           <button onClick={handleDropdownMenu}>Menu</button>
         </div>
-        <div className="navigationBar">
+        <div ref={navbar_Ref} className="navigationBar">
           <NavLink to="/" onClick={handleDropdownMenu} className="nav-link">Home</NavLink>
           <NavLink to="/grindingSchemaModule" onClick={handleDropdownMenu} className="nav-link">Schema</NavLink>
           <NavLink to="/speedCut" onClick={handleDropdownMenu} className="nav-link">Speed Cut</NavLink>

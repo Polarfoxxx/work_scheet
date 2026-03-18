@@ -5,3 +5,23 @@
     align-items: center;
     justify-content: center;
 }
+
+.logoutButton>button {
+    width: 55px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(224, 224, 224);
+    background-color: rgb(210, 3, 3);
+    color: white;
+    font-size: 12px;
+}
+
+
+.logoutButton>button:hover {
+    width: 55px;
+    height: 30px;
+    border-radius: 20%;
+    border: 1px solid rgb(224, 224, 224);
+    background-color: rgb(13, 208, 143);
+    transition: 0.5s;
+}

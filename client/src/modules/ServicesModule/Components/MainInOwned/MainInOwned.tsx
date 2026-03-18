@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./style/mainOnOwned_style.css";
 import { Outlet, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,7 @@ import { LogOutButton } from "../../../services/Components";
 
 function MainInOwned(): React.JSX.Element {
   const { provideDATA } = useContext(ContainerProvider.Context);
+  const dropDown_Ref = useRef<HTMLDivElement | null>(null)
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -16,9 +17,8 @@ function MainInOwned(): React.JSX.Element {
   }, [provideDATA.isLogged]);
 
 
-  const handleOnDropDownClick = (): void {
-    const navBar = document.querySelector(".navigationBar") as HTMLElement;
-    navBar.classList.toggle("active");
+  const handleOnDropDownClick = (): void => {
+    dropDown_Ref.current?.classList.toggle("active");
   };
 
 
@@ -28,7 +28,7 @@ function MainInOwned(): React.JSX.Element {
         <div className="dropdownButton">
           <button onClick={handleOnDropDownClick}>Menu 2</button>
         </div>
-        <div className="naviLocation">
+        <div  ref={dropDown_Ref} className="naviLocation">
           <NavLink to="education" className="nav-link">Education</NavLink>
           <NavLink to="excelFirst" className="nav-link">Excel one</NavLink>
           <NavLink to="excelSecond" className="nav-link">Excel second</NavLink>
