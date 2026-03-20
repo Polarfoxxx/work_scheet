@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./style/main_style.css";
 import { Route, Routes, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { ContainerProvider } from "../";
 import {
   SpeedCutModule,
   GrindingSchemaModule,
@@ -19,7 +21,14 @@ import {
 } from "../";
 
 function Main(): React.JSX.Element {
+  const { provideDATA, setProvideDATA } = useContext(ContainerProvider.Context);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const navbar_Ref = useRef<HTMLDivElement | null>(null)
+
+
+  useEffect(() => {
+    containerRef.current?.scrollTo({ top: provideDATA.display_setting.scroolScreen, behavior: "smooth" })
+  }, [provideDATA.display_setting.scroolScreen])
 
 
   const handleDropdownMenu = (): void => {
@@ -45,7 +54,7 @@ function Main(): React.JSX.Element {
           <NavLink to="/services" onClick={handleDropdownMenu} className="nav-link">Services</NavLink>
         </div>
       </nav>
-      <main>
+      <main ref={containerRef} >
         <Routes>
           <Route path="/" element={<WellcomeModule />} />
           <Route path="/grindingSchemaModule" element={<GrindingSchemaModule />} />

@@ -4,7 +4,10 @@ import { createContext, Dispatch, SetStateAction } from "react";
 type Type_for_provideDATA = {
     appColorTheme: "light" | "dark";
     isLogged: boolean;
-    loginName: string
+    loginName: string;
+    display_setting: {
+        scroolScreen: number
+    }
 };
 
 type Type_for_DATA_context = {
@@ -15,7 +18,10 @@ type Type_for_DATA_context = {
 const defaultProvideDATA: Type_for_provideDATA = {
     appColorTheme: "light",
     isLogged: false,
-    loginName: ""
+    loginName: "",
+    display_setting: {
+        scroolScreen: 0
+    }
 };
 
 const Context = createContext<Type_for_DATA_context>({

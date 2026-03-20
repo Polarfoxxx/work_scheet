@@ -3,8 +3,12 @@ import { cykleTime_API } from '../API';
 import './style/cykleTimeModule_style.css';
 import { Type_for_cykleTime_response } from '../API/cykleTime/cykleTime_API';
 import { PageHeaderComponent } from '../services';
+import { useContext } from 'react';
+import { ContainerProvider } from '../Container';
+
 
 function CykleTimeModule(): React.JSX.Element {
+    const { provideDATA, setProvideDATA } = useContext(ContainerProvider.Context);
     const [result, setResult] = React.useState<Type_for_cykleTime_response | undefined>({
         thisCykle: 0,
         halfHourCykle: 0,
@@ -30,21 +34,34 @@ function CykleTimeModule(): React.JSX.Element {
         if (payload.calTime && payload.couPiec) {
             try {
                 const response = await cykleTime_API(payload);
-                response?.message !== undefined ?
-                    setResult(response.message) :
+                if (response?.message !== undefined) {
+                    setResult(response.message)
+                    setProvideDATA({
+                        ...provideDATA,
+                        display_setting: {
+                            ...provideDATA.display_setting,
+                            scroolScreen: 700
+                        }
+                    })
+                } else {
                     setResult(undefined);
+                }
                 console.log("API response:", response);
             } catch (err) {
                 console.error("Error calling Cykle Time API:", err);
             }
+
         } else {
             alert("Proím vyplnit všechna pole formuláře.");
         };
     };
 
 
+
+
     return (
-        <div className="cykleTimeModule">
+        <div
+            className="cykleTimeModule">
             <PageHeaderComponent headerTitle={"Výpočet cyklového času"} />
             <main>
                 <div className='formContentAndInfoContent'>
