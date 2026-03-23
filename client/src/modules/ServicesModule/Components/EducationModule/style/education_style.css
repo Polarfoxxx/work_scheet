@@ -128,11 +128,13 @@ td {
 @media (max-width: 950px) {
   .educationModule {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
+  background-color: var(--primary-color);
+
 }
 
 .educationModule header {

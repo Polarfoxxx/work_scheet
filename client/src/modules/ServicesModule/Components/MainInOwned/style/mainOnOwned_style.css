@@ -105,10 +105,11 @@
         display: flex;
         align-items: center;
         position: relative;
+        min-height: 35px;
     }
 
     .services-container nav .dropdownButton {
-        width: 100px;
+        width: 200px;
         height: 100%;
         color: white;
         display: flex;
@@ -117,13 +118,13 @@
     }
 
     .services-container nav .dropdownButton>button {
-        width: 80px;
-        height: 30px;
+        width: 120px;
+        height: 25px;
         color: white;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #47df0a;
+        background-color: #0f4e04;
         border-radius: 5px;
     }
 
@@ -134,9 +135,9 @@
     .services-container nav .naviLocation.active {
         width: 100%;
         height: auto;
-        background-color: rebeccapurple;
+        background-color: rgba(139, 139, 139, 0.926);
         color: white;
-        display: flex;
+        display: block;
         align-items: center;
         padding: 10px 20px;
         border-radius: 0px;

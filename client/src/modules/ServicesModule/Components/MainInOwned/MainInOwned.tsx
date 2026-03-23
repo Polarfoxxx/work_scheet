@@ -28,13 +28,13 @@ function MainInOwned(): React.JSX.Element {
         <div className="dropdownButton">
           <button onClick={handleOnDropDownClick}>Menu 2</button>
         </div>
-        <div  ref={dropDown_Ref} className="naviLocation">
-          <NavLink to="education" className="nav-link">Education</NavLink>
-          <NavLink to="excelFirst" className="nav-link">Excel one</NavLink>
-          <NavLink to="excelSecond" className="nav-link">Excel second</NavLink>
-          <NavLink to="picsAnalyze" className="nav-link">Picture analýze</NavLink>
-          <NavLink to="whellSignal" className="nav-link">Whell signál</NavLink>
-          <NavLink to="tkzCalculate" className="nav-link">Calculate Tz</NavLink>
+        <div ref={dropDown_Ref} className="naviLocation">
+          <NavLink to="education" onClick={handleOnDropDownClick} className="nav-link">Education</NavLink>
+          <NavLink to="excelFirst" onClick={handleOnDropDownClick} className="nav-link">Excel one</NavLink>
+          <NavLink to="excelSecond" onClick={handleOnDropDownClick} className="nav-link">Excel second</NavLink>
+          <NavLink to="picsAnalyze" onClick={handleOnDropDownClick} className="nav-link">Picture analýze</NavLink>
+          <NavLink to="whellSignal" onClick={handleOnDropDownClick} className="nav-link">Whell signál</NavLink>
+          <NavLink to="tkzCalculate" onClick={handleOnDropDownClick} className="nav-link">Calculate Tz</NavLink>
         </div>
         <div className="logOutBar">
           <LogOutButton />
