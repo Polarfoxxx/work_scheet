@@ -1,5 +1,6 @@
 import React from "react";
 import "./style/education_style.css";
+import { PageHeaderComponent } from "../../../services/Components";
 
 
 function EducationModule(): React.JSX.Element {
@@ -7,9 +8,7 @@ function EducationModule(): React.JSX.Element {
 
     return (
         <div className="educationModule">
-            <header>
-                <h1>Education</h1>
-            </header>
+            <PageHeaderComponent headerTitle="Education"/>
             <main>
                 <div className="education_text">
                     <div className="content_text one">

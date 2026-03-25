@@ -81,3 +81,96 @@
     border: 1px solid black;
 
 }
+
+/* !------------------------------------ */
+/* !------------------------------------ */
+/* !------------------------------------ */
+/* !------------------------------------ */
+@media (max-width: 950px) {
+.calculateTkz {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.calculateTkz .calculate_block {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.calculateTkz .calculate_block .formCalculate_select {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.calculateTkz .calculate_block .formCalculate_select>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+
+.calculateTkz .calculate_block .displaySelectMachineBlock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(211, 211, 211);
+    flex-direction: column;
+}
+
+.calculateTkz .calculate_block .displaySelectMachineBlock .formSelectBlock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.calculateTkz .calculate_block .displaySelectMachineBlock .calculateValueBlock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+
+}
+
+.calculateTkz .calculate_block .displaySelectMachineBlock .calculateValueBlock>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+
+}
+    
+}

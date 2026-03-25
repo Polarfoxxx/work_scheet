@@ -8,16 +8,6 @@
   padding: 5px;
 }
 
-.educationModule header {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bg-color-primary);
-  border-radius: 10px;
-}
-
 .educationModule main {
   width: 100%;
   height: 100%;
@@ -135,17 +125,6 @@ td {
   flex-direction: column;
   background-color: var(--primary-color);
 
-}
-
-.educationModule header {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bg-color-primary);
-  border-radius: 10px;
-  flex-direction: column;
 }
 
 .educationModule main {
