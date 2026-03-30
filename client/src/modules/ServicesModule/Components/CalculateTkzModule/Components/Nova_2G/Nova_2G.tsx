@@ -1,21 +1,21 @@
 import React from "react";
-
+import "../style/merge_style.css"
 
 
 function Nova_2G(): React.JSX.Element {
 
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-        e.preventDefault()
+        e.preventDefault();
 
     };
 
 
 
     return (
-        <div className="nova2gForm">
+        <div className="vehiclegForm">
             <form action="#" onSubmit={e => handleSubmit(e)}>
-                <div className="piecesDataBlock">
+                <div className="piecesData Block">
                     <div className="formBlock">
                         <label htmlFor="idm">Vnúroný priemer</label>
                         <input type="number" name="idm" step={0.01} />
@@ -39,7 +39,7 @@ function Nova_2G(): React.JSX.Element {
                 </div>
                 {/* ------------------- */}
                 {/* ------------------- */}
-                <div className="programDataBlock">
+                <div className="programData Block">
                     <div className="formBlock">
                         <label htmlFor="aufmass">Aufmass</label>
                         <input type="number" name="aufmass" step={0.001} />

@@ -35,8 +35,8 @@ function CalculateTkz_Module(): React.JSX.Element {
                     </div>
                     <div className="type_mashineBlock">
                         <label htmlFor="machine-select">Choose a maschine:</label>
-                        <select id="machine-select" onChange={e => handleChangeMachine(e)}>
-                            <option value="">--Please choose an option--</option>
+                        <select className="selector" id="machine-select" onChange={e => handleChangeMachine(e)}>
+                            <option value="">Please choose type</option>
                             <option value="NOVA_2G">NOVA 2G </option>
                             <option value="NOVA_PGE">NOVA PGE</option>
                         </select>

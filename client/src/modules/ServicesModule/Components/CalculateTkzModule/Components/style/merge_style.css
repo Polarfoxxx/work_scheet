@@ -1,0 +1,49 @@
+.vehiclegForm{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+}
+.vehiclegForm > form{
+      width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vehiclegForm > form .Block{
+ width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+}
+.vehiclegForm > form .Block>div{
+     width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.vehiclegForm > form .Block>div>label{
+    width: 140px;
+    height: 20px;
+    text-align: center;
+    background-color: aqua;
+}
+.vehiclegForm > form .Block>div>input{
+      width: 150px;
+    height: 25px;
+    border-radius: 5px;
+    padding: 0 10px;
+    text-align: center;
+}
