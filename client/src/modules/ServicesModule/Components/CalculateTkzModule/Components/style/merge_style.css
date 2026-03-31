@@ -1,4 +1,4 @@
-.vehiclegForm{
+.vehiclegForm {
     width: 100%;
     height: 100%;
     display: flex;
@@ -7,41 +7,56 @@
     flex-direction: column;
     background-color: transparent;
 }
-.vehiclegForm > form{
-      width: 100%;
+.vehiclegForm .piecesData{
+  width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
 }
 
-.vehiclegForm > form .Block{
- width: 100%;
-    height: 100%;
+.vehiclegForm .piecesData .formBlockCaculate{
+     width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    border: 1px solid red;
+    padding-top: 10px;
+}
+
+
+.vehiclegForm .piecesData .formBlockCaculate>form {
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 3px;
+    gap: 10px;
+    background-color: blue;
 }
-.vehiclegForm > form .Block>div{
-     width: 100%;
-    height: 100%;
+
+.vehiclegForm .piecesData .formBlockCaculate>form .Block {
+    width: 100%;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    background-color: rgb(255, 255, 255);
 }
-.vehiclegForm > form .Block>div>label{
+
+.vehiclegForm .piecesData .formBlockCaculate>form .Block>label {
     width: 140px;
     height: 20px;
     text-align: center;
-    background-color: aqua;
 }
-.vehiclegForm > form .Block>div>input{
-      width: 150px;
+
+.vehiclegForm .piecesData .formBlockCaculate>form .Block>input {
+    width: 150px;
     height: 25px;
     border-radius: 5px;
     padding: 0 10px;

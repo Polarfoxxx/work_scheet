@@ -14,29 +14,47 @@ function Nova_2G(): React.JSX.Element {
 
     return (
         <div className="vehiclegForm">
-            <form action="#" onSubmit={e => handleSubmit(e)}>
-                <div className="piecesData Block">
-                    <div className="formBlock">
-                        <label htmlFor="idm">Vnúroný priemer</label>
-                        <input type="number" name="idm" step={0.01} />
-                    </div>
-                    <div className="formBlock">
-                        <label htmlFor="adm">Vonkajší priemer</label>
-                        <input type="number" name="adm" step={0.01} />
-                    </div>
-                    <div className="formBlock">
-                        <label htmlFor="idm">Výška</label>
-                        <input type="number" name="výška" step={0.01} />
-                    </div>
-                    <div className="formBlock">
-                        <label htmlFor="material">Material</label>
-                        <input type="string" name="material" />
-                    </div>
-                    <div className="formBlock">
-                        <label htmlFor="pridavok">Prídavok</label>
-                        <input type="number" name="pridavok" step={0.001} />
+            <div className="piecesData">
+                <div className="formBlockCaculate">
+                    <form action="#" onSubmit={e => handleSubmit(e)}>
+                        <div className="form Block">
+                            <label htmlFor="idm">Vnúroný priemer</label>
+                            <input type="number" name="idm" step={0.01} placeholder="mm" />
+                        </div>
+                        <div className="form Block">
+                            <label htmlFor="adm">Vonkajší priemer</label>
+                            <input type="number" name="adm" step={0.01} placeholder="mm" />
+                        </div>
+                        <div className="form Block">
+                            <label htmlFor="idm">Výška</label>
+                            <input type="number" name="výška" step={0.01} placeholder="mm" />
+                        </div>
+                        <div className="form Block">
+                            <label htmlFor="material">Material</label>
+                            <input type="string" name="material" />
+                        </div>
+                        <div className="form Block">
+                            <label htmlFor="pridavok">Prídavok</label>
+                            <input type="number" name="pridavok" step={0.001} placeholder="mm" />
+                        </div >
+                         <div className="form Block">
+                            <label htmlFor="tybeGrind">Brusivo</label>
+                            <input type="number" name="tybeGrind" step={0.001} placeholder="mm" />
+                        </div >
+                        <div className="form Block">
+                            <button>Prepočet</button>
+                        </div>
+                    </form>
+                    <div className="resultCalculate">
+                        <div>
+                            resu.t
+                        </div>
+                        <div>
+                            res
+                        </div>
                     </div>
                 </div>
+
                 {/* ------------------- */}
                 {/* ------------------- */}
                 <div className="programData Block">
@@ -100,8 +118,8 @@ function Nova_2G(): React.JSX.Element {
                 <div className="formButtonBlock">
                     <button type="submit">Výpočet</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </div >
     )
 };
 
