@@ -1,7 +1,7 @@
 import React from "react";
-import { calculateTkz_API } from "../../../API";
+import { calzTkz_calculation_API } from "../../../API";
 import { Nova_2G, Nova_Pge } from "./Components";
-import "./style/calculateTkz_style.css"
+import "./style/calculateTkz_style.css";
 import { PageHeaderComponent } from "../../../services/Components";
 
 
