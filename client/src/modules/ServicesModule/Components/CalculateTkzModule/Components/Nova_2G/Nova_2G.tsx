@@ -31,7 +31,11 @@ function Nova_2G(): React.JSX.Element {
                         </div>
                         <div className="form Block">
                             <label htmlFor="material">Material</label>
-                            <input type="string" name="material" />
+                           <select className="selector" id="machine-select">
+                            <option value="">Please choose type</option>
+                            <option value="NOVA_2G">NOVA 2G </option>
+                            <option value="NOVA_PGE">NOVA PGE</option>
+                        </select>
                         </div>
                         <div className="form Block">
                             <label htmlFor="pridavok">Prídavok</label>
@@ -39,10 +43,14 @@ function Nova_2G(): React.JSX.Element {
                         </div >
                          <div className="form Block">
                             <label htmlFor="tybeGrind">Brusivo</label>
-                            <input type="number" name="tybeGrind" step={0.001} placeholder="mm" />
+                          <select className="selector" id="machine-select">
+                            <option value="">Please choose type</option>
+                            <option value="NOVA_2G">NOVA 2G </option>
+                            <option value="NOVA_PGE">NOVA PGE</option>
+                        </select>
                         </div >
-                        <div className="form Block">
-                            <button>Prepočet</button>
+                        <div className="formButton Block">
+                            <button>Calculate</button>
                         </div>
                     </form>
                     <div className="resultCalculate">

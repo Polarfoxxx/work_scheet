@@ -1,1 +1,2 @@
-export { default as calculateTkz_API } from "./calculateTkz_API"; 
+export * from "./forCalculation"; 
+export * from "./fromParameters"; 

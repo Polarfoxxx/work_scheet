@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-type Type_for_calculateTz_params = {
+type Type_for_calzTkz_calculation_params = {
     machineType: "NOVA_2G" | "",
     idm: number;
     adm: number;
@@ -25,10 +25,10 @@ type Type_for_calculateTz_params = {
     sr: number,
 }
 
-async function calculateTkz_API(params: Type_for_calculateTz_params): Promise<{ message: number } | undefined> {
+async function calzTkz_calculation_API(params: Type_for_calzTkz_calculation_params): Promise<{ message: number } | undefined> {
 
     try {
-        const response = await axios.get("/calculateCalcTkz/calculateTz", {
+        const response = await axios.get("/calculateCalcTkz/calzTkz_calculation", {
             params: {
                 machineType:params.machineType,
                 idm: params.idm,
@@ -61,4 +61,4 @@ async function calculateTkz_API(params: Type_for_calculateTz_params): Promise<{ 
     };
 };
 
-export default calculateTkz_API;
+export default calzTkz_calculation_API;
