@@ -5,23 +5,12 @@ import { Type_for_cykleTime_response } from '../API/cykleTime/cykleTime_API';
 import { PageHeaderComponent } from '../services';
 import { useContext } from 'react';
 import { ContainerProvider } from '../Container';
+import { TimeItem } from './Components';
 
 
 function CykleTimeModule(): React.JSX.Element {
     const { provideDATA, setProvideDATA } = useContext(ContainerProvider.Context);
-    const [result, setResult] = React.useState<Type_for_cykleTime_response | undefined>({
-        thisCykle: 0,
-        halfHourCykle: 0,
-        onehourCykle: 0,
-        twoohourCykle: 0,
-        threehourCykle: 0,
-        fourhourCykle: 0,
-        fivehourCykle: 0,
-        sixHourCykle: 0,
-        sevenHourCykle: 0,
-        eightHourCykle: 0,
-    }
-    );
+    const [result, setResult] = React.useState<Type_for_cykleTime_response | undefined>([]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -152,63 +141,15 @@ function CykleTimeModule(): React.JSX.Element {
                     </div>
                     <div className='resultMain'>
                         {
-                            result && (
-                                <div className="resultContainer">
+                            result && result.map((item: any) => (
+                                <div className="resultContainer" key={item.nameCykle}>
                                     <div className='resultMainResult'>
-                                        <p className='titleRes'>Dielou za 1 minútu</p>
-                                        <p className='titleValue'>{Math.round(result.thisCykle * 1000) / 1000}</p>
-                                    </div>
-                                    <div className='resultother'>
-                                        <div>
-                                            <h4>Dielou za 30 minút:</h4>
-                                            <p>{result.halfHourCykle} dielov</p>
-                                        </div>
-
-                                        <div>
-                                            <h4>Dielou za 1 hodinu:</h4>
-                                            <p>{result.onehourCykle} dielov</p>
-                                        </div>
-
-                                        <div>
-                                            <h4>Dielou za 2 hodiny:</h4>
-                                            <p>{result.twoohourCykle} dielov</p>
-                                        </div>
-
-                                        <div>
-                                            <h4>Dielou za 3 hodiny:</h4>
-                                            <p>{result.threehourCykle} dielov</p>
-                                        </div>
-
-                                        <div>
-                                            <h4>Dielou za 4 hodiny:</h4>
-                                            <p>{result.fourhourCykle} dielov</p>
-                                        </div>
-
-                                        <div>
-                                            <h4>Dielou za 5 hodín:</h4>
-                                            <p>{result.fivehourCykle} dielov</p>
-                                        </div>
-
-                                        <div>
-                                            <h4>Dielou za 6 hodín:</h4>
-                                            <p>{result.sixHourCykle} dielov</p>
-                                        </div>
-
-                                        <div>
-                                            <h4>Dielou za 7 hodín:</h4>
-                                            <p>{result.sevenHourCykle} dielov</p>
-                                        </div>
-
-                                        <div>
-                                            <h4>Dielou za 8 hodín:</h4>
-                                            <p>{result.eightHourCykle} dielov</p>
-                                        </div>
-                                    </div>
-                                    <div className='resultGraph'>
-                                        infograph
+                                        <p className='titleRes'>{item.value}</p>
+                                        <p className='titleValue'>{item.nameCykle}</p>
                                     </div>
                                 </div>
-                            )}
+                            ))
+                        }
                     </div>
                 </div>
             </main>

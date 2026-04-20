@@ -5,19 +5,11 @@ type Type_for_cykleTime_params = {
     calTime: number;
     couPiec: number;
 };
-
 export type Type_for_cykleTime_response = {
-    thisCykle: number,
-    halfHourCykle: number,
-    onehourCykle: number,
-    twoohourCykle: number,
-    threehourCykle: number,
-    fourhourCykle: number,
-    fivehourCykle: number,
-    sixHourCykle: number,
-    sevenHourCykle: number,
-    eightHourCykle: number,
-};
+  nameCykle: string;
+  value: number;
+}[];
+
 
 async function cykleTime_API(params: Type_for_cykleTime_params): Promise<{ message: Type_for_cykleTime_response } | undefined> {
     try {
@@ -28,7 +20,7 @@ async function cykleTime_API(params: Type_for_cykleTime_params): Promise<{ messa
             }
         });
         console.log(response.data);
-        
+
         return response.data
     } catch (error) {
         console.error(error);
